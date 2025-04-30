@@ -22,7 +22,7 @@ class StatsCan_Manager:
         vectors = self.api.fetch_vetors(vectorIds)
         self.population_vectors=self.api.fetch_vetors(populationVectorIds)
         #Format pop vectors correctly
-        
+
         logger.info(self.population_vectors)
         with open("popVectors.json", "w") as output:
             json.dump(self.population_vectors, output)
@@ -96,6 +96,25 @@ class Data_Assembler:
         self.api=api
         self.manager=manager
         self.metadata_cache = []
+
+    def assemble_comparative_data(self, vectors):
+        """Assembles data for specific comparisons"""
+        #Initialize an empty list to store data
+        data_points = []
+
+        #TODO: Look at comparing to assemble_data_point to see where we need to actually change
+        #Iterate through vectors, assigning to new data points
+        for raw_vector in tqdm(vectors, desc="Assembling comparative lists"):
+            vector = raw_vector['object']
+            #Get Info
+            #Get productId and metadata
+            productId= vector['productId']
+            metadata = self.get_metadata(productId)
+            #Get other vector-wide info
+            coordinate = vector['coordinate']
+            vectorId = vector['vectorId']
+            logger.info(f'Processing vector {vectorId} with coordinate {coordinate}')
+
 
     def assemble_data_points(self, vectors):
         """Assembles data from vector data and metadata"""
