@@ -127,7 +127,7 @@ class Data_Assembler:
             coordinate = vector['coordinate']
             vectorId = vector['vectorId']
 
-            logger.info(f'Processing vector {vectorId} with coordinate {coordinate}')
+            #logger.info(f'Processing vector {vectorId} with coordinate {coordinate}')
 
             #Iterate through data points, creating data point helper objects
             for vector_data_point in vector['vectorDataPoint']:
@@ -178,7 +178,7 @@ class Data_Point:
         self.coordinate = coordinate
         self.vectorId = vectorId
 
-        logger.info(f'Set vector data: Product Id: {self.productId} | coordinate: {self.coordinate} | VectorId: {self.vectorId}')
+        #logger.info(f'Set vector data: Product Id: {self.productId} | coordinate: {self.coordinate} | VectorId: {self.vectorId}')
 
     def process_data_point(self, data_point, metadata, comparisons):
         """Processes raw data into dictionary
@@ -191,6 +191,11 @@ class Data_Point:
         self.process_coordinates()
         #Process Value and per capita measure
         self.process_value(comparisons)
+
+        vId = self.data['VectorId']
+        refPer = self.data['RefPeriod']
+        val=self.data['Data_Value']
+        logger.debug(f'Processed data point. Vector ID: {vId}, ref period: {refPer}, Value = {val}')
 
     def initialize_dictionary(self, data_point, metadata):
         """Processes data and metadata into dictionary"""
@@ -206,7 +211,7 @@ class Data_Point:
             'VectorId' : self.vectorId
             }
         
-        logger.info(f'Initialized dictionary: {self.data}')
+        #logger.info(f'Initialized dictionary: {self.data}')
 
     def process_coordinates(self):
         """Enumerates through coordintes, creating dictionary entries where key: dimension name and value: coordinate (member) name"""
@@ -222,13 +227,12 @@ class Data_Point:
                 #Save coordinate as dictionary entry, with key of dimension name
                 self.data[key] = value
 
-        logger.info(f'Added coordinate data to dictionary: {self.data}')
+        #logger.info(f'Added coordinate data to dictionary: {self.data}')
     
     def process_value(self, comparisons):
         """Processes data's value. Renames value keys to avoid conflicts from StatsCan organization, and scales if scalar present"""
         data_value = self.data_point['value']
         self.data['Data_Value']=data_value
-        logger.info(f'Processing data value {data_value}')
 
         #Process scalar, if present
         scalar_code = self.data_point['scalarFactorCode']
@@ -244,11 +248,13 @@ class Data_Point:
             scaled_value=data_value*(10**scalar_code)
             self.data['Scaled Value']= scaled_value
         
-            logger.info(f'Processed scaled value. Scalar code: {scalar_code}, Scalar name: {scalar} | Scaled value: {scaled_value}')
+            #logger.info(f'Processed scaled value. Scalar code: {scalar_code}, Scalar name: {scalar} | Scaled value: {scaled_value}')
+       # else:
+            #logger.info(f'Either scalar code {scalar_code} !> 0 OR data value {data_value} is None')
 
         #Calculate comparative values (unless being assembled as part of comparisons)
         if(comparisons):
-            logger.info(f'Processing comparisons')
+            #logger.info(f'Processing comparisons')
             #Compare to population data to calculate per capita measure
             self.process_per_capita()
 
@@ -263,26 +269,23 @@ class Data_Point:
 
         #Divide data_value by population value to get per capita measure
         if pop_vector:
-            #TODO: Fix to use scaled value where available
             if self.data['Data_Value'] is not None:
                 data_value = self.data['Data_Value']
-                logger.info(f'Using raw value {data_value}')
+                #logger.debug(f'Processing per capita using raw value {data_value}')
             if 'Scaled Value' in self.data.keys() and self.data['Scaled Value'] is not None:
                 data_value=self.data['Scaled Value']
-                logger.info(f'Using scaled value {data_value}')
+                #logger.debug(f'Processing per capita using scaled value {data_value}')
             else:
-                logger.info(f'No data value or scaled value, skipping')
+                #logger.debug(f'Cannot process per capita: No data value or scaled value, skipping')
                 return None
 
             value_per_capita = data_value / pop_vector['Data_Value']
             self.data['Value Per Capita']=value_per_capita
-            logger.info(f' value per capita {value_per_capita}')
+            #logger.info(f' value per capita {value_per_capita}')
             
         else:
             logger.error(f'No matching dict found for geo = {geo} and year={year}')
         
-
-
     def get_dimension_and_coordinate_name(self, dimension, coord):
         """Gets dimension and coordinate (member) name """
         #Find given dimension in metadata, save name
