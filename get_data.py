@@ -10,6 +10,7 @@ Output: StatsCan_Output excel spreadsheet
 #Libraries for core behaviour
 import pandas as pd
 from statistics import mean
+import xlsxwriter
 #StatsCan data manager handles pulling and organizing data from StatsCan
 from scripts import statscan_data_manager
 #Libraries for debugging and monitoring
@@ -82,11 +83,25 @@ class Director:
         #Also, product id to title. There's *got* to be a better way
         product_id_to_sheet = {}
         product_id_to_title = {}
+        #Initialize lists for tracking uniersal values
+        shared_keys_values = {}
+        #Initialize keys from first data point in first goup
+        shared_keys = set(list_of_grouped_dicts[0].group[0].keys())
 
         #Iterate through groups of data.
         for data_group in list_of_grouped_dicts:
             #Iterate through data point dictionaries within each group
             for data_point in data_group.group:
+                #Update intersection of keys 
+                shared_keys.intersection_update(data_point.keys())
+                logger.debug(f'Updated shared keys to intersection with previous and {data_point.keys()}. Now {shared_keys}')
+                #Add value of current value
+                for key in shared_keys:
+                    #Check to ensure key exists
+                    if key not in shared_keys_values:
+                            shared_keys_values[key]=set()
+                    shared_keys_values[key].add(data_point[key])
+
                 #Get product Id of data point
                 productId = data_point['ProductId']
                 #If product id is not present in the product_id_to_sheet dictionary keys, add it
@@ -106,13 +121,25 @@ class Director:
 
         # Convert each sheet to a pandas DataFrame and store in dictionary, organized by product id
         dfs = {f'{product_id}-{product_id_to_title[product_id]}'[:30]: pd.DataFrame(sheet) for product_id, sheet in product_id_to_sheet.items()}
+        
+        #Convert shared key sets to lists for pandas output
+        shared_keys_values={key:list(values) for key, values in shared_keys_values.items()}
+        #Create shared keys df
+        global_vars_df=pd.DataFrame(dict([(k, pd.Series(v)) for k, v in shared_keys_values.items()]))
+        #Add to dfs
+        dfs['Global variables']=global_vars_df
+        
         return dfs
 
     def export_to_excel(self, dfs, filename):
         """Exports dictionary of pandas dataframes to excel file, where each value is a list of rows that share a product Id, and each sheet contains all values grouped by productId"""
-        with pd.ExcelWriter(filename) as writer:
+        with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
             for sheet_name, df in dfs.items():
-                df.to_excel(writer, sheet_name=sheet_name, index=False)   
+                df.to_excel(writer, sheet_name=sheet_name, index=False)  
+                worksheet=writer.sheets[sheet_name]
+                for i, col in enumerate(df.columns):
+                    width=max(df[col].apply(lambda x: len(str(x))).max(), len(col))
+                    worksheet.set_column(i, i, width)
 
 class Data_Analyzer:
     """Used to group and summarize data - finds all cross-data variables to perform analysis on, and performs some analysis"""
@@ -189,7 +216,6 @@ class Data_Analyzer:
     def create_summary_dict(self, group, differing_key):
         """Crate summary dictionary from group of data points, and seed with initial values"""
         #Create summary dict by copying one of the group elements
-        #TODO: Add check for when productID does differ?
         summary_dict = group[0].copy()
         #Replace value for differing key with string of "Mean (Average)"
         summary_dict[differing_key]= 'Mean (Average)'
@@ -298,9 +324,12 @@ class Data_group:
         summary_dict = self.get_summary_dict()
         """Calculates mean values for data value and scaled value (if present)"""
         #If we have values for data values, find mean.
-        data_values = [data_point['Data_Value'] for data_point in self.group]
-        data_ids = [data_point['VectorId'] for data_point in self.group]
-        data_dates = [data_point['RefPeriod'] for data_point in self.group]
+        #Create list that excludes the summary dictionary
+        clean_list = [d for d in self.group if d!=summary_dict]
+
+        data_values = [data_point['Data_Value'] for data_point in clean_list]
+        data_ids = [data_point['VectorId'] for data_point in clean_list]
+        data_dates = [data_point['RefPeriod'] for data_point in clean_list]
         if data_values is not None and len(data_values)>0:
             try:
                 summary_dict['Data_Value'] = mean(data_values)
