@@ -11,8 +11,10 @@ Output: StatsCan_Output excel spreadsheet
 import pandas as pd
 from statistics import mean
 import xlsxwriter
+
 #StatsCan data manager handles pulling and organizing data from StatsCan
 from scripts import statscan_data_manager
+
 #Libraries for debugging and monitoring
 from tqdm import tqdm
 import logging
@@ -27,7 +29,7 @@ outputFile = "data/StatsCan_Output.xlsx"
 def init():
     """Initializes script - Creates Director object and begins process"""
     #Initializes logger
-    logging.basicConfig(handlers=[RotatingFileHandler('./debugging/getdata_log.log', maxBytes=50000000, backupCount=50)], level=logging.DEBUG)
+    logging.basicConfig(handlers=[RotatingFileHandler('./debugging/getdata_log.log', maxBytes=50000000, backupCount=50)], level=logging.INFO)
     
     #Director will create helper objects, then perform full process
     director= Director()
@@ -44,23 +46,21 @@ class Director:
         source_df = pd.read_excel(sourceFile)
         vectorIds = self.extract_vector_ids(source_df)
         logger.info(f'vector Ids: {vectorIds}')
+
         #Get list of dictionary version for each data point 
         data_dicts = self.statscan.fetch_data_dicts(vectorIds)
-        #length = len(data_dicts)
-        #logger.info(f'Got {length} data points in dictionary')
 
         #Identify and summarize groups of values
-        excluded_columns = ['VectorId', 'Data_Value', 'Scaled Value']
+        excluded_columns = ['VectorId', 'Data_Value', 'Scaled_Value']
         analyzer = Data_Analyzer(excluded_columns) 
         list_of_grouped_dicts = analyzer.group_and_summarize_data(data_dicts)
-        #Adds global group to ensure all data points are included
+
+        #Adds global group to ensure all data points are included in output
         global_group = Data_group(data_dicts, global_group=True)
         list_of_grouped_dicts.insert(0, global_group)
-        #grouped_length = len(list_of_grouped_dicts)
-        #logger.info(f'When grouped, produced {grouped_length} dicts in list')
 
         #Group data into sheets, organized by Product Id
-        export_df = self.prep_data_for_export(list_of_grouped_dicts)
+        export_df = self.statscan.prep_data_for_export(list_of_grouped_dicts)
         
         #Export to excel file
         self.export_to_excel(export_df, outputFile)
@@ -75,61 +75,6 @@ class Director:
             vectorIds.extend(row_ids.split(', '))
         #Return all vectorIds as single string
         return ','.join(vectorIds)
-
-    def prep_data_for_export(self, list_of_grouped_dicts):
-        """Takes grouped data, and re-groups into data frames for export to excel, organized by Product Id.
-        De-duplicates grouped data, so that each data frame contains one row per dat point"""
-        #Initialize product id to sheet dictionary, to track included productIds
-        #Also, product id to title. There's *got* to be a better way
-        product_id_to_sheet = {}
-        product_id_to_title = {}
-        #Initialize lists for tracking uniersal values
-        shared_keys_values = {}
-        #Initialize keys from first data point in first goup
-        shared_keys = set(list_of_grouped_dicts[0].group[0].keys())
-
-        #Iterate through groups of data.
-        for data_group in list_of_grouped_dicts:
-            #Iterate through data point dictionaries within each group
-            for data_point in data_group.group:
-                #Update intersection of keys 
-                shared_keys.intersection_update(data_point.keys())
-                logger.debug(f'Updated shared keys to intersection with previous and {data_point.keys()}. Now {shared_keys}')
-                #Add value of current value
-                for key in shared_keys:
-                    #Check to ensure key exists
-                    if key not in shared_keys_values:
-                            shared_keys_values[key]=set()
-                    shared_keys_values[key].add(data_point[key])
-
-                #Get product Id of data point
-                productId = data_point['ProductId']
-                #If product id is not present in the product_id_to_sheet dictionary keys, add it
-                if productId not in product_id_to_sheet:
-                    logger.debug(f'Creating new sheet for productId {productId}')
-                    product_id_to_sheet[productId] = []
-
-                #If this product id isn't in the title dictionary, add it
-                if productId not in product_id_to_title:
-                    logger.debug(f'Adding product Id {productId} to title dictionary (should follow "creating new sheet" message)')
-                    product_id_to_title[productId]=data_point['Title']
-                
-                #If the current data point dictionary is not in the corresponding dictionary value, add it
-                if data_point not in product_id_to_sheet[productId]:
-                    logger.debug(f'Dict {data_point} not found in sheet for productId {productId}. Adding')
-                    product_id_to_sheet[productId].append(data_point)
-
-        # Convert each sheet to a pandas DataFrame and store in dictionary, organized by product id
-        dfs = {f'{product_id}-{product_id_to_title[product_id]}'[:30]: pd.DataFrame(sheet) for product_id, sheet in product_id_to_sheet.items()}
-        
-        #Convert shared key sets to lists for pandas output
-        shared_keys_values={key:list(values) for key, values in shared_keys_values.items()}
-        #Create shared keys df
-        global_vars_df=pd.DataFrame(dict([(k, pd.Series(v)) for k, v in shared_keys_values.items()]))
-        #Add to dfs
-        dfs['Global variables']=global_vars_df
-        
-        return dfs
 
     def export_to_excel(self, dfs, filename):
         """Exports dictionary of pandas dataframes to excel file, where each value is a list of rows that share a product Id, and each sheet contains all values grouped by productId"""
@@ -193,7 +138,7 @@ class Data_Analyzer:
 
         #After completing iteraiton, if we haven't found a match yet, create a new group
         if not match_found:
-            #logger.debug(f'No match found in list of groups. Creating new group. Data point: {data_point} | Comparison: {comparison_data_point} | Differing key: {differing_key}')
+            logger.debug(f'No match found in list of groups. Creating new group. Data point: {data_point} | Comparison: {comparison_data_point} | Differing key: {differing_key}')
             #Create new list containing both data points
             new_group = Data_group([data_point, comparison_data_point], differing_key)
 
@@ -224,16 +169,16 @@ class Data_Analyzer:
         return summary_dict
     
     def update_summary_dict(self, summary_dict, group):
-        """Calculates mean values for data value and scaled value (if present)"""
+        """Calculates mean values for data value and Scaled_Value (if present)"""
         #If we have values for data values, find mean.
         data_values = [d['Data_Value'] for d in group]
         if summary_dict['Data_Value'] is not None:
             summary_dict['Data_Value'] = mean(data_values)
 
-        #If we have values for scaled values, find mean.
-        if 'Scaled Value' in group[0]:
-            scaled_values = [d['Scaled Value'] for d in group]
-            summary_dict['Scaled Value'] = mean(scaled_values)
+        #If we have values for Scaled_Values, find mean.
+        if 'Scaled_Value' in group[0]:
+            scaled_values = [d['Scaled_Value'] for d in group]
+            summary_dict['Scaled_Value'] = mean(scaled_values)
 
         #Return amended dictionary
         return summary_dict
@@ -241,8 +186,8 @@ class Data_Analyzer:
     def find_single_difference(self, data_point, comparison_data_point):
         """Compares two data points to find single differing value"""
         # Immediately return None if we're testing a data point against itself
-        #Also return none if product Ids differ - we may be interested in cross-analyses later, but for now let's just get it working
-        if data_point == comparison_data_point or data_point['ProductId'] != comparison_data_point['ProductId']:
+        #NOTE: REmoved  or data_point['ProductId'] != comparison_data_point['ProductId']: from next line - removing specific varible from generic analyzer
+        if data_point == comparison_data_point:
             return None
         
         # Initialize difference counter and differing key tracker
@@ -278,17 +223,14 @@ class Data_group:
         if differing_key is not None:
             self.differing_key = differing_key
         if global_group == False:
-        #Add summary dict to group
+            #Add summary dict to group
             self.add_point(self.get_summary_dict())
             self.update_summary_dict()
-        #logger.info(f'Creating data group from differing key {differing_key} and initial {initial_points}')
-
 
     def add_point(self, data_dict):
         """Adds data point to group"""
         #Checks for duplicates
         if data_dict not in self.group:
-            #logger.info(f'Adding {data_dict} to this group\'s group')
             #Adds point and updates stats
             self.group.append(data_dict)
             self.update_summary_dict()
@@ -305,31 +247,30 @@ class Data_group:
 
     def create_summary_dict(self):
         """Creates new summary dictionary for data group"""
-        #logger.info(f'Found no summary dictionary. Creating')
-            #Copy's first item in group for summary dictionary
+        #Copy's first item in group for summary dictionary
         summary_dict = self.group[0].copy()
 
-        #Debug check - see if we have cross-productID groups
+        #Check for cross-productID groups (Note: Shouldn't happen, so nothing big to deal with yet)
         summary_product_id = summary_dict['ProductId']
         if any(member['ProductId']!=summary_product_id for member in self.group):
            differing = next(data_dict for data_dict in self.group if data_dict['ProductId']!=summary_product_id)
            logger.warning(f'Found cross-product Id group, includes summary id {summary_product_id} and differing id {differing}')
-            #Replace value for differing key with string indicating summary
         
+        #Sets header for summary dictionary
         summary_dict[self.differing_key] = 'Mean (Average)'
         return summary_dict
     
     def update_summary_dict(self):
         """Updates summary dict. """
         summary_dict = self.get_summary_dict()
-        """Calculates mean values for data value and scaled value (if present)"""
+        """Calculates mean values for data value and Scaled_Value (if present)"""
         #If we have values for data values, find mean.
         #Create list that excludes the summary dictionary
         clean_list = [d for d in self.group if d!=summary_dict]
 
         data_values = [data_point['Data_Value'] for data_point in clean_list]
-        data_ids = [data_point['VectorId'] for data_point in clean_list]
-        data_dates = [data_point['RefPeriod'] for data_point in clean_list]
+        data_ids = [data_point['VectorId'] for data_point in clean_list] #Exemption to specific rule: For debugging only
+        data_dates = [data_point['RefPeriod'] for data_point in clean_list] #Exemption to specific rule: For debugging only
         if data_values is not None and len(data_values)>0:
             try:
                 summary_dict['Data_Value'] = mean(data_values)
@@ -338,10 +279,10 @@ class Data_group:
                 summary_dict['Data_Value'] = None
                 logger.warning(f'Error calculating mean of list {data_values}. Ids of point: {data_ids}. Dates: {data_dates}')
                 
-        #If we have values for scaled values, find mean.
-        if 'Scaled Value' in self.group[0]:
-            scaled_values = [d['Scaled Value'] for d in self.group]
-            summary_dict['Scaled Value'] = mean(scaled_values)
+        #If we have values for Scaled_Values, find mean.
+        if 'Scaled_Value' in self.group[0]:
+            scaled_values = [d['Scaled_Value'] for d in self.group]
+            summary_dict['Scaled_Value'] = mean(scaled_values)
         
             
 

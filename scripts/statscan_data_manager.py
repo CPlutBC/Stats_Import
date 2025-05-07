@@ -1,11 +1,14 @@
 #Import libraries
 import requests
+import requests_cache
+from datetime import timedelta
 
 #Import debugging libraries
 from tqdm import tqdm
 import logging
 import json
 import urllib3
+import pandas as pd
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger=logging.getLogger(__name__)
 
@@ -19,8 +22,6 @@ class StatsCan_Manager:
         self.api = API_Manager()
         #Create data assembler to assemble data
         self.data_assembler = Data_Assembler(self.api, self)
-
-
 
     def fetch_data_dicts(self, vectorIds):
         #Get population vector for per capita reference
@@ -36,19 +37,76 @@ class StatsCan_Manager:
         data_dicts = self.data_assembler.assemble_data(vectors)
 
         return data_dicts
+    
+    def prep_data_for_export(self, list_of_grouped_dicts):
+        """Takes grouped data, and re-groups into data frames for export to excel, organized by Product Id.
+        De-duplicates grouped data, so that each data frame contains one row per dat point"""
+        #Initialize product id to sheet dictionary, to track included productIds
+        #Also, product id to title. There's *got* to be a better way
+        product_id_to_sheet = {}
+        product_id_to_title = {}
+        #Initialize lists for tracking uniersal values
+        shared_keys_values = {}
+        #Initialize keys from first data point in first goup
+        shared_keys = set(list_of_grouped_dicts[0].group[0].keys())
+
+        #Iterate through groups of data.
+        for data_group in list_of_grouped_dicts:
+            #Iterate through data point dictionaries within each group
+            for data_point in data_group.group:
+                #Update intersection of keys 
+                shared_keys.intersection_update(data_point.keys())
+                logger.debug(f'Updated shared keys to intersection with previous and {data_point.keys()}. Now {shared_keys}')
+                #Add value of current value
+                for key in shared_keys:
+                    #Check to ensure key exists
+                    if key not in shared_keys_values:
+                            shared_keys_values[key]=set()
+                    shared_keys_values[key].add(data_point[key])
+
+                #Get product Id of data point
+                productId = data_point['ProductId']
+                #If product id is not present in the product_id_to_sheet dictionary keys, add it
+                if productId not in product_id_to_sheet:
+                    logger.debug(f'Creating new sheet for productId {productId}')
+                    product_id_to_sheet[productId] = []
+
+                #If this product id isn't in the title dictionary, add it
+                if productId not in product_id_to_title:
+                    logger.debug(f'Adding product Id {productId} to title dictionary (should follow "creating new sheet" message)')
+                    product_id_to_title[productId]=data_point['Title']
+                
+                #If the current data point dictionary is not in the corresponding dictionary value, add it
+                if data_point not in product_id_to_sheet[productId]:
+                    logger.debug(f'Dict {data_point} not found in sheet for productId {productId}. Adding')
+                    product_id_to_sheet[productId].append(data_point)
+
+        # Convert each sheet to a pandas DataFrame and store in dictionary, organized by product id
+        dfs = {f'{product_id}-{product_id_to_title[product_id]}'[:30]: pd.DataFrame(sheet) for product_id, sheet in product_id_to_sheet.items()}
+        
+        #Convert shared key sets to lists for pandas output
+        shared_keys_values={key:list(values) for key, values in shared_keys_values.items()}
+        #Create shared keys df
+        global_vars_df=pd.DataFrame(dict([(k, pd.Series(v)) for k, v in shared_keys_values.items()]))
+        #Add to dfs
+        dfs['Global variables']=global_vars_df
+        
+        return dfs
 
 
 class API_Manager:
     """Controls interactions with API, stores and returns data"""
     def __init__(self):
+        #Initialize cached requests session
+        cache_backend = requests_cache.backends.FileCache('./data/cache')
+        self.session=requests_cache.CachedSession('statscan_cache', expire_after=timedelta(hours=24), backend=cache_backend)
+        #Also turn off verification to avoid warnings
+        self.session.verify=False
+
         #Get code sets, to allow for fetching definitions
         self.code_sets=self.get_code_sets()
         #Get scalar code definitions
         self.scale_codes = self.code_sets['object']['scalar']
-
-        #Don't like this, but turn off warnings for verification
-        session=requests.Session()
-        session.verify=False
 
     def get_code_sets(self):
         """Gets code sets - text descriptions of numerical codes"""
@@ -88,9 +146,9 @@ class API_Manager:
         Defaults to blank suffix and get call"""
         #Perform call based on call type
         if call_type=='get':
-            response = requests.get(url, params=suffix, verify=False)
+            response = self.session.get(url, params=suffix, verify=False)
         elif call_type=='post':
-            response = requests.post(url, json=suffix, verify=False)
+            response = self.session.post(url, json=suffix, verify=False)
         
         #Returns call info if successful, otherwise, returns response status code
         if response.status_code == 200:
@@ -101,7 +159,6 @@ class API_Manager:
             #Error catch - if problem in response, print and return None
             logger.error(f"Error: {response.status_code}")
             return None
-        
 
 class Data_Assembler:
     def __init__(self, api, manager):
@@ -159,7 +216,6 @@ class Data_Assembler:
             metadata = self.api.fetch_metadata(productId)
             self.metadata_cache.append(metadata)
             return metadata
-
     
 class Data_Point:
     """Helper class for assembling data point"""
@@ -177,9 +233,7 @@ class Data_Point:
         self.productId=productId
         self.coordinate = coordinate
         self.vectorId = vectorId
-
-        #logger.info(f'Set vector data: Product Id: {self.productId} | coordinate: {self.coordinate} | VectorId: {self.vectorId}')
-
+        
     def process_data_point(self, data_point, metadata, comparisons):
         """Processes raw data into dictionary
         Processes dimensional data
@@ -192,6 +246,7 @@ class Data_Point:
         #Process Value and per capita measure
         self.process_value(comparisons)
 
+        #Sets variables for logging
         vId = self.data['VectorId']
         refPer = self.data['RefPeriod']
         val=self.data['Data_Value']
@@ -244,11 +299,11 @@ class Data_Point:
             #Assign scalar to dictionary entry
             self.data['Scalar'] = scalar
 
-            #Create entry for scaled value that scales based on the scalar code (NOTE: Scalar codes in StatsCan data correspond to a 10^scalar_code multiplier)
+            #Create entry for Scaled_Value that scales based on the scalar code (NOTE: Scalar codes in StatsCan data correspond to a 10^scalar_code multiplier)
             scaled_value=data_value*(10**scalar_code)
-            self.data['Scaled Value']= scaled_value
+            self.data['Scaled_Value']= scaled_value
         
-            #logger.info(f'Processed scaled value. Scalar code: {scalar_code}, Scalar name: {scalar} | Scaled value: {scaled_value}')
+            #logger.info(f'Processed Scaled_Value. Scalar code: {scalar_code}, Scalar name: {scalar} | Scaled_Value: {scaled_value}')
        # else:
             #logger.info(f'Either scalar code {scalar_code} !> 0 OR data value {data_value} is None')
 
@@ -269,14 +324,15 @@ class Data_Point:
 
         #Divide data_value by population value to get per capita measure
         if pop_vector:
+            data_value = None
             if self.data['Data_Value'] is not None:
                 data_value = self.data['Data_Value']
                 #logger.debug(f'Processing per capita using raw value {data_value}')
-            if 'Scaled Value' in self.data.keys() and self.data['Scaled Value'] is not None:
-                data_value=self.data['Scaled Value']
-                #logger.debug(f'Processing per capita using scaled value {data_value}')
-            else:
-                #logger.debug(f'Cannot process per capita: No data value or scaled value, skipping')
+            if 'Scaled_Value' in self.data.keys() and self.data['Scaled_Value'] is not None:
+                data_value=self.data['Scaled_Value']
+                #logger.debug(f'Processing per capita using Scaled_Value {data_value}')
+            if data_value == None:
+                #logger.debug(f'Cannot process per capita: No data value or Scaled_Value, skipping')
                 return None
 
             value_per_capita = data_value / pop_vector['Data_Value']
