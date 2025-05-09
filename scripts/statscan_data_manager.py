@@ -41,13 +41,13 @@ class StatsCan_Manager:
     def prep_data_for_export(self, list_of_grouped_dicts):
         """Takes grouped data, and re-groups into data frames for export to excel, organized by Product Id.
         De-duplicates grouped data, so that each data frame contains one row per dat point"""
-        #Initialize product id to sheet dictionary, to track included productIds
+        #Initialize product id to sheet dictionary list, to track included productIds
         #Also, product id to title. There's *got* to be a better way
         product_id_to_sheet = {}
         product_id_to_title = {}
-        #Initialize lists for tracking uniersal values
+
+        #Initialize lists for tracking globally shared keys and the included values
         shared_keys_values = {}
-        #Initialize keys from first data point in first goup
         shared_keys = set(list_of_grouped_dicts[0].group[0].keys())
 
         #Iterate through groups of data.
@@ -92,7 +92,6 @@ class StatsCan_Manager:
         dfs['Global variables']=global_vars_df
         
         return dfs
-
 
 class API_Manager:
     """Controls interactions with API, stores and returns data"""
@@ -246,11 +245,7 @@ class Data_Point:
         #Process Value and per capita measure
         self.process_value(comparisons)
 
-        #Sets variables for logging
-        vId = self.data['VectorId']
-        refPer = self.data['RefPeriod']
-        val=self.data['Data_Value']
-        logger.debug(f'Processed data point. Vector ID: {vId}, ref period: {refPer}, Value = {val}')
+        logger.debug(f'Processed data point. {self.data}')
 
     def initialize_dictionary(self, data_point, metadata):
         """Processes data and metadata into dictionary"""
@@ -265,8 +260,6 @@ class Data_Point:
             'RefPeriod': self.data_point['refPer'],
             'VectorId' : self.vectorId
             }
-        
-        #logger.info(f'Initialized dictionary: {self.data}')
 
     def process_coordinates(self):
         """Enumerates through coordintes, creating dictionary entries where key: dimension name and value: coordinate (member) name"""
@@ -281,8 +274,6 @@ class Data_Point:
                 key, value = self.get_dimension_and_coordinate_name(i, coord)
                 #Save coordinate as dictionary entry, with key of dimension name
                 self.data[key] = value
-
-        #logger.info(f'Added coordinate data to dictionary: {self.data}')
     
     def process_value(self, comparisons):
         """Processes data's value. Renames value keys to avoid conflicts from StatsCan organization, and scales if scalar present"""
@@ -302,14 +293,9 @@ class Data_Point:
             #Create entry for Scaled_Value that scales based on the scalar code (NOTE: Scalar codes in StatsCan data correspond to a 10^scalar_code multiplier)
             scaled_value=data_value*(10**scalar_code)
             self.data['Scaled_Value']= scaled_value
-        
-            #logger.info(f'Processed Scaled_Value. Scalar code: {scalar_code}, Scalar name: {scalar} | Scaled_Value: {scaled_value}')
-       # else:
-            #logger.info(f'Either scalar code {scalar_code} !> 0 OR data value {data_value} is None')
 
         #Calculate comparative values (unless being assembled as part of comparisons)
         if(comparisons):
-            #logger.info(f'Processing comparisons')
             #Compare to population data to calculate per capita measure
             self.process_per_capita()
 

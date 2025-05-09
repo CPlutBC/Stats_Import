@@ -1,8 +1,14 @@
 """
-Gets and orgnaizes data from StatsCan API
+Gets and orgnaizes data from data collection modules
 
 Input: StatsCanCounts excel spreadsheet, with list of VectorIds to pull
 Output: StatsCan_Output excel spreadsheet
+
+Current version only pulls data from Stats Canada. Will include other data sources as available
+Formatting notes:
+-The data analyzer is relatively source agnostic, though requires a few formatting specifics
+--Source values should be in dictionary entries with key "Data_Value"
+--Any scaled values should be in dict entries with key "Scaled_Value"
 
 """
 
@@ -29,7 +35,7 @@ outputFile = "data/StatsCan_Output.xlsx"
 def init():
     """Initializes script - Creates Director object and begins process"""
     #Initializes logger
-    logging.basicConfig(handlers=[RotatingFileHandler('./debugging/getdata_log.log', maxBytes=50000000, backupCount=50)], level=logging.INFO)
+    logging.basicConfig(handlers=[RotatingFileHandler('./debugging/getdata_log.log', maxBytes=50000000, backupCount=250)], level=logging.INFO)
     
     #Director will create helper objects, then perform full process
     director= Director()
@@ -38,29 +44,22 @@ def init():
 class Director:
     """Coordintes overall process"""
     def __init__(self):
+        #Creates manager for data from Statistics Canada
         self.statscan=statscan_data_manager.StatsCan_Manager()
 
     def main(self):
+        logger.info("Beginning main loop")
         """Imports, sorts, analyzes, and exports data"""
+        #Stats Canada organizes by "Vectors". Vectors are stored in source file
         #Read source file for Vectors to download and extract vector Ids
         source_df = pd.read_excel(sourceFile)
         vectorIds = self.extract_vector_ids(source_df)
-        logger.info(f'vector Ids: {vectorIds}')
 
-        #Get list of dictionary version for each data point 
+        #Get list of dictionary version for each data point for analysis
         data_dicts = self.statscan.fetch_data_dicts(vectorIds)
 
-        #Identify and summarize groups of values
-        excluded_columns = ['VectorId', 'Data_Value', 'Scaled_Value']
-        analyzer = Data_Analyzer(excluded_columns) 
-        list_of_grouped_dicts = analyzer.group_and_summarize_data(data_dicts)
-
-        #Adds global group to ensure all data points are included in output
-        global_group = Data_group(data_dicts, global_group=True)
-        list_of_grouped_dicts.insert(0, global_group)
-
-        #Group data into sheets, organized by Product Id
-        export_df = self.statscan.prep_data_for_export(list_of_grouped_dicts)
+        #Prepare data from Statistics Canada for export
+        export_df = self.prepare_StatsCan(data_dicts)
         
         #Export to excel file
         self.export_to_excel(export_df, outputFile)
@@ -76,6 +75,25 @@ class Director:
         #Return all vectorIds as single string
         return ','.join(vectorIds)
 
+    def prepare_StatsCan(self, data_dicts):
+        """Groups StatsCan data for summary, performs summaries,
+        Organizes data into pandas data frame for export
+        returns dataframe
+        """
+        excluded_columns = ['VectorId', 'Data_Value', 'Scaled_Value', "Value Per Capita"]
+        statsCan_analyzer = Data_Analyzer(excluded_columns)
+
+        #Group data from Stats Canada and perform summaries
+        list_of_data_groups = statsCan_analyzer.group_and_summarize_data(data_dicts)
+
+        #Add raw data to ensure all data points represented
+        global_group = Data_group(data_dicts, global_group=True)
+        list_of_data_groups.insert(0, global_group)
+
+        #Use StatsCan manager to group data into dataframe
+        export_df = self.statscan.prep_data_for_export(list_of_data_groups)
+        return export_df
+
     def export_to_excel(self, dfs, filename):
         """Exports dictionary of pandas dataframes to excel file, where each value is a list of rows that share a product Id, and each sheet contains all values grouped by productId"""
         with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
@@ -89,7 +107,7 @@ class Director:
 class Data_Analyzer:
     """Used to group and summarize data - finds all cross-data variables to perform analysis on, and performs some analysis"""
     def __init__(self, exclude_list):
-        """Saves exclude list for sorting groups (NOTE: Value, our DV, is expected to change. We want to allow cross-data (productId) groups as well, if possible)"""
+        """Saves exclude list for sorting groups (e.g. unique identifiers - expected to differ between points)"""
         self.exclude_list = exclude_list
 
     def group_and_summarize_data(self, data_dicts):
@@ -99,20 +117,20 @@ class Data_Analyzer:
         # Compare every pair of data points
         for data_point in tqdm(data_dicts, desc="Populating groups for analysis..."):
             for comparison_data_point in data_dicts:
-                #Set variables
+                #logger.debug(f"Comparing data from vector {data_point['VectorId']} and {comparison_data_point['VectorId']}")
+                #Check if points share keys for comparison
                 data_keys=data_point.keys()
                 compare_keys=comparison_data_point.keys()
-
-                #If two points share the same keys, we can compare them
                 if data_keys == compare_keys:
                     #Find single key whose value differs between two data points
                     differing_key = self.find_single_difference(data_point, comparison_data_point)
                     
                     #If single differing key found, add to group list
                     if differing_key:
-                        #logging.debug(f'Found differing key {differing_key}, adding points to groups')
+                        #logger.debug(f"Single differing key {differing_key} found, adding to groups")
                         self.add_points_to_groups(list_of_groups, data_point, comparison_data_point, differing_key)
-                    
+        
+        #Return assembled list of data_groups
         return list_of_groups
 
     def add_points_to_groups(self, list_of_groups, data_point, comparison_data_point, differing_key):
@@ -127,16 +145,14 @@ class Data_Analyzer:
         for group in list_of_groups:
             #Find if either data point exists in this group
             if data_point in group.group or comparison_data_point in group.group:
-                #If the group's differing key is the same as ours, add the data points
-                #Note: Filtering for duplicates and updating analysis is done in the group
+                #If the group's differing key is the same as ours, add points
                 if group.differing_key == differing_key:
-                    group.add_point(data_point)
-                    group.add_point(comparison_data_point)
+                    group.add_points([data_point, comparison_data_point])
 
-                    #Change match_found to true
+                    #Flag match as found
                     match_found = True
 
-        #After completing iteraiton, if we haven't found a match yet, create a new group
+        #If no matches, create a new group
         if not match_found:
             logger.debug(f'No match found in list of groups. Creating new group. Data point: {data_point} | Comparison: {comparison_data_point} | Differing key: {differing_key}')
             #Create new list containing both data points
@@ -145,11 +161,10 @@ class Data_Analyzer:
             #Add group to list
             list_of_groups.append(new_group)
 
-            
-    def get_summary_dict(self, group):
-        """Finds and returns dictionary in group that has 'Mean (Average)' as one of its values"""
+    def get_summary_dict(self, group, summary):
+        """Returns data point in group that contains summary in value"""
         #Find dictionary with average
-        summary_dict = next((d for d in group if 'Mean (Average)' in d.values()), None)
+        summary_dict = next((d for d in group if summary in d.values()), None)
 
         #Error checking for instances where summary dictionary isn't found in group - this should be impossible, as the summary dictionary is created when the group is.
         if summary_dict is None:
@@ -185,8 +200,7 @@ class Data_Analyzer:
 
     def find_single_difference(self, data_point, comparison_data_point):
         """Compares two data points to find single differing value"""
-        # Immediately return None if we're testing a data point against itself
-        #NOTE: REmoved  or data_point['ProductId'] != comparison_data_point['ProductId']: from next line - removing specific varible from generic analyzer
+        # Bounce if we're testing a data point against itself
         if data_point == comparison_data_point:
             return None
         
@@ -203,49 +217,61 @@ class Data_Analyzer:
                     # Add one to diff. If this results in more than 1 differences, return None
                     diff += 1
                     differing_key = key
+                    #logger.debug(f'Difference: {key} Points: {data_point}, {comparison_data_point}')
                     #Return when differences equals more than one
                     if diff > 1:
+                        #logger.debug(f'Diff ({diff}) > 1')
                         return None
                     
         # If diff is 1 after checking all keys, return the differing key
         if diff == 1:
-            #logger.debug(f'Diff between {data_point} and {comparison_data_point} = 1! Returning differing key {differing_key}')
+            logger.debug(f'Diff between {data_point} and {comparison_data_point} = 1! Returning differing key {differing_key}')
             return differing_key
         
         # Otherwise, return None (e.g. if diff = 0)
         else:
+            logger.debug(f'Finished function, diff = {diff}, returning None')
             return None
                
 class Data_group:
-    def __init__(self, initial_points, differing_key=None, global_group=False):
+    #Defaults to summary stat being Mean (Average). May perform others
+    def __init__(self, initial_points, differing_key=None, global_group=False, summary= 'Mean (Average)'):
         #Creates group - differing_key and list of dictionaries
         self.group = initial_points
         if differing_key is not None:
             self.differing_key = differing_key
         if global_group == False:
             #Add summary dict to group
-            self.add_point(self.get_summary_dict())
-            self.update_summary_dict()
+            self.add_point(self.get_summary_dict(summary))
+            self.update_group_average()
 
     def add_point(self, data_dict):
-        """Adds data point to group"""
+        logger.debug(f"Checking whether vector {data_dict['VectorId']} is in group")
+        """Adds data point to group, unless group already contains point"""
         #Checks for duplicates
         if data_dict not in self.group:
             #Adds point and updates stats
             self.group.append(data_dict)
-            self.update_summary_dict()
+            self.update_group_average()
+            logger.debug(f"Added vector {data_dict['VectorId']} to data group")
 
-    def get_summary_dict(self):
+    def add_points(self, data_dicts):
+        """Version of add point that takes multiple points"""
+        #Iterate through list and add each to group
+        for data_dict in data_dicts:
+            self.add_point(data_dict)
+
+    def get_summary_dict(self, summary_value):
         """Gets summary dictionary. If none exists, creates one"""
         #Create new summary dictionary if none exists
-        summary_dict = next((summary for summary in self.group if summary[self.differing_key] == 'Mean (Average)'), None)
+        summary_dict = next((summary for summary in self.group if summary[self.differing_key] == summary_value), None)
         
         if summary_dict == None:
-            summary_dict = self.create_summary_dict()        
+            summary_dict = self.create_summary_dict(summary_value)        
 
         return summary_dict
 
-    def create_summary_dict(self):
+    def create_summary_dict(self, summary):
         """Creates new summary dictionary for data group"""
         #Copy's first item in group for summary dictionary
         summary_dict = self.group[0].copy()
@@ -257,12 +283,12 @@ class Data_group:
            logger.warning(f'Found cross-product Id group, includes summary id {summary_product_id} and differing id {differing}')
         
         #Sets header for summary dictionary
-        summary_dict[self.differing_key] = 'Mean (Average)'
+        summary_dict[self.differing_key] = summary
         return summary_dict
     
-    def update_summary_dict(self):
-        """Updates summary dict. """
-        summary_dict = self.get_summary_dict()
+    def update_group_average(self):
+        """Updates group average summary dictionary """
+        summary_dict = self.get_summary_dict('Mean (Average)')
         """Calculates mean values for data value and Scaled_Value (if present)"""
         #If we have values for data values, find mean.
         #Create list that excludes the summary dictionary
@@ -277,7 +303,7 @@ class Data_group:
                 logger.debug(f'Calculated mean of list {data_values}. Ids of point: {data_ids}. Dates: {data_dates}')
             except:
                 summary_dict['Data_Value'] = None
-                logger.warning(f'Error calculating mean of list {data_values}. Ids of point: {data_ids}. Dates: {data_dates}')
+                logger.debug(f'Couldn\'t calculate mean {data_values}. Ids of point: {data_ids}. Dates: {data_dates}')
                 
         #If we have values for Scaled_Values, find mean.
         if 'Scaled_Value' in self.group[0]:

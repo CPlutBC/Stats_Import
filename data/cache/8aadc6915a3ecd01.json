@@ -1,8 +1,8 @@
 {
-  "created_at": "2025-05-07T19:38:49.337552+00:00",
-  "elapsed": 12.141432,
+  "created_at": "2025-05-09T17:53:31.376085+00:00",
+  "elapsed": 11.873907,
   "encoding": "utf-8",
-  "expires": "2025-05-08T19:38:49.337041+00:00",
+  "expires": "2025-05-10T17:53:31.376085+00:00",
   "headers": {
     "Access-Control-Allow-Headers": "DNT,X-Custom-Header,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -13,8 +13,8 @@
     "Content-Encoding": "gzip",
     "Content-Security-Policy": "default-src 'self' 'unsafe-inline' *.statcan.gc.ca *.statcan.ca *.stc.ca  *.demdex.net *.omtrdc.net *.everesttech.net blob:; style-src 'self' 'unsafe-inline' *.statcan.gc.ca *.statcan.ca https:\/\/fonts.googleapis.com blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.statcan.gc.ca *.statcan.ca *.googletagmanager.com *.adobedtm.com *.jsdelivr.net *.mathjax.org cdnjs.cloudflare.com blob:; connect-src 'self' *.statcan.gc.ca *.statcan.ca *.stc.ca  *.demdex.net *.omtrdc.net https:\/\/api.mapbox.com\/ https:\/\/events.mapbox.com\/; img-src 'self' *.statcan.gc.ca *.statcan.ca *.stc.ca  *.demdex.net *.omtrdc.net *.everesttech.net *.jsdelivr.net data: blob:; font-src 'self' *.statcan.gc.ca *.statcan.ca https:\/\/fonts.gstatic.com; worker-src 'self' 'unsafe-inline' 'unsafe-eval' *.statcan.gc.ca *.statcan.ca blob:; frame-src 'self' 'unsafe-inline' *.statcan.gc.ca *.statcan.ca *.stc.ca https:\/\/dv-vd.shinyapps.io *.demdex.net blob:;",
     "Content-Type": "application\/json",
-    "Date": "Wed, 07 May 2025 19:38:49 GMT",
-    "Expires": "Wed, 07 May 2025 20:08:49 GMT",
+    "Date": "Fri, 09 May 2025 17:53:30 GMT",
+    "Expires": "Fri, 09 May 2025 18:23:30 GMT",
     "Pragma": "no-cache",
     "Server": "nginx\/1.19.6",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",

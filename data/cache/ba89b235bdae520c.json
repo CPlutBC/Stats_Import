@@ -1,8 +1,8 @@
 {
-  "created_at": "2025-05-07T19:38:34.269632+00:00",
-  "elapsed": 0.936243,
+  "created_at": "2025-05-09T17:53:16.994661+00:00",
+  "elapsed": 0.94462,
   "encoding": "utf-8",
-  "expires": "2025-05-08T19:38:34.269632+00:00",
+  "expires": "2025-05-10T17:53:16.994661+00:00",
   "headers": {
     "Access-Control-Allow-Headers": "DNT,X-Custom-Header,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -13,8 +13,8 @@
     "Content-Encoding": "gzip",
     "Content-Security-Policy": "default-src 'self' 'unsafe-inline' *.statcan.gc.ca *.statcan.ca *.stc.ca  *.demdex.net *.omtrdc.net *.everesttech.net blob:; style-src 'self' 'unsafe-inline' *.statcan.gc.ca *.statcan.ca https:\/\/fonts.googleapis.com blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.statcan.gc.ca *.statcan.ca *.googletagmanager.com *.adobedtm.com *.jsdelivr.net *.mathjax.org cdnjs.cloudflare.com blob:; connect-src 'self' *.statcan.gc.ca *.statcan.ca *.stc.ca  *.demdex.net *.omtrdc.net https:\/\/api.mapbox.com\/ https:\/\/events.mapbox.com\/; img-src 'self' *.statcan.gc.ca *.statcan.ca *.stc.ca  *.demdex.net *.omtrdc.net *.everesttech.net *.jsdelivr.net data: blob:; font-src 'self' *.statcan.gc.ca *.statcan.ca https:\/\/fonts.gstatic.com; worker-src 'self' 'unsafe-inline' 'unsafe-eval' *.statcan.gc.ca *.statcan.ca blob:; frame-src 'self' 'unsafe-inline' *.statcan.gc.ca *.statcan.ca *.stc.ca https:\/\/dv-vd.shinyapps.io *.demdex.net blob:;",
     "Content-Type": "application\/json",
-    "Date": "Wed, 07 May 2025 19:38:34 GMT",
-    "Expires": "Wed, 07 May 2025 20:08:34 GMT",
+    "Date": "Fri, 09 May 2025 17:53:16 GMT",
+    "Expires": "Fri, 09 May 2025 18:23:16 GMT",
     "Pragma": "no-cache",
     "Server": "nginx\/1.19.6",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
@@ -22,7 +22,7 @@
     "Vary": "Accept-Encoding, accept-encoding",
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "SAMEORIGIN, SAMEORIGIN, SAMEORIGIN",
-    "X-Proxy-Cache": "EXPIRED",
+    "X-Proxy-Cache": "MISS",
     "X-XSS-Protection": "1; mode=block"
   },
   "reason": "",
@@ -2576,6 +2576,1761 @@
         }
       ],
       "survey": [
+        {
+          "surveyCode": "1105",
+          "surveyEn": "Business Register",
+          "surveyFr": "Registre des entreprises"
+        },
+        {
+          "surveyCode": "1141",
+          "surveyEn": "Average Fair Market Value\/Purchase Price for New Homes in Canada - Data from GST Administrative Records",
+          "surveyFr": "Juste valeur marchande\/prix d'achat pour les habitations neuves au Canada - donn\u00e9es produites \u00e0 partir des dossiers administratifs de la TPS"
+        },
+        {
+          "surveyCode": "1209",
+          "surveyEn": "Survey of Environmental Goods and Services",
+          "surveyFr": "Enqu\u00eate sur les biens et services environnementaux"
+        },
+        {
+          "surveyCode": "1301",
+          "surveyEn": "Gross Domestic Product by Industry - National (Monthly)",
+          "surveyFr": "Produit int\u00e9rieur brut par industrie - National (mensuel)"
+        },
+        {
+          "surveyCode": "1302",
+          "surveyEn": "Gross Domestic Product by Industry - Annual",
+          "surveyFr": "Produit int\u00e9rieur brut par industrie - annuelle"
+        },
+        {
+          "surveyCode": "1303",
+          "surveyEn": "Gross Domestic Product by Industry - Provincial and Territorial (Annual)",
+          "surveyFr": "Produit int\u00e9rieur brut par industrie - Provinces et territoires (annuel)"
+        },
+        {
+          "surveyCode": "1401",
+          "surveyEn": "Supply, Use and Input-Output Tables",
+          "surveyFr": "Tableaux des ressources, des emplois et des entr\u00e9es-sorties"
+        },
+        {
+          "surveyCode": "1402",
+          "surveyEn": "Productivity Measures and Related Variables - National and Provincial (Annual)",
+          "surveyFr": "Mesures de la productivit\u00e9 et des variables connexes - National et provincial (annuelles)"
+        },
+        {
+          "surveyCode": "1529",
+          "surveyEn": "Capital Invested Abroad by Canadian Enterprises",
+          "surveyFr": "Capitaux investis \u00e0 l'\u00e9tranger par les entreprises canadiennes"
+        },
+        {
+          "surveyCode": "1530",
+          "surveyEn": "Capital Invested in secondary foreign companies by Canadian Enterprises",
+          "surveyFr": "Capitaux investis dans les soci\u00e9t\u00e9s \u00e9trang\u00e8res au deuxi\u00e8me degr\u00e9 par les entreprises canadiennes"
+        },
+        {
+          "surveyCode": "1531",
+          "surveyEn": "Canadian Investment in Non-Canadian Corporations (BP-60)",
+          "surveyFr": "Investissements canadiens dans des soci\u00e9t\u00e9s non canadiennes (BP-60)"
+        },
+        {
+          "surveyCode": "1532",
+          "surveyEn": "Investment in Canada of Non-Canadian Partnerships",
+          "surveyFr": "Investissement au Canada des soci\u00e9t\u00e9s \u00e9trang\u00e8res en nom collectif"
+        },
+        {
+          "surveyCode": "1533",
+          "surveyEn": "Quarterly International Transactions in Commercial Services",
+          "surveyFr": "Op\u00e9rations internationales trimestrielles de services commerciaux"
+        },
+        {
+          "surveyCode": "1534",
+          "surveyEn": "Canada's Balance of International Payments",
+          "surveyFr": "Balance des paiements internationaux du Canada"
+        },
+        {
+          "surveyCode": "1535",
+          "surveyEn": "Canada's International Transactions in Securities",
+          "surveyFr": "Op\u00e9rations internationales du Canada en valeurs mobili\u00e8res"
+        },
+        {
+          "surveyCode": "1536",
+          "surveyEn": "Canada's International Transactions in Services",
+          "surveyFr": "Transactions internationales de services du Canada"
+        },
+        {
+          "surveyCode": "1537",
+          "surveyEn": "Canada's International Investment Position",
+          "surveyFr": "Bilan des investissements internationaux du Canada"
+        },
+        {
+          "surveyCode": "1538",
+          "surveyEn": "Canadian Portfolio Investment Abroad (BP-54)",
+          "surveyFr": "Investissement de portefeuille des Canadiens \u00e0 l'\u00e9tranger (BP-54F)"
+        },
+        {
+          "surveyCode": "1539",
+          "surveyEn": "Activities of Canadian Majority-Owned Affiliates Abroad",
+          "surveyFr": "Activit\u00e9s \u00e0 l'\u00e9tranger des soci\u00e9t\u00e9s affili\u00e9es \u00e0 participation majoritaire canadienne"
+        },
+        {
+          "surveyCode": "1601",
+          "surveyEn": "Canadian Composite Leading Indicator",
+          "surveyFr": "Indicateur avanc\u00e9 composite du Canada"
+        },
+        {
+          "surveyCode": "1651",
+          "surveyEn": "Survey of Advanced Technology in the Canadian Food Processing Industry",
+          "surveyFr": "Enqu\u00eate sur les technologies de pointe dans l'industrie alimentaire canadienne"
+        },
+        {
+          "surveyCode": "1702",
+          "surveyEn": "Local Government Assets and Liabilities",
+          "surveyFr": "Actif et passif des administrations locales"
+        },
+        {
+          "surveyCode": "1709",
+          "surveyEn": "Consolidated Government Financial Assets and Liabilities",
+          "surveyFr": "Actifs et passifs financiers consolid\u00e9s des administrations publiques"
+        },
+        {
+          "surveyCode": "1711",
+          "surveyEn": "Federal Provincial Fiscal Arrangements Program",
+          "surveyFr": "Programme des accords fiscaux f\u00e9d\u00e9raux-provinciaux"
+        },
+        {
+          "surveyCode": "1713",
+          "surveyEn": "Public Sector Employment",
+          "surveyFr": "Emploi dans le secteur public"
+        },
+        {
+          "surveyCode": "1720",
+          "surveyEn": "Provincial Government Revenue and Expenditure - Estimates and Actual Data",
+          "surveyFr": "Recettes et d\u00e9penses des administrations provinciales - estimations et donn\u00e9es r\u00e9elles"
+        },
+        {
+          "surveyCode": "1723",
+          "surveyEn": "Provincial Government Assets, Liabilities, Sources and Application of Funds",
+          "surveyFr": "Actif, passif, provenance et utilisation des fonds des gouvernements provinciaux"
+        },
+        {
+          "surveyCode": "1725",
+          "surveyEn": "Provincial Government Business Enterprise Finance",
+          "surveyFr": "Finances des entreprises publiques provinciales"
+        },
+        {
+          "surveyCode": "1726",
+          "surveyEn": "Control and Sale of Alcoholic Beverages in Canada",
+          "surveyFr": "Contr\u00f4le et vente des boissons alcoolis\u00e9es au Canada"
+        },
+        {
+          "surveyCode": "1728",
+          "surveyEn": "Provincial and Territorial Government Employment and Payroll Survey",
+          "surveyFr": "Enqu\u00eate sur l'emploi et r\u00e9mun\u00e9ration des administrations publiques provinciales et territoriales"
+        },
+        {
+          "surveyCode": "1730",
+          "surveyEn": "Finances of Government Business Enterprises",
+          "surveyFr": "Finances des entreprises publiques"
+        },
+        {
+          "surveyCode": "1731",
+          "surveyEn": "Local Government Revenue and Expenditure - Financial Management System Basis - Actual Data",
+          "surveyFr": "Recettes et d\u00e9penses des administrations locales - Syst\u00e8me de la gestion financi\u00e8re - chiffres r\u00e9els"
+        },
+        {
+          "surveyCode": "1732",
+          "surveyEn": "Local Government Revenue and Expenditure - Financial Management System Basis - Preliminary Data",
+          "surveyFr": "Recettes et d\u00e9penses des administrations locales - Syst\u00e8me de gestion financi\u00e8re - Chiffres provisoires"
+        },
+        {
+          "surveyCode": "1735",
+          "surveyEn": "Consolidated Government Revenue and Expenditures",
+          "surveyFr": "Recettes et d\u00e9penses consolid\u00e9es des administrations publiques"
+        },
+        {
+          "surveyCode": "1736",
+          "surveyEn": "Waste Management Industry Survey: Government Sector",
+          "surveyFr": "Enqu\u00eate sur l'industrie de la gestion des d\u00e9chets: secteur des administrations publiques"
+        },
+        {
+          "surveyCode": "1739",
+          "surveyEn": "Local Government Revenue and Expenditure - Financial Management System Basis - Estimates Data",
+          "surveyFr": "Recettes et d\u00e9penses des administrations locales - Syst\u00e8me de gestion financi\u00e8re - pr\u00e9visions"
+        },
+        {
+          "surveyCode": "1803",
+          "surveyEn": "Official Canadian Government Travel Survey",
+          "surveyFr": "Enqu\u00eate officielle du gouvernement canadien sur les voyages"
+        },
+        {
+          "surveyCode": "1804",
+          "surveyEn": "Financial Flow Accounts",
+          "surveyFr": "Comptes des flux financiers"
+        },
+        {
+          "surveyCode": "1806",
+          "surveyEn": "National Balance Sheet Accounts",
+          "surveyFr": "Comptes du bilan national"
+        },
+        {
+          "surveyCode": "1901",
+          "surveyEn": "National Gross Domestic Product by Income and by Expenditure Accounts",
+          "surveyFr": "Comptes nationaux du produit int\u00e9rieur brut en termes de revenus et de d\u00e9penses"
+        },
+        {
+          "surveyCode": "1902",
+          "surveyEn": "Provincial and Territorial Gross Domestic Product by Income and by Expenditure Accounts",
+          "surveyFr": "Comptes provinciaux et territoriaux du produit int\u00e9rieur brut en termes de revenus et de d\u00e9penses"
+        },
+        {
+          "surveyCode": "1903",
+          "surveyEn": "Annual Environmental Protection Expenditures Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur les d\u00e9penses de protection de l'environnement"
+        },
+        {
+          "surveyCode": "1910",
+          "surveyEn": "National Tourism Indicators",
+          "surveyFr": "Indicateurs nationaux du tourisme"
+        },
+        {
+          "surveyCode": "2001",
+          "surveyEn": "Electric Utility Financial Report Annual",
+          "surveyFr": "Rapport financier des services d'\u00e9lectricit\u00e9 annuel"
+        },
+        {
+          "surveyCode": "2003",
+          "surveyEn": "Monthly Coke Supply and Disposition Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur l'approvisionnement et l'\u00e9coulement du coke"
+        },
+        {
+          "surveyCode": "2008",
+          "surveyEn": "Retail Commodity Survey",
+          "surveyFr": "Enqu\u00eate sur les marchandises vendues au d\u00e9tail"
+        },
+        {
+          "surveyCode": "2009",
+          "surveyEn": "Biennial Waste Management Survey",
+          "surveyFr": "Enqu\u00eate biennale sur la gestion des d\u00e9chets"
+        },
+        {
+          "surveyCode": "2014",
+          "surveyEn": "Contract Drilling and Services to Oil and Gas Extraction Industry",
+          "surveyFr": "Forage \u00e0 forfait et services relatifs \u00e0 l'industrie de l'extraction du p\u00e9trole et du gaz"
+        },
+        {
+          "surveyCode": "2101",
+          "surveyEn": "Monthly Survey of Manufacturing",
+          "surveyFr": "Enqu\u00eate mensuelle sur les industries manufacturi\u00e8res"
+        },
+        {
+          "surveyCode": "2103",
+          "surveyEn": "Annual Survey of Manufacturing and Logging Industries",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries manufacturi\u00e8res et de l'exploitation foresti\u00e8re"
+        },
+        {
+          "surveyCode": "2105",
+          "surveyEn": "Steel Pipe and Tubing",
+          "surveyFr": "Tuyaux et tubes en acier"
+        },
+        {
+          "surveyCode": "2106",
+          "surveyEn": "Steel Wire and Specified Wire Products",
+          "surveyFr": "Fil d'acier et certains produits de fil m\u00e9tallique"
+        },
+        {
+          "surveyCode": "2107",
+          "surveyEn": "Annual Survey of Forestry",
+          "surveyFr": "Enqu\u00eate annuelle de la foresterie"
+        },
+        {
+          "surveyCode": "2108",
+          "surveyEn": "Sales of Paints, Varnishes and Lacquers",
+          "surveyFr": "Ventes de peintures, vernis et laqu\u00e9s"
+        },
+        {
+          "surveyCode": "2109",
+          "surveyEn": "Gypsum Products",
+          "surveyFr": "Produits de gypse"
+        },
+        {
+          "surveyCode": "2110",
+          "surveyEn": "Mineral Wool Including Fibrous Glass Insulation",
+          "surveyFr": "Laine min\u00e9rale y compris les isolants en fibre de verre"
+        },
+        {
+          "surveyCode": "2112",
+          "surveyEn": "Production, Sales and Stocks of Major Appliances",
+          "surveyFr": "Productions, ventes et stocks d'appareils m\u00e9nagers"
+        },
+        {
+          "surveyCode": "2113",
+          "surveyEn": "Domestic Washing Machines and Clothes Dryers",
+          "surveyFr": "Machines \u00e0 laver et s\u00e9cheuses \u00e0 linge"
+        },
+        {
+          "surveyCode": "2114",
+          "surveyEn": "Domestic Electrical Appliances",
+          "surveyFr": "Appareils \u00e9lectriques m\u00e9nagers"
+        },
+        {
+          "surveyCode": "2115",
+          "surveyEn": "Pig Iron",
+          "surveyFr": "Fonte en gueuses"
+        },
+        {
+          "surveyCode": "2116",
+          "surveyEn": "Steel Primary Forms, Steel Castings and Pig Iron",
+          "surveyFr": "Acier formes primaires, moulages d'acier et fonte en gueuses"
+        },
+        {
+          "surveyCode": "2117",
+          "surveyEn": "Electric Lamps (Light Sources)",
+          "surveyFr": "Lampes \u00e9lectriques (sources de lumi\u00e8re)"
+        },
+        {
+          "surveyCode": "2118",
+          "surveyEn": "Annual Production of Soft Drinks",
+          "surveyFr": "Production annuelle de boissons gazeuses"
+        },
+        {
+          "surveyCode": "2119",
+          "surveyEn": "Footwear Statistics",
+          "surveyFr": "Statistique de la chaussure"
+        },
+        {
+          "surveyCode": "2121",
+          "surveyEn": "Oils and Fats",
+          "surveyFr": "Huiles et mati\u00e8res grasses"
+        },
+        {
+          "surveyCode": "2122",
+          "surveyEn": "Hardboard",
+          "surveyFr": "Panneaux press\u00e9s"
+        },
+        {
+          "surveyCode": "2123",
+          "surveyEn": "Asphalt Roofing",
+          "surveyFr": "Papier-toiture asphalt\u00e9"
+        },
+        {
+          "surveyCode": "2124",
+          "surveyEn": "Rigid Insulating Board",
+          "surveyFr": "Panneaux isolants rigides"
+        },
+        {
+          "surveyCode": "2125",
+          "surveyEn": "Floor Tiles",
+          "surveyFr": "Carreaux et dalles de parquet"
+        },
+        {
+          "surveyCode": "2126",
+          "surveyEn": "Process Cheese",
+          "surveyFr": "Fromage fondu"
+        },
+        {
+          "surveyCode": "2130",
+          "surveyEn": "Production and Sales of Phonograph Records and Pre-Recorded Tapes in Canada",
+          "surveyFr": "Production et ventes de disques de phonographe et de rubans pr\u00e9-enregistr\u00e9s au Canada"
+        },
+        {
+          "surveyCode": "2131",
+          "surveyEn": "Steel Primary Forms Weekly",
+          "surveyFr": "Acier en formes primaires (hebdomadaire)"
+        },
+        {
+          "surveyCode": "2134",
+          "surveyEn": "Sawmills",
+          "surveyFr": "Scieries"
+        },
+        {
+          "surveyCode": "2135",
+          "surveyEn": "Production, Shipments and Stocks on Hand of Sawmills in British Columbia",
+          "surveyFr": "Production, livraisons et stocks en mains des scieries en Colombie-Britannique"
+        },
+        {
+          "surveyCode": "2136",
+          "surveyEn": "Pulpwood and Wood Residue",
+          "surveyFr": "Bois \u00e0 p\u00e2te et d\u00e9chets de bois"
+        },
+        {
+          "surveyCode": "2138",
+          "surveyEn": "Construction Type Plywood",
+          "surveyFr": "Contreplaqu\u00e9s de construction"
+        },
+        {
+          "surveyCode": "2140",
+          "surveyEn": "Cement Survey",
+          "surveyFr": "Enqu\u00eate de ciment"
+        },
+        {
+          "surveyCode": "2141",
+          "surveyEn": "Particleboard, Oriented Strandboard and Fibreboard",
+          "surveyFr": "Panneaux de particules, de lamelles orient\u00e9es et de fibres"
+        },
+        {
+          "surveyCode": "2142",
+          "surveyEn": "Production and Disposition of Tobacco Products",
+          "surveyFr": "Production et \u00e9coulement des produits du tabac"
+        },
+        {
+          "surveyCode": "2143",
+          "surveyEn": "Sugar - Situation",
+          "surveyFr": "Situation - sucre"
+        },
+        {
+          "surveyCode": "2147",
+          "surveyEn": "Monthly Coal Supply and Disposition Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur l'approvisionnement et l'\u00e9coulement du charbon"
+        },
+        {
+          "surveyCode": "2148",
+          "surveyEn": "Monthly Oil and Other Liquid Petroleum Products Pipeline Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur le transport par ol\u00e9oduc de p\u00e9trole brut et autres produits p\u00e9troliers liquides"
+        },
+        {
+          "surveyCode": "2149",
+          "surveyEn": "Monthly Natural Gas Transmission Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur le transport du gaz naturel"
+        },
+        {
+          "surveyCode": "2150",
+          "surveyEn": "Monthly Refined Petroleum Products",
+          "surveyFr": "Produits p\u00e9troliers raffin\u00e9s (rapport mensuel)"
+        },
+        {
+          "surveyCode": "2151",
+          "surveyEn": "Monthly Electricity Supply and Disposition Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur l'approvisionnement et l'\u00e9coulement de l'\u00e9lectricit\u00e9"
+        },
+        {
+          "surveyCode": "2152",
+          "surveyEn": "Business Conditions Survey for the Manufacturing Industries",
+          "surveyFr": "Enqu\u00eate sur les perspectives  du monde des affaires pour les industries manufacturi\u00e8res"
+        },
+        {
+          "surveyCode": "2154",
+          "surveyEn": "Production of Selected Biscuits",
+          "surveyFr": "Production de certains biscuits"
+        },
+        {
+          "surveyCode": "2156",
+          "surveyEn": "Tea and Coffee",
+          "surveyFr": "Th\u00e9 et caf\u00e9"
+        },
+        {
+          "surveyCode": "2161",
+          "surveyEn": "Semi-annual Shipments of Office Furniture Products",
+          "surveyFr": "Livraisons semestrielles des produits de meubles de bureau"
+        },
+        {
+          "surveyCode": "2166",
+          "surveyEn": "Quarterly Industrial Consumption of Energy Survey",
+          "surveyFr": "Enqu\u00eate trimestrielle sur la consommation industrielle d'\u00e9nergie"
+        },
+        {
+          "surveyCode": "2167",
+          "surveyEn": "Annual End-Use of Natural Gas Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur l'utilisation finale du gaz naturel"
+        },
+        {
+          "surveyCode": "2168",
+          "surveyEn": "Annual Survey on End-Use of Refined Petroleum Products",
+          "surveyFr": "Enqu\u00eate annuelle sur l'utilisation finale des produits p\u00e9troliers raffin\u00e9s"
+        },
+        {
+          "surveyCode": "2177",
+          "surveyEn": "Coal Mines Annual",
+          "surveyFr": "Mines de charbon annuel"
+        },
+        {
+          "surveyCode": "2178",
+          "surveyEn": "Annual Oil and Gas Extraction Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur l'extraction de p\u00e9trole et de gaz"
+        },
+        {
+          "surveyCode": "2179",
+          "surveyEn": "Oil Pipeline Annual",
+          "surveyFr": "Enqu\u00eate annuelle des ol\u00e9oducs"
+        },
+        {
+          "surveyCode": "2180",
+          "surveyEn": "Natural Gas Transport and Distribution Annual",
+          "surveyFr": "Transport et distribution de gaz naturel annuel"
+        },
+        {
+          "surveyCode": "2181",
+          "surveyEn": "Electric Power Capability and Load",
+          "surveyFr": "Puissance \u00e9lectrique et d'\u00e9lectricit\u00e9"
+        },
+        {
+          "surveyCode": "2183",
+          "surveyEn": "Industrial Chemicals and Synthetic Resins",
+          "surveyFr": "Produits chimiques industriels et r\u00e9sines synth\u00e9tiques"
+        },
+        {
+          "surveyCode": "2184",
+          "surveyEn": "Disposition of Shipments of Ingots and Rolled Steel Products",
+          "surveyFr": "\u00c9coulement des livraisons de lingots et de laminages d'acier"
+        },
+        {
+          "surveyCode": "2187",
+          "surveyEn": "Confectionery",
+          "surveyFr": "Confiserie"
+        },
+        {
+          "surveyCode": "2189",
+          "surveyEn": "Shipments of Solid Fuel Burning Heating Products",
+          "surveyFr": "Livraisons des produits de chauffage \u00e0 combustible solide"
+        },
+        {
+          "surveyCode": "2191",
+          "surveyEn": "Monthly Oil Pipeline Statement",
+          "surveyFr": "\u00c9tat mensuel des r\u00e9sultats d'exploitation"
+        },
+        {
+          "surveyCode": "2192",
+          "surveyEn": "Factory Shipments of High Pressure Decorative Laminate Sheet",
+          "surveyFr": "Livraisons d\u00e9part usine de feuilles ornementales stratifi\u00e9es sous haute pression"
+        },
+        {
+          "surveyCode": "2193",
+          "surveyEn": "Annual Electric Power Generating Stations Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur les centrales d'\u00e9nergie \u00e9lectrique"
+        },
+        {
+          "surveyCode": "2194",
+          "surveyEn": "Annual Electricity Supply and Disposition Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur l'approvisionnement et l'\u00e9coulement de l'\u00e9lectricit\u00e9"
+        },
+        {
+          "surveyCode": "2196",
+          "surveyEn": "Annual Survey of Electric Power Thermal Generating Station Fuel Consumption",
+          "surveyFr": "Enqu\u00eate annuelle sur la consommation de combustibles de centrales thermiques d'\u00e9nergie \u00e9lectrique"
+        },
+        {
+          "surveyCode": "2198",
+          "surveyEn": "Crude Oil and Natural Gas",
+          "surveyFr": "P\u00e9trole brut et gaz naturel"
+        },
+        {
+          "surveyCode": "2201",
+          "surveyEn": "Canadian International Merchandise Trade (Customs Basis)",
+          "surveyFr": "Commerce international de marchandises du Canada (base douani\u00e8re)"
+        },
+        {
+          "surveyCode": "2202",
+          "surveyEn": "Canadian International Merchandise Trade (Balance of Payments Basis)",
+          "surveyFr": "Commerce international de marchandises du Canada (base de la balance de paiements)"
+        },
+        {
+          "surveyCode": "2203",
+          "surveyEn": "International Merchandise Trade Price Index",
+          "surveyFr": "Indice des prix du commerce international de marchandises"
+        },
+        {
+          "surveyCode": "2301",
+          "surveyEn": "Consumer Price Index",
+          "surveyFr": "Indice des prix \u00e0 la consommation"
+        },
+        {
+          "surveyCode": "2303",
+          "surveyEn": "Precast Concrete Price Indexes",
+          "surveyFr": "Indices des prix du b\u00e9ton pr\u00e9fabriqu\u00e9"
+        },
+        {
+          "surveyCode": "2304",
+          "surveyEn": "Fabricated Structural Steel Price Indexes",
+          "surveyFr": "Indices des prix de l'acier de charpente semi-ouvr\u00e9"
+        },
+        {
+          "surveyCode": "2305",
+          "surveyEn": "Farm Input Price Index",
+          "surveyFr": "Indice des prix des entr\u00e9es dans l'agriculture"
+        },
+        {
+          "surveyCode": "2306",
+          "surveyEn": "Raw Materials Price Index",
+          "surveyFr": "Indice des prix des mati\u00e8res brutes"
+        },
+        {
+          "surveyCode": "2307",
+          "surveyEn": "Construction Union Wage Rate Index",
+          "surveyFr": "Indice des taux de salaires syndicaux dans la construction"
+        },
+        {
+          "surveyCode": "2308",
+          "surveyEn": "Residential Building Construction Input Price Indexes",
+          "surveyFr": "Indices des prix des entr\u00e9es dans la construction r\u00e9sidentielle"
+        },
+        {
+          "surveyCode": "2310",
+          "surveyEn": "New Housing Price Index",
+          "surveyFr": "Indice des prix des logements neufs"
+        },
+        {
+          "surveyCode": "2311",
+          "surveyEn": "Highway Construction Price Indexes",
+          "surveyFr": "Indices des prix de la construction routi\u00e8re"
+        },
+        {
+          "surveyCode": "2312",
+          "surveyEn": "Machinery and Equipment Price Index",
+          "surveyFr": "Indice des prix des machines et du mat\u00e9riel"
+        },
+        {
+          "surveyCode": "2314",
+          "surveyEn": "Chemical and Mineral Process Plant Price Indexes",
+          "surveyFr": "Indices des prix des installations de traitement des produits chimiques et min\u00e9raux"
+        },
+        {
+          "surveyCode": "2315",
+          "surveyEn": "Chemical and Petrochemical Process Plant Price Index",
+          "surveyFr": "Indices des prix des installations de traitement des produits chimiques et p\u00e9trochimiques"
+        },
+        {
+          "surveyCode": "2316",
+          "surveyEn": "Electric Utility Construction Price Index",
+          "surveyFr": "Indice des prix \u00e0 la construction dans les services d'\u00e9lectricit\u00e9"
+        },
+        {
+          "surveyCode": "2317",
+          "surveyEn": "Building Construction Price Index",
+          "surveyFr": "Indice des prix de la construction de b\u00e2timents"
+        },
+        {
+          "surveyCode": "2318",
+          "surveyEn": "Industrial Product Price Index",
+          "surveyFr": "Indice des prix des produits industriels"
+        },
+        {
+          "surveyCode": "2319",
+          "surveyEn": "Telecommunications Plant Price Index",
+          "surveyFr": "Indice des prix des installations de t\u00e9l\u00e9communications"
+        },
+        {
+          "surveyCode": "2321",
+          "surveyEn": "Isolated Posts Allowance Indexes (Living Cost Differential Indexes)",
+          "surveyFr": "Indices sur les postes isol\u00e9s (Indices d'indemnit\u00e9 de vie ch\u00e8re)"
+        },
+        {
+          "surveyCode": "2322",
+          "surveyEn": "Canadian Foreign Post Indexes",
+          "surveyFr": "Indices de missions canadiennes \u00e0 l'\u00e9tranger"
+        },
+        {
+          "surveyCode": "2324",
+          "surveyEn": "Construction Building Materials Price Index",
+          "surveyFr": "Indice des prix des mat\u00e9riaux de la construction"
+        },
+        {
+          "surveyCode": "2325",
+          "surveyEn": "Electric Power Selling Price Indexes for Non-residential Customers",
+          "surveyFr": "Indices des prix de vente de l'\u00e9nergie \u00e9lectrique pour les acheteurs non r\u00e9sidentiels"
+        },
+        {
+          "surveyCode": "2328",
+          "surveyEn": "Consulting Engineering Services Price Index",
+          "surveyFr": "Indice des prix des services d'ing\u00e9nierie conseil"
+        },
+        {
+          "surveyCode": "2329",
+          "surveyEn": "Selected Financial Indexes",
+          "surveyFr": "Certains indices financiers"
+        },
+        {
+          "surveyCode": "2330",
+          "surveyEn": "Apartment Building Construction Price Index",
+          "surveyFr": "Indice des prix de construction d'immeubles d'appartements"
+        },
+        {
+          "surveyCode": "2333",
+          "surveyEn": "Informatics Professional Services Price Indexes",
+          "surveyFr": "Indices des prix des services professionnels en informatique"
+        },
+        {
+          "surveyCode": "2334",
+          "surveyEn": "Accounting Services Price Index",
+          "surveyFr": "Indice des prix des services de comptabilit\u00e9"
+        },
+        {
+          "surveyCode": "2336",
+          "surveyEn": "Traveller Accommodation Services Price Index",
+          "surveyFr": "Indice des prix des services d'h\u00e9bergement des voyageurs"
+        },
+        {
+          "surveyCode": "2401",
+          "surveyEn": "Monthly Wholesale Trade Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur le commerce de gros"
+        },
+        {
+          "surveyCode": "2402",
+          "surveyEn": "Monthly New Motor Vehicle Sales Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur les ventes de v\u00e9hicules automobiles neufs"
+        },
+        {
+          "surveyCode": "2404",
+          "surveyEn": "Vending Machine Operators",
+          "surveyFr": "Exploitants de distributeurs automatiques"
+        },
+        {
+          "surveyCode": "2405",
+          "surveyEn": "Direct Selling in Canada",
+          "surveyFr": "Vente directe au Canada"
+        },
+        {
+          "surveyCode": "2406",
+          "surveyEn": "Retail Trade Survey (Monthly)",
+          "surveyFr": "Enqu\u00eate sur le commerce de d\u00e9tail (mensuelle)"
+        },
+        {
+          "surveyCode": "2408",
+          "surveyEn": "Monthly Retail Trade Survey (Department Store Organizations)",
+          "surveyFr": "Enqu\u00eate mensuelle sur le commerce de d\u00e9tail - Organismes des grands magasins"
+        },
+        {
+          "surveyCode": "2409",
+          "surveyEn": "Retail Chains and Department Stores",
+          "surveyFr": "Magasins de d\u00e9tail \u00e0 succursales et les grands magasins"
+        },
+        {
+          "surveyCode": "2410",
+          "surveyEn": "Annual Survey of Service Industries: Software Development and Computer Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : d\u00e9veloppement de logiciels et services informatiques"
+        },
+        {
+          "surveyCode": "2413",
+          "surveyEn": "Survey of Service Industries: Film, Television and Video Production",
+          "surveyFr": "Enqu\u00eate sur les industries de services : production cin\u00e9matographique, t\u00e9l\u00e9visuelle et vid\u00e9o"
+        },
+        {
+          "surveyCode": "2414",
+          "surveyEn": "Survey of Service Industries: Film and Video Distribution",
+          "surveyFr": "Enqu\u00eate sur les industries de services : distribution de films cin\u00e9matographiques et de vid\u00e9os"
+        },
+        {
+          "surveyCode": "2415",
+          "surveyEn": "Survey of Service Industries: Film, Television and Video Post-production",
+          "surveyFr": "Enqu\u00eate sur les industries de services : postproduction cin\u00e9matographique, t\u00e9l\u00e9visuelle et vid\u00e9o"
+        },
+        {
+          "surveyCode": "2416",
+          "surveyEn": "Survey of Service Industries: Motion Picture Theatres",
+          "surveyFr": "Enqu\u00eate sur les industries de services : cin\u00e9mas"
+        },
+        {
+          "surveyCode": "2418",
+          "surveyEn": "Annual Survey of Service Industries: Accommodation Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services d'h\u00e9bergement"
+        },
+        {
+          "surveyCode": "2419",
+          "surveyEn": "Monthly Survey of Food Services and Drinking Places",
+          "surveyFr": "Enqu\u00eate mensuelle sur les services de restauration et d\u00e9bits de boissons"
+        },
+        {
+          "surveyCode": "2420",
+          "surveyEn": "Annual Survey of Service Industries: Architectural Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services d'architecture"
+        },
+        {
+          "surveyCode": "2422",
+          "surveyEn": "Retail Trade Survey (Annual)",
+          "surveyFr": "Enqu\u00eate sur le commerce de d\u00e9tail (annuelle)"
+        },
+        {
+          "surveyCode": "2423",
+          "surveyEn": "Annual Survey of Service Industries: Travel Arrangement Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services de pr\u00e9paration de voyages"
+        },
+        {
+          "surveyCode": "2424",
+          "surveyEn": "Annual Survey of Service Industries:  Personal Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services :  services personnels"
+        },
+        {
+          "surveyCode": "2425",
+          "surveyEn": "Annual Survey of Service Industries: Amusement and Recreation",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : divertissement et loisirs"
+        },
+        {
+          "surveyCode": "2430",
+          "surveyEn": "Annual Survey of Professional Accountants",
+          "surveyFr": "Enqu\u00eate annuelle aupr\u00e8s des comptables professionnels"
+        },
+        {
+          "surveyCode": "2433",
+          "surveyEn": "Annual Retail and Wholesale Trade Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le commerce de gros et d\u00e9tail"
+        },
+        {
+          "surveyCode": "2434",
+          "surveyEn": "Annual Survey of Service Industries: Consumer Goods Rental",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : location de biens de consommation"
+        },
+        {
+          "surveyCode": "2435",
+          "surveyEn": "Annual Survey of Services to Buildings and Dwellings",
+          "surveyFr": "Enqu\u00eate annuelle sur le secteur des services relatifs aux b\u00e2timents et aux logements"
+        },
+        {
+          "surveyCode": "2436",
+          "surveyEn": "Annual Survey of Investigation and Security Services",
+          "surveyFr": "Enqu\u00eate annuelle sur le secteur des services d'enqu\u00eates et de securit\u00e9"
+        },
+        {
+          "surveyCode": "2437",
+          "surveyEn": "Annual Survey of Service Industries: Advertising and Related Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services: publicit\u00e9 et services connexes"
+        },
+        {
+          "surveyCode": "2439",
+          "surveyEn": "Annual Survey of Service Industries: Engineering Services",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services de g\u00e9nie"
+        },
+        {
+          "surveyCode": "2441",
+          "surveyEn": "Annual Survey of Service Industries: Commercial and Industrial Machinery and Equipment Rental and Leasing",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : location et location \u00e0 bail de machines et mat\u00e9riel d'usage commercial et industriel"
+        },
+        {
+          "surveyCode": "2442",
+          "surveyEn": "Annual Survey of Service Industries: Automotive Equipment Rental and Leasing",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : location et location \u00e0 bail de mat\u00e9riel automobile"
+        },
+        {
+          "surveyCode": "2445",
+          "surveyEn": "Annual Wholesale Trade Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le commerce de gros"
+        },
+        {
+          "surveyCode": "2446",
+          "surveyEn": "Retail Store Survey (Annual)",
+          "surveyFr": "Enqu\u00eate sur les magasins de d\u00e9tail (annuelle)"
+        },
+        {
+          "surveyCode": "2447",
+          "surveyEn": "Annual Retail Trade Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le commerce de d\u00e9tail"
+        },
+        {
+          "surveyCode": "2448",
+          "surveyEn": "Annual Non-store Retail Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le commerce de d\u00e9tail hors magasin"
+        },
+        {
+          "surveyCode": "2501",
+          "surveyEn": "Quarterly Survey of Financial Statements",
+          "surveyFr": "Relev\u00e9 trimestriel des \u00e9tats financiers"
+        },
+        {
+          "surveyCode": "2502",
+          "surveyEn": "Corporations and Labour Unions Returns Act, Part 2 - Labour Unions",
+          "surveyFr": "Loi sur les d\u00e9clarations des corporations et des syndicats ouvriers, Partie 2 - Syndicats ouvriers"
+        },
+        {
+          "surveyCode": "2503",
+          "surveyEn": "Corporations Returns Act",
+          "surveyFr": "Loi sur les d\u00e9clarations des personnes morales"
+        },
+        {
+          "surveyCode": "2504",
+          "surveyEn": "Quarterly Survey of Financial Institutions",
+          "surveyFr": "Enqu\u00eate trimestrielle sur les institutions financi\u00e8res"
+        },
+        {
+          "surveyCode": "2505",
+          "surveyEn": "Credit Unions",
+          "surveyFr": "Caisses d'\u00e9pargne et de cr\u00e9dit"
+        },
+        {
+          "surveyCode": "2506",
+          "surveyEn": "Corporation Financial Statistics",
+          "surveyFr": "Statistique financi\u00e8re des soci\u00e9t\u00e9s"
+        },
+        {
+          "surveyCode": "2507",
+          "surveyEn": "Corporation Taxation Statistics",
+          "surveyFr": "Statistique fiscale des soci\u00e9t\u00e9s"
+        },
+        {
+          "surveyCode": "2510",
+          "surveyEn": "Financial and Taxation Statistics for Enterprises",
+          "surveyFr": "Statistiques financi\u00e8res et fiscales des entreprises"
+        },
+        {
+          "surveyCode": "2513",
+          "surveyEn": "Survey of Deposit-accepting Intermediaries: Chartered Banks, Trust Companies, Caisses Populaires and Credit Unions",
+          "surveyFr": "Enqu\u00eate aupr\u00e8s des interm\u00e9diaires financiers de d\u00e9p\u00f4ts : banques \u00e0 charte, soci\u00e9t\u00e9s de fiducie, caisses populaires et coop\u00e9ratives de cr\u00e9dit"
+        },
+        {
+          "surveyCode": "2514",
+          "surveyEn": "Biannual Survey of Suppliers of Business Financing",
+          "surveyFr": "Enqu\u00eate semestrielle aupr\u00e8s des fournisseurs de services de financement aux entreprises"
+        },
+        {
+          "surveyCode": "2601",
+          "surveyEn": "Labour Cost Survey",
+          "surveyFr": "Enqu\u00eate sur les co\u00fbts de main-d'oeuvre"
+        },
+        {
+          "surveyCode": "2602",
+          "surveyEn": "Estimates of Labour Income",
+          "surveyFr": "Estimations du revenu du travail"
+        },
+        {
+          "surveyCode": "2603",
+          "surveyEn": "Survey of Employment, Payrolls and Man-hours",
+          "surveyFr": "Enqu\u00eate sur l'emploi, la r\u00e9mun\u00e9ration et les heures-hommes"
+        },
+        {
+          "surveyCode": "2604",
+          "surveyEn": "Employment Insurance Statistics - Monthly",
+          "surveyFr": "Statistiques de l'assurance-emploi - Mensuel"
+        },
+        {
+          "surveyCode": "2605",
+          "surveyEn": "National Work Injuries Statistics Program",
+          "surveyFr": "Programme national de statistiques sur les accidents de travail"
+        },
+        {
+          "surveyCode": "2606",
+          "surveyEn": "Help Wanted Index Survey",
+          "surveyFr": "Enqu\u00eate sur l'indice de l'offre d'emploi"
+        },
+        {
+          "surveyCode": "2607",
+          "surveyEn": "Quarterly Estimates of Trusteed Pension Funds",
+          "surveyFr": "Estimations trimestrielles relatives aux caisses de retraite en fiducie"
+        },
+        {
+          "surveyCode": "2608",
+          "surveyEn": "Census of Trusteed Pension Funds",
+          "surveyFr": "Recensement des Caisses de retraite en fiducie"
+        },
+        {
+          "surveyCode": "2609",
+          "surveyEn": "Pension Plans in Canada",
+          "surveyFr": "R\u00e9gimes de pension au Canada"
+        },
+        {
+          "surveyCode": "2610",
+          "surveyEn": "Unemployment Insurance Statistics (Annual)",
+          "surveyFr": "Statistiques sur l'assurance-ch\u00f4mage (Annuel)"
+        },
+        {
+          "surveyCode": "2612",
+          "surveyEn": "Survey of Employment, Payrolls and Hours",
+          "surveyFr": "Enqu\u00eate sur l'emploi, la r\u00e9mun\u00e9ration et les heures de travail"
+        },
+        {
+          "surveyCode": "2614",
+          "surveyEn": "Business Payrolls Survey",
+          "surveyFr": "Enqu\u00eate sur la r\u00e9mun\u00e9ration aupr\u00e8s des entreprises"
+        },
+        {
+          "surveyCode": "2615",
+          "surveyEn": "Workplace and Employee Survey",
+          "surveyFr": "Enqu\u00eate sur le milieu de travail et les employ\u00e9s"
+        },
+        {
+          "surveyCode": "2620",
+          "surveyEn": "Survey of Financial Security",
+          "surveyFr": "Enqu\u00eate sur la s\u00e9curit\u00e9 financi\u00e8re"
+        },
+        {
+          "surveyCode": "2701",
+          "surveyEn": "Airport Activity Survey",
+          "surveyFr": "Enqu\u00eate sur l'activit\u00e9 a\u00e9roportuaire"
+        },
+        {
+          "surveyCode": "2702",
+          "surveyEn": "Air Passenger Origin and Destination, Domestic Journeys",
+          "surveyFr": "Origine et destination des passagers a\u00e9riens, voyages int\u00e9rieurs"
+        },
+        {
+          "surveyCode": "2703",
+          "surveyEn": "Air Passenger Origin and Destination, Canada-U.S.A.",
+          "surveyFr": "Origine et destination des passagers a\u00e9riens, Canada - \u00c9tats-Unis"
+        },
+        {
+          "surveyCode": "2704",
+          "surveyEn": "Coupon Passenger Origin and Destination Report - Other Unit Toll Services",
+          "surveyFr": "Relev\u00e9 de l'origine et de la destination des passagers d'apr\u00e8s le coupon"
+        },
+        {
+          "surveyCode": "2705",
+          "surveyEn": "Air Charter Statistics",
+          "surveyFr": "Statistiques des affr\u00e8tements a\u00e9riens"
+        },
+        {
+          "surveyCode": "2708",
+          "surveyEn": "Fare Basis Survey",
+          "surveyFr": "Enqu\u00eate sur la base tarifaire"
+        },
+        {
+          "surveyCode": "2712",
+          "surveyEn": "Quarterly Civil Aviation Survey",
+          "surveyFr": "Enqu\u00eate trimestrielle sur l'aviation civile"
+        },
+        {
+          "surveyCode": "2713",
+          "surveyEn": "Annual Civil Aviation Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur l'aviation civile"
+        },
+        {
+          "surveyCode": "2715",
+          "surveyEn": "Aircraft Movement Statistics",
+          "surveyFr": "Statistiques relatives aux mouvements des a\u00e9ronefs"
+        },
+        {
+          "surveyCode": "2721",
+          "surveyEn": "Quarterly Survey of Telecommunications",
+          "surveyFr": "Enqu\u00eate trimestrielle des t\u00e9l\u00e9communications"
+        },
+        {
+          "surveyCode": "2722",
+          "surveyEn": "Annual Survey of Telecommunications",
+          "surveyFr": "Enqu\u00eate annuelle des t\u00e9l\u00e9communications"
+        },
+        {
+          "surveyCode": "2724",
+          "surveyEn": "Radio and Television Broadcasting Survey",
+          "surveyFr": "Enqu\u00eate sur la radiodiffusion et la t\u00e9l\u00e9diffusion"
+        },
+        {
+          "surveyCode": "2728",
+          "surveyEn": "Annual Cable Television Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur la t\u00e9l\u00e9distribution"
+        },
+        {
+          "surveyCode": "2732",
+          "surveyEn": "Monthly Railway Carloadings Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur les chargements ferroviaires"
+        },
+        {
+          "surveyCode": "2734",
+          "surveyEn": "Annual Survey on Rail Transportation",
+          "surveyFr": "Enqu\u00eate annuelle sur le transport ferroviaire"
+        },
+        {
+          "surveyCode": "2735",
+          "surveyEn": "Railway Operating Statistics Survey",
+          "surveyFr": "Enqu\u00eate sur les statistiques de l'exploitation ferroviaire"
+        },
+        {
+          "surveyCode": "2736",
+          "surveyEn": "Rail Commodity Origin and Destination Statistics",
+          "surveyFr": "Statistiques sur l'origine et la destination des marchandises transport\u00e9es par chemin de fer"
+        },
+        {
+          "surveyCode": "2741",
+          "surveyEn": "Trucking Commodity Origin and Destination Survey",
+          "surveyFr": "Enqu\u00eate sur l'origine et la destination des marchandises transport\u00e9es par camion"
+        },
+        {
+          "surveyCode": "2742",
+          "surveyEn": "Annual Trucking Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le camionnage"
+        },
+        {
+          "surveyCode": "2743",
+          "surveyEn": "Passenger Bus Statistics",
+          "surveyFr": "Statistique du transport des voyageurs par autobus"
+        },
+        {
+          "surveyCode": "2744",
+          "surveyEn": "Intercity and Rural Passenger Bus Survey",
+          "surveyFr": "Enqu\u00eate sur le transport interurbain et rural de voyageurs par autobus"
+        },
+        {
+          "surveyCode": "2745",
+          "surveyEn": "Monthly Passenger Bus and Urban Transit Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur le transport de passagers par autobus et le transport urbain"
+        },
+        {
+          "surveyCode": "2746",
+          "surveyEn": "Gasoline and Other Petroleum Fuels Sold",
+          "surveyFr": "Essence et autres combustibles de p\u00e9trole vendus"
+        },
+        {
+          "surveyCode": "2747",
+          "surveyEn": "Vehicle Registrations",
+          "surveyFr": "Immatriculations de v\u00e9hicules"
+        },
+        {
+          "surveyCode": "2748",
+          "surveyEn": "Quarterly Trucking Survey",
+          "surveyFr": "Enqu\u00eate trimestrielle sur le camionnage"
+        },
+        {
+          "surveyCode": "2749",
+          "surveyEn": "Fuel Consumption Survey",
+          "surveyFr": "Enqu\u00eate sur la consommation de carburant"
+        },
+        {
+          "surveyCode": "2751",
+          "surveyEn": "Coastwise Shipping Survey",
+          "surveyFr": "Enqu\u00eate sur le cabotage"
+        },
+        {
+          "surveyCode": "2753",
+          "surveyEn": "Financial Survey of Canadian Water Carriers",
+          "surveyFr": "Enqu\u00eate financi\u00e8re des transporteurs par eau canadiens"
+        },
+        {
+          "surveyCode": "2791",
+          "surveyEn": "Marine International Freight Origin and Destination Survey",
+          "surveyFr": "Enqu\u00eate sur l'origine et la destination des marchandises au titre du transport maritime international"
+        },
+        {
+          "surveyCode": "2797",
+          "surveyEn": "Passenger Bus\/Urban Transit Survey - Quarterly",
+          "surveyFr": "Enqu\u00eate trimestrielle sur le transport des voyageurs par autobus et le transport urbain"
+        },
+        {
+          "surveyCode": "2798",
+          "surveyEn": "Annual Passenger Bus and Urban Transit Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le transport de passagers par autobus et le transport urbain"
+        },
+        {
+          "surveyCode": "2800",
+          "surveyEn": "Annual Survey of Small For-Hire Carriers of Freight and Owner-Operators",
+          "surveyFr": "Enqu\u00eate annuelle sur les petits transporteurs routiers de marchandises pour compte d'autrui et les chauffeurs contractants"
+        },
+        {
+          "surveyCode": "2802",
+          "surveyEn": "Building Permits",
+          "surveyFr": "Permis de b\u00e2tir"
+        },
+        {
+          "surveyCode": "2803",
+          "surveyEn": "Annual Capital and Repair Expenditures Survey: Actual, Preliminary Actual and Intentions",
+          "surveyFr": "Enqu\u00eate annuelle sur les d\u00e9penses en immobilisations et r\u00e9parations : r\u00e9elles, provisoires, perspectives"
+        },
+        {
+          "surveyCode": "2820",
+          "surveyEn": "Stock and Consumption of Fixed Non-residential Capital",
+          "surveyFr": "Stock et consommation de capital fixe non r\u00e9sidentiel"
+        },
+        {
+          "surveyCode": "2821",
+          "surveyEn": "Capacity Utilization Rates",
+          "surveyFr": "Taux d'utilisation de la capacit\u00e9"
+        },
+        {
+          "surveyCode": "2917",
+          "surveyEn": "Survey on Fluid Power Products Manufactured in Canada",
+          "surveyFr": "Enqu\u00eate sur les dispositifs de transmission d'\u00e9nergie par fluide fabriqu\u00e9s au Canada"
+        },
+        {
+          "surveyCode": "2920",
+          "surveyEn": "Provincial Wage and Salary Survey",
+          "surveyFr": "Enqu\u00eate sur les traitements et salaires dans les provinces"
+        },
+        {
+          "surveyCode": "2925",
+          "surveyEn": "Survey of Canada's Tourist Attractions",
+          "surveyFr": "Enqu\u00eate sur les attractions touristiques du Canada"
+        },
+        {
+          "surveyCode": "2927",
+          "surveyEn": "Canadian Aquaculture Industry Survey",
+          "surveyFr": "Enqu\u00eate sur l'industrie canadienne de l'aquaculture"
+        },
+        {
+          "surveyCode": "2933",
+          "surveyEn": "Canadian Defence, Aerospace and Marine Industries Survey",
+          "surveyFr": "Enqu\u00eate sur les industries canadiennes de la d\u00e9fense, de l'a\u00e9rospatiale et de la marine"
+        },
+        {
+          "surveyCode": "2935",
+          "surveyEn": "National Construction Industry Wage Rate Survey",
+          "surveyFr": "Enqu\u00eate nationale sur les taux salariaux dans le secteur de la construction"
+        },
+        {
+          "surveyCode": "2936",
+          "surveyEn": "Survey of Growing Innovative Firms",
+          "surveyFr": "Enqu\u00eate sur les entreprises innovatrices en expension"
+        },
+        {
+          "surveyCode": "2939",
+          "surveyEn": "Survey of Information Technology Occupations",
+          "surveyFr": "Enqu\u00eate  sur les professions reli\u00e9es aux technologies de l'information"
+        },
+        {
+          "surveyCode": "2941",
+          "surveyEn": "Survey on Financing and Growth of Small and Medium Enterprises",
+          "surveyFr": "Enqu\u00eate sur le financement et la croissance des petites et moyennes entreprises"
+        },
+        {
+          "surveyCode": "2943",
+          "surveyEn": "Commercial and Institutional Buildings Energy Use Survey",
+          "surveyFr": "Enqu\u00eate sur la consommation d'\u00e9nergie par les b\u00e2timents commerciaux et institutionnels"
+        },
+        {
+          "surveyCode": "2944",
+          "surveyEn": "Survey of Adventure Travel Operations in Canada",
+          "surveyFr": "Enqu\u00eate aupr\u00e8s des entreprises de tourisme d'aventure au Canada"
+        },
+        {
+          "surveyCode": "2946",
+          "surveyEn": "Employment Dynamics",
+          "surveyFr": "Variations de l'emploi"
+        },
+        {
+          "surveyCode": "2947",
+          "surveyEn": "Survey of the Medical Devices Industry",
+          "surveyFr": "Enqu\u00eate sur l'industrie des mat\u00e9riels m\u00e9dicaux"
+        },
+        {
+          "surveyCode": "3101",
+          "surveyEn": "University and College Academic Staff System - Full-time Staff",
+          "surveyFr": "Syst\u00e8me d'information sur le personnel d'enseignement dans les universit\u00e9s et les coll\u00e8ges - Personnel enseignant \u00e0 plein temps"
+        },
+        {
+          "surveyCode": "3105",
+          "surveyEn": "Survey of Service Industries: Book Publishers",
+          "surveyFr": "Enqu\u00eate sur les industries de services : \u00e9diteurs de livres"
+        },
+        {
+          "surveyCode": "3107",
+          "surveyEn": "Annual Survey of Service Industries: Heritage Institutions",
+          "surveyFr": "Enqu\u00eate annuelle sur les industries de services :  \u00e9tablissements du patrimoine"
+        },
+        {
+          "surveyCode": "3108",
+          "surveyEn": "Survey of Service Industries: Performing Arts",
+          "surveyFr": "Enqu\u00eate sur les industries de services : Arts de la sc\u00e8ne"
+        },
+        {
+          "surveyCode": "3114",
+          "surveyEn": "Television Viewing Databank",
+          "surveyFr": "Banque de donn\u00e9es sur l'\u00e9coute de la t\u00e9l\u00e9vision"
+        },
+        {
+          "surveyCode": "3115",
+          "surveyEn": "Survey of Service Industries: Sound Recording and Music Publishing",
+          "surveyFr": "Enqu\u00eate sur les industries de services : enregistrement sonore et \u00e9dition de musique"
+        },
+        {
+          "surveyCode": "3116",
+          "surveyEn": "Survey of Provincial\/Territorial Government Expenditures on Culture",
+          "surveyFr": "Enqu\u00eate sur les d\u00e9penses des administrations provinciales\/territoriales au titre de la culture"
+        },
+        {
+          "surveyCode": "3117",
+          "surveyEn": "Survey of Federal Government Expenditures on Culture",
+          "surveyFr": "Enqu\u00eate sur les d\u00e9penses d'administration f\u00e9d\u00e9rale au titre de la culture"
+        },
+        {
+          "surveyCode": "3119",
+          "surveyEn": "Survey of Uniform Financial System - School Boards",
+          "surveyFr": "Enqu\u00eate sur le syst\u00e8me int\u00e9gr\u00e9 d'information financi\u00e8re sur les commissions scolaires"
+        },
+        {
+          "surveyCode": "3120",
+          "surveyEn": "Survey of Financial Statistics of Private Elementary and Secondary Schools",
+          "surveyFr": "Enqu\u00eate sur les statistiques financi\u00e8res des \u00e9coles priv\u00e9es primaires et secondaires"
+        },
+        {
+          "surveyCode": "3121",
+          "surveyEn": "Financial Information of Universities Survey",
+          "surveyFr": "Enqu\u00eate sur l'information financi\u00e8re des universit\u00e9s"
+        },
+        {
+          "surveyCode": "3122",
+          "surveyEn": "Community College Student Information System",
+          "surveyFr": "Syst\u00e8me d'information statistique sur la client\u00e8le des coll\u00e8ges communautaires"
+        },
+        {
+          "surveyCode": "3123",
+          "surveyEn": "Tuition and Living Accommodation Costs",
+          "surveyFr": "Frais de scolarit\u00e9 et de subsistance"
+        },
+        {
+          "surveyCode": "3124",
+          "surveyEn": "University Student Information System",
+          "surveyFr": "Syst\u00e8me d'information statistique sur la client\u00e8le universitaire"
+        },
+        {
+          "surveyCode": "3125",
+          "surveyEn": "Annual College and Related Institutions Educational Staff Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur le personnel enseignant des coll\u00e8ges et \u00e9tablissements analogues"
+        },
+        {
+          "surveyCode": "3126",
+          "surveyEn": "Survey of Earned Doctorates",
+          "surveyFr": "Enqu\u00eate aupr\u00e8s des titulaires d'un doctorat"
+        },
+        {
+          "surveyCode": "3127",
+          "surveyEn": "Elementary\/Secondary Education Staff Survey",
+          "surveyFr": "Enqu\u00eate sur les caract\u00e9ristiques du personnel scolaire des \u00e9coles primaires et secondaires"
+        },
+        {
+          "surveyCode": "3128",
+          "surveyEn": "Elementary\/Secondary School Enrolment",
+          "surveyFr": "Effectifs des \u00e9coles primaires et secondaires"
+        },
+        {
+          "surveyCode": "3129",
+          "surveyEn": "Minority and Second Language Education, Elementary and Secondary Independent Schools",
+          "surveyFr": "Enseignement dans la langue de la minorit\u00e9 et dans la langue seconde - \u00c9coles primaires et secondaires ind\u00e9pendantes"
+        },
+        {
+          "surveyCode": "3131",
+          "surveyEn": "Degrees, Diplomas and Certificates Granted by Universities",
+          "surveyFr": "Grades, dipl\u00f4mes et certificats d\u00e9cern\u00e9s par les universit\u00e9s"
+        },
+        {
+          "surveyCode": "3139",
+          "surveyEn": "Periodical Publishing Survey",
+          "surveyFr": "Enqu\u00eate sur l'\u00e9dition du p\u00e9riodique"
+        },
+        {
+          "surveyCode": "3140",
+          "surveyEn": "Survey of Federal Government Expenditures in Support of Education",
+          "surveyFr": "Enqu\u00eate sur les d\u00e9penses du gouvernement f\u00e9d\u00e9ral au titre de l'\u00e9ducation"
+        },
+        {
+          "surveyCode": "3141",
+          "surveyEn": "Provincial Expenditures on Education in Reform and Correctional Institutions",
+          "surveyFr": "D\u00e9penses provinciales au titre de l'\u00e9ducation dans les maisons de r\u00e9habilitation et de correction"
+        },
+        {
+          "surveyCode": "3142",
+          "surveyEn": "Trade\/Vocational Enrolment Survey",
+          "surveyFr": "Enqu\u00eate sur les effectifs des programmes de formation professionnelle au niveau des m\u00e9tiers"
+        },
+        {
+          "surveyCode": "3144",
+          "surveyEn": "Education Price Index",
+          "surveyFr": "Indice des prix a l'enseignement"
+        },
+        {
+          "surveyCode": "3146",
+          "surveyEn": "Financial Information of Colleges",
+          "surveyFr": "Information financi\u00e8re des coll\u00e8ges"
+        },
+        {
+          "surveyCode": "3147",
+          "surveyEn": "Continuing Education Survey",
+          "surveyFr": "Enqu\u00eate sur l'\u00e9ducation permanente"
+        },
+        {
+          "surveyCode": "3152",
+          "surveyEn": "International Travel Survey: Electronic questionnaires and Air Exit Survey",
+          "surveyFr": "Enqu\u00eate sur les voyages internationaux : questionnaires \u00e9lectroniques et Enqu\u00eate sur les d\u00e9parts a\u00e9riens"
+        },
+        {
+          "surveyCode": "3153",
+          "surveyEn": "Radio Listening Databank",
+          "surveyFr": "Banque de donn\u00e9es sur l'\u00e9coute de la radio"
+        },
+        {
+          "surveyCode": "3154",
+          "surveyEn": "Registered Apprenticeship Information System",
+          "surveyFr": "Syst\u00e8me d'information sur les apprentis inscrits"
+        },
+        {
+          "surveyCode": "3156",
+          "surveyEn": "School Leavers Survey",
+          "surveyFr": "Enqu\u00eate aupr\u00e8s des sortants"
+        },
+        {
+          "surveyCode": "3160",
+          "surveyEn": "National Apprenticeship Survey",
+          "surveyFr": "Enqu\u00eate nationale aupr\u00e8s des apprentis"
+        },
+        {
+          "surveyCode": "3161",
+          "surveyEn": "University and College Academic Staff System - Part-time Staff",
+          "surveyFr": "Syst\u00e8me d'information sur le personnel d'enseignement dans les universit\u00e9s et les coll\u00e8ges - Personnel \u00e0 temps partiel"
+        },
+        {
+          "surveyCode": "3163",
+          "surveyEn": "Survey of Providers of Training in English or French as a Second Language",
+          "surveyFr": "Enqu\u00eate aupr\u00e8s des fournisseurs de formation en anglais ou en fran\u00e7ais langue seconde au Canada"
+        },
+        {
+          "surveyCode": "3166",
+          "surveyEn": "Survey on Education in the Minority-Language and Second-Language at the Postsecondary Level",
+          "surveyFr": "Enqu\u00eate sur l'enseignement  dans la langue de la minorit\u00e9 et dans la langue seconde au niveau postsecondaire"
+        },
+        {
+          "surveyCode": "3167",
+          "surveyEn": "Survey of Activity with International Financial Institutions",
+          "surveyFr": "Enqu\u00eate sur l'activit\u00e9 dans le secteur des institutions financi\u00e8res Internationales"
+        },
+        {
+          "surveyCode": "3203",
+          "surveyEn": "Hospital Morbidity Database",
+          "surveyFr": "Base de donn\u00e9es sur la morbidit\u00e9 hospitali\u00e8re"
+        },
+        {
+          "surveyCode": "3204",
+          "surveyEn": "Mental Health Statistics",
+          "surveyFr": "La statistique de l'hygi\u00e8ne mentale"
+        },
+        {
+          "surveyCode": "3207",
+          "surveyEn": "Canadian Cancer Registry",
+          "surveyFr": "Registre canadien du cancer"
+        },
+        {
+          "surveyCode": "3208",
+          "surveyEn": "Annual Return of Health Care Facilities - Hospitals",
+          "surveyFr": "Rapport annuel des \u00e9tablissements de sant\u00e9 - H\u00f4pitaux"
+        },
+        {
+          "surveyCode": "3209",
+          "surveyEn": "Therapeutic Abortion Survey",
+          "surveyFr": "Enqu\u00eate sur les avortements th\u00e9rapeutiques"
+        },
+        {
+          "surveyCode": "3210",
+          "surveyEn": "Private nursing and residential care facilities",
+          "surveyFr": "\u00c9tablissements priv\u00e9 de soins infirmiers et de soins pour b\u00e9n\u00e9ficiaires internes"
+        },
+        {
+          "surveyCode": "3217",
+          "surveyEn": "Canada Health Survey",
+          "surveyFr": "Enqu\u00eate sant\u00e9 Canada"
+        },
+        {
+          "surveyCode": "3225",
+          "surveyEn": "National Population Health Survey: Household Component, Longitudinal",
+          "surveyFr": "Enqu\u00eate nationale sur la sant\u00e9 de la population : Volet m\u00e9nages, longitudinal"
+        },
+        {
+          "surveyCode": "3226",
+          "surveyEn": "Canadian Community Health Survey - Annual Component",
+          "surveyFr": "Enqu\u00eate sur la sant\u00e9 dans les collectivit\u00e9s canadiennes - Composante annuelle"
+        },
+        {
+          "surveyCode": "3231",
+          "surveyEn": "Vital Statistics - Birth Database",
+          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les naissances"
+        },
+        {
+          "surveyCode": "3232",
+          "surveyEn": "Vital Statistics - Marriage Database",
+          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les mariages"
+        },
+        {
+          "surveyCode": "3233",
+          "surveyEn": "Vital Statistics - Death Database",
+          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les d\u00e9c\u00e8s"
+        },
+        {
+          "surveyCode": "3234",
+          "surveyEn": "Vital Statistics - Stillbirth Database",
+          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les mortinaissances"
+        },
+        {
+          "surveyCode": "3235",
+          "surveyEn": "Vital Statistics - Divorce Database",
+          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les divorces"
+        },
+        {
+          "surveyCode": "3236",
+          "surveyEn": "National Population Health Survey: Household Component, Cross-sectional",
+          "surveyFr": "Enqu\u00eate nationale sur la sant\u00e9 de la population : Volet m\u00e9nages - transversal"
+        },
+        {
+          "surveyCode": "3250",
+          "surveyEn": "Indigenous Peoples Survey",
+          "surveyFr": "Enqu\u00eate aupr\u00e8s des peuples autochtones"
+        },
+        {
+          "surveyCode": "3251",
+          "surveyEn": "Canadian Survey on Disability",
+          "surveyFr": "Enqu\u00eate canadienne sur l'incapacit\u00e9"
+        },
+        {
+          "surveyCode": "3252",
+          "surveyEn": "Health and Activity Limitation Survey : Institutional Component",
+          "surveyFr": "Enqu\u00eate sur la sant\u00e9 et les limitations d'activit\u00e9s : \u00c9tablissements"
+        },
+        {
+          "surveyCode": "3301",
+          "surveyEn": "Police Administration Survey",
+          "surveyFr": "Enqu\u00eate sur l'administration polici\u00e8re"
+        },
+        {
+          "surveyCode": "3302",
+          "surveyEn": "Uniform Crime Reporting Survey",
+          "surveyFr": "Programme de d\u00e9claration uniforme de la criminalit\u00e9"
+        },
+        {
+          "surveyCode": "3306",
+          "surveyEn": "Adult Correctional Services",
+          "surveyFr": "Services correctionnels pour adultes"
+        },
+        {
+          "surveyCode": "3308",
+          "surveyEn": "Legal Aid Survey",
+          "surveyFr": "Enqu\u00eate sur l'aide juridique"
+        },
+        {
+          "surveyCode": "3309",
+          "surveyEn": "Youth Court Survey",
+          "surveyFr": "Enqu\u00eate sur les tribunaux de la jeunesse"
+        },
+        {
+          "surveyCode": "3310",
+          "surveyEn": "Courts Resources, Expenditures and Personnel Survey",
+          "surveyFr": "Enqu\u00eate des ressources, d\u00e9penses et personnel des tribunaux"
+        },
+        {
+          "surveyCode": "3312",
+          "surveyEn": "Integrated Criminal Court Survey",
+          "surveyFr": "Enqu\u00eate int\u00e9gr\u00e9e sur les tribunaux de juridiction criminelle"
+        },
+        {
+          "surveyCode": "3313",
+          "surveyEn": "Corrections Key Indicator Report for Adults and Youth",
+          "surveyFr": "Rapport sur les indicateurs cl\u00e9s des services correctionnels pour les adultes et les jeunes"
+        },
+        {
+          "surveyCode": "3315",
+          "surveyEn": "Homicide Survey",
+          "surveyFr": "Enqu\u00eate sur l'homicide"
+        },
+        {
+          "surveyCode": "3322",
+          "surveyEn": "Prosecutorial Services in Canada",
+          "surveyFr": "Services en mati\u00e8re de poursuites au Canada"
+        },
+        {
+          "surveyCode": "3323",
+          "surveyEn": "Youth Custody and Community Services",
+          "surveyFr": "Services communautaires et le placement sous garde des jeunes"
+        },
+        {
+          "surveyCode": "3324",
+          "surveyEn": "Survey of Maintenance Enforcement Programs",
+          "surveyFr": "L'Enqu\u00eate sur les programmes d'ex\u00e9cution des ordonnances alimentaires"
+        },
+        {
+          "surveyCode": "3325",
+          "surveyEn": "Alternative Measures Survey for Youth",
+          "surveyFr": "Enqu\u00eate sur les mesures de rechange pour les adolescents"
+        },
+        {
+          "surveyCode": "3326",
+          "surveyEn": "A One Day Snapshot in Canada's Correctional Facilities",
+          "surveyFr": "Profil instantan\u00e9 d'une journ\u00e9e des d\u00e9tenus dans les \u00e9tablissements correctionnels pour adultes du Canada"
+        },
+        {
+          "surveyCode": "3327",
+          "surveyEn": "Adult and Youth Recidivism in Canada Special Study",
+          "surveyFr": "\u00c9tude sp\u00e9ciale sur la r\u00e9cidive chez les adultes et les jeunes au Canada"
+        },
+        {
+          "surveyCode": "3328",
+          "surveyEn": "Survey of Residential Facilities for Victims of Abuse",
+          "surveyFr": "Enqu\u00eate sur les \u00e9tablissements d'h\u00e9bergement pour les victimes de violence"
+        },
+        {
+          "surveyCode": "3401",
+          "surveyEn": "Field Crop Reporting Series",
+          "surveyFr": "S\u00e9rie de rapports sur les grandes cultures"
+        },
+        {
+          "surveyCode": "3403",
+          "surveyEn": "Monthly Miller's Survey",
+          "surveyFr": "Enqu\u00eate mensuelle aupr\u00e8s des minotiers"
+        },
+        {
+          "surveyCode": "3404",
+          "surveyEn": "Monthly Crushing Operations Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur les op\u00e9rations de trituration"
+        },
+        {
+          "surveyCode": "3405",
+          "surveyEn": "Leaf Tobacco Area, Production and Value",
+          "surveyFr": "Superficie r\u00e9colt\u00e9e, production et valeur du tabac en feuilles"
+        },
+        {
+          "surveyCode": "3407",
+          "surveyEn": "Fruits and Vegetables Survey",
+          "surveyFr": "Enqu\u00eate sur les fruits et l\u00e9gumes"
+        },
+        {
+          "surveyCode": "3411",
+          "surveyEn": "Mushroom Growers' Survey",
+          "surveyFr": "Enqu\u00eate relative aux producteurs de champignons"
+        },
+        {
+          "surveyCode": "3414",
+          "surveyEn": "Maple Products",
+          "surveyFr": "Produits de l'\u00e9rable"
+        },
+        {
+          "surveyCode": "3416",
+          "surveyEn": "Annual Greenhouse, Sod and Nursery Survey",
+          "surveyFr": "Enqu\u00eate annuelle sur les cultures de serre, les p\u00e9pini\u00e8res et les gazonni\u00e8res"
+        },
+        {
+          "surveyCode": "3419",
+          "surveyEn": "Honey Production, Value and Colonies",
+          "surveyFr": "Production de miel, valeur et colonies d'abeilles"
+        },
+        {
+          "surveyCode": "3421",
+          "surveyEn": "Egg Producers Survey",
+          "surveyFr": "Enqu\u00eate sur les producteurs d'oeufs"
+        },
+        {
+          "surveyCode": "3422",
+          "surveyEn": "Stocks of Frozen Fruit and Vegetables",
+          "surveyFr": "Stocks de fruits et de l\u00e9gumes congel\u00e9es"
+        },
+        {
+          "surveyCode": "3423",
+          "surveyEn": "Quarterly Stocks of Frozen and Chilled Meats Survey",
+          "surveyFr": "Enqu\u00eate trimestrielle sur les stocks de viandes froides et congel\u00e9es"
+        },
+        {
+          "surveyCode": "3425",
+          "surveyEn": "Inventory Statement of Frozen Eggs, Poultry and Edible Dried Egg Products (Agriculture and Agri-Food Canada Data)",
+          "surveyFr": "Relev\u00e9 des stocks de produits avicoles, d'oeufs congel\u00e9s et de produits d'oeufs en poudre comestibles (Donn\u00e9es du Agriculture et Agroalimentaire Canada)"
+        },
+        {
+          "surveyCode": "3426",
+          "surveyEn": "Fur Farm Report - Mink and Foxes",
+          "surveyFr": "Rapport des fermes \u00e0 fourrure - Visons et renards"
+        },
+        {
+          "surveyCode": "3428",
+          "surveyEn": "Census of Wildlife Pelt Production",
+          "surveyFr": "Recensement de la production des fourrures provenant de la chasse"
+        },
+        {
+          "surveyCode": "3430",
+          "surveyEn": "Monthly Dairy Factory Production and Stocks Survey",
+          "surveyFr": "Enqu\u00eate mensuelle sur la production et stocks des fabriques laiti\u00e8res"
+        },
+        {
+          "surveyCode": "3431",
+          "surveyEn": "Monthly Inventory Statement of Butter and Cheese",
+          "surveyFr": "Inventaire mensuel du beurre et du fromage"
+        },
+        {
+          "surveyCode": "3432",
+          "surveyEn": "Milk Sold Off Farms and Cash Receipts from the Sale of Milk",
+          "surveyFr": "Ventes de lait hors ferme et recettes mon\u00e9taires provenant des ventes de lait"
+        },
+        {
+          "surveyCode": "3434",
+          "surveyEn": "Survey of Livestock Slaughter",
+          "surveyFr": "Relev\u00e9 des abattages de bestiaux"
+        },
+        {
+          "surveyCode": "3435",
+          "surveyEn": "Wool Price Survey",
+          "surveyFr": "Enqu\u00eate sur les prix de la laine"
+        },
+        {
+          "surveyCode": "3436",
+          "surveyEn": "Farm Product Prices Survey",
+          "surveyFr": "Enqu\u00eate sur les prix des produits agricoles"
+        },
+        {
+          "surveyCode": "3437",
+          "surveyEn": "Farm Cash Receipts",
+          "surveyFr": "Recettes mon\u00e9taires agricoles"
+        },
+        {
+          "surveyCode": "3438",
+          "surveyEn": "Census of Agriculture",
+          "surveyFr": "Recensement de l'agriculture"
+        },
+        {
+          "surveyCode": "3439",
+          "surveyEn": "National Farm Survey",
+          "surveyFr": "Enqu\u00eate nationale sur les fermes"
+        },
+        {
+          "surveyCode": "3441",
+          "surveyEn": "Processors Supplementary Report of Frozen Vegetables Intended for Re-manufacture",
+          "surveyFr": "Rapport suppl\u00e9mentaire des conditionneurs de l\u00e9gumes congel\u00e9s sur les stocks destin\u00e9s \u00e0 la retransformation"
+        },
+        {
+          "surveyCode": "3442",
+          "surveyEn": "Forage Seed Usage Survey",
+          "surveyFr": "Enqu\u00eate sur l'utilisation des semences fourrag\u00e8res"
+        },
+        {
+          "surveyCode": "3443",
+          "surveyEn": "Annual Miller's Survey",
+          "surveyFr": "Enqu\u00eate annuelle aupr\u00e8s des minotiers"
+        },
+        {
+          "surveyCode": "3446",
+          "surveyEn": "Biannual Potato Area and Yield Survey",
+          "surveyFr": "Enqu\u00eate semestrielle sur la superficie et le rendement des pommes de terre"
+        },
+        {
+          "surveyCode": "3447",
+          "surveyEn": "Agriculture Taxation Data Program",
+          "surveyFr": "Programme des donn\u00e9es fiscales agricoles"
+        },
+        {
+          "surveyCode": "3449",
+          "surveyEn": "Survey of Wage Rates for Hired Farm Labour",
+          "surveyFr": "Enqu\u00eate sur les taux des salaires de la main-d'oeuvre agricole salari\u00e9e"
+        },
+        {
+          "surveyCode": "3450",
+          "surveyEn": "Farm Financial Survey",
+          "surveyFr": "Enqu\u00eate financi\u00e8re sur les fermes"
+        },
+        {
+          "surveyCode": "3451",
+          "surveyEn": "Seed Corn Trade Survey",
+          "surveyFr": "Enqu\u00eate sur le commerce des semences de ma\u00efs"
+        },
+        {
+          "surveyCode": "3460",
+          "surveyEn": "Livestock Survey",
+          "surveyFr": "Enqu\u00eate sur le b\u00e9tail"
+        },
+        {
+          "surveyCode": "3461",
+          "surveyEn": "Farm Inputs Management Survey",
+          "surveyFr": "Enqu\u00eate sur la gestion des intrants agricoles"
+        },
+        {
+          "surveyCode": "3464",
+          "surveyEn": "Commercial Stocks of Corn and Soybeans Survey",
+          "surveyFr": "Enqu\u00eate sur les stocks commerciaux de ma\u00efs et de soya"
+        },
+        {
+          "surveyCode": "3465",
+          "surveyEn": "Atlantic Agriculture Survey",
+          "surveyFr": "Enqu\u00eate agricole des provinces de l'Atlantique"
+        },
+        {
+          "surveyCode": "3471",
+          "surveyEn": "Value of Farm Capital",
+          "surveyFr": "Valeur du capital agricole"
+        },
+        {
+          "surveyCode": "3472",
+          "surveyEn": "Farm Debt Outstanding",
+          "surveyFr": "Dette agricole en cours"
+        },
+        {
+          "surveyCode": "3473",
+          "surveyEn": "Net Farm Income",
+          "surveyFr": "Revenu agricole net"
+        },
+        {
+          "surveyCode": "3474",
+          "surveyEn": "Farm Income in Kind, by Item",
+          "surveyFr": "Revenu agricole en nature, par article"
+        },
         {
           "surveyCode": "3475",
           "surveyEn": "Food Availability (per person)",
@@ -5215,1761 +6970,6 @@
           "surveyCode": "8014",
           "surveyEn": "Respondent Selection Study for the General Social Survey",
           "surveyFr": "\u00c9tude sur la s\u00e9lection des r\u00e9pondants pour l'Enqu\u00eate sociale g\u00e9n\u00e9rale"
-        },
-        {
-          "surveyCode": "1105",
-          "surveyEn": "Business Register",
-          "surveyFr": "Registre des entreprises"
-        },
-        {
-          "surveyCode": "1141",
-          "surveyEn": "Average Fair Market Value\/Purchase Price for New Homes in Canada - Data from GST Administrative Records",
-          "surveyFr": "Juste valeur marchande\/prix d'achat pour les habitations neuves au Canada - donn\u00e9es produites \u00e0 partir des dossiers administratifs de la TPS"
-        },
-        {
-          "surveyCode": "1209",
-          "surveyEn": "Survey of Environmental Goods and Services",
-          "surveyFr": "Enqu\u00eate sur les biens et services environnementaux"
-        },
-        {
-          "surveyCode": "1301",
-          "surveyEn": "Gross Domestic Product by Industry - National (Monthly)",
-          "surveyFr": "Produit int\u00e9rieur brut par industrie - National (mensuel)"
-        },
-        {
-          "surveyCode": "1302",
-          "surveyEn": "Gross Domestic Product by Industry - Annual",
-          "surveyFr": "Produit int\u00e9rieur brut par industrie - annuelle"
-        },
-        {
-          "surveyCode": "1303",
-          "surveyEn": "Gross Domestic Product by Industry - Provincial and Territorial (Annual)",
-          "surveyFr": "Produit int\u00e9rieur brut par industrie - Provinces et territoires (annuel)"
-        },
-        {
-          "surveyCode": "1401",
-          "surveyEn": "Supply, Use and Input-Output Tables",
-          "surveyFr": "Tableaux des ressources, des emplois et des entr\u00e9es-sorties"
-        },
-        {
-          "surveyCode": "1402",
-          "surveyEn": "Productivity Measures and Related Variables - National and Provincial (Annual)",
-          "surveyFr": "Mesures de la productivit\u00e9 et des variables connexes - National et provincial (annuelles)"
-        },
-        {
-          "surveyCode": "1529",
-          "surveyEn": "Capital Invested Abroad by Canadian Enterprises",
-          "surveyFr": "Capitaux investis \u00e0 l'\u00e9tranger par les entreprises canadiennes"
-        },
-        {
-          "surveyCode": "1530",
-          "surveyEn": "Capital Invested in secondary foreign companies by Canadian Enterprises",
-          "surveyFr": "Capitaux investis dans les soci\u00e9t\u00e9s \u00e9trang\u00e8res au deuxi\u00e8me degr\u00e9 par les entreprises canadiennes"
-        },
-        {
-          "surveyCode": "1531",
-          "surveyEn": "Canadian Investment in Non-Canadian Corporations (BP-60)",
-          "surveyFr": "Investissements canadiens dans des soci\u00e9t\u00e9s non canadiennes (BP-60)"
-        },
-        {
-          "surveyCode": "1532",
-          "surveyEn": "Investment in Canada of Non-Canadian Partnerships",
-          "surveyFr": "Investissement au Canada des soci\u00e9t\u00e9s \u00e9trang\u00e8res en nom collectif"
-        },
-        {
-          "surveyCode": "1533",
-          "surveyEn": "Quarterly International Transactions in Commercial Services",
-          "surveyFr": "Op\u00e9rations internationales trimestrielles de services commerciaux"
-        },
-        {
-          "surveyCode": "1534",
-          "surveyEn": "Canada's Balance of International Payments",
-          "surveyFr": "Balance des paiements internationaux du Canada"
-        },
-        {
-          "surveyCode": "1535",
-          "surveyEn": "Canada's International Transactions in Securities",
-          "surveyFr": "Op\u00e9rations internationales du Canada en valeurs mobili\u00e8res"
-        },
-        {
-          "surveyCode": "1536",
-          "surveyEn": "Canada's International Transactions in Services",
-          "surveyFr": "Transactions internationales de services du Canada"
-        },
-        {
-          "surveyCode": "1537",
-          "surveyEn": "Canada's International Investment Position",
-          "surveyFr": "Bilan des investissements internationaux du Canada"
-        },
-        {
-          "surveyCode": "1538",
-          "surveyEn": "Canadian Portfolio Investment Abroad (BP-54)",
-          "surveyFr": "Investissement de portefeuille des Canadiens \u00e0 l'\u00e9tranger (BP-54F)"
-        },
-        {
-          "surveyCode": "1539",
-          "surveyEn": "Activities of Canadian Majority-Owned Affiliates Abroad",
-          "surveyFr": "Activit\u00e9s \u00e0 l'\u00e9tranger des soci\u00e9t\u00e9s affili\u00e9es \u00e0 participation majoritaire canadienne"
-        },
-        {
-          "surveyCode": "1601",
-          "surveyEn": "Canadian Composite Leading Indicator",
-          "surveyFr": "Indicateur avanc\u00e9 composite du Canada"
-        },
-        {
-          "surveyCode": "1651",
-          "surveyEn": "Survey of Advanced Technology in the Canadian Food Processing Industry",
-          "surveyFr": "Enqu\u00eate sur les technologies de pointe dans l'industrie alimentaire canadienne"
-        },
-        {
-          "surveyCode": "1702",
-          "surveyEn": "Local Government Assets and Liabilities",
-          "surveyFr": "Actif et passif des administrations locales"
-        },
-        {
-          "surveyCode": "1709",
-          "surveyEn": "Consolidated Government Financial Assets and Liabilities",
-          "surveyFr": "Actifs et passifs financiers consolid\u00e9s des administrations publiques"
-        },
-        {
-          "surveyCode": "1711",
-          "surveyEn": "Federal Provincial Fiscal Arrangements Program",
-          "surveyFr": "Programme des accords fiscaux f\u00e9d\u00e9raux-provinciaux"
-        },
-        {
-          "surveyCode": "1713",
-          "surveyEn": "Public Sector Employment",
-          "surveyFr": "Emploi dans le secteur public"
-        },
-        {
-          "surveyCode": "1720",
-          "surveyEn": "Provincial Government Revenue and Expenditure - Estimates and Actual Data",
-          "surveyFr": "Recettes et d\u00e9penses des administrations provinciales - estimations et donn\u00e9es r\u00e9elles"
-        },
-        {
-          "surveyCode": "1723",
-          "surveyEn": "Provincial Government Assets, Liabilities, Sources and Application of Funds",
-          "surveyFr": "Actif, passif, provenance et utilisation des fonds des gouvernements provinciaux"
-        },
-        {
-          "surveyCode": "1725",
-          "surveyEn": "Provincial Government Business Enterprise Finance",
-          "surveyFr": "Finances des entreprises publiques provinciales"
-        },
-        {
-          "surveyCode": "1726",
-          "surveyEn": "Control and Sale of Alcoholic Beverages in Canada",
-          "surveyFr": "Contr\u00f4le et vente des boissons alcoolis\u00e9es au Canada"
-        },
-        {
-          "surveyCode": "1728",
-          "surveyEn": "Provincial and Territorial Government Employment and Payroll Survey",
-          "surveyFr": "Enqu\u00eate sur l'emploi et r\u00e9mun\u00e9ration des administrations publiques provinciales et territoriales"
-        },
-        {
-          "surveyCode": "1730",
-          "surveyEn": "Finances of Government Business Enterprises",
-          "surveyFr": "Finances des entreprises publiques"
-        },
-        {
-          "surveyCode": "1731",
-          "surveyEn": "Local Government Revenue and Expenditure - Financial Management System Basis - Actual Data",
-          "surveyFr": "Recettes et d\u00e9penses des administrations locales - Syst\u00e8me de la gestion financi\u00e8re - chiffres r\u00e9els"
-        },
-        {
-          "surveyCode": "1732",
-          "surveyEn": "Local Government Revenue and Expenditure - Financial Management System Basis - Preliminary Data",
-          "surveyFr": "Recettes et d\u00e9penses des administrations locales - Syst\u00e8me de gestion financi\u00e8re - Chiffres provisoires"
-        },
-        {
-          "surveyCode": "1735",
-          "surveyEn": "Consolidated Government Revenue and Expenditures",
-          "surveyFr": "Recettes et d\u00e9penses consolid\u00e9es des administrations publiques"
-        },
-        {
-          "surveyCode": "1736",
-          "surveyEn": "Waste Management Industry Survey: Government Sector",
-          "surveyFr": "Enqu\u00eate sur l'industrie de la gestion des d\u00e9chets: secteur des administrations publiques"
-        },
-        {
-          "surveyCode": "1739",
-          "surveyEn": "Local Government Revenue and Expenditure - Financial Management System Basis - Estimates Data",
-          "surveyFr": "Recettes et d\u00e9penses des administrations locales - Syst\u00e8me de gestion financi\u00e8re - pr\u00e9visions"
-        },
-        {
-          "surveyCode": "1803",
-          "surveyEn": "Official Canadian Government Travel Survey",
-          "surveyFr": "Enqu\u00eate officielle du gouvernement canadien sur les voyages"
-        },
-        {
-          "surveyCode": "1804",
-          "surveyEn": "Financial Flow Accounts",
-          "surveyFr": "Comptes des flux financiers"
-        },
-        {
-          "surveyCode": "1806",
-          "surveyEn": "National Balance Sheet Accounts",
-          "surveyFr": "Comptes du bilan national"
-        },
-        {
-          "surveyCode": "1901",
-          "surveyEn": "National Gross Domestic Product by Income and by Expenditure Accounts",
-          "surveyFr": "Comptes nationaux du produit int\u00e9rieur brut en termes de revenus et de d\u00e9penses"
-        },
-        {
-          "surveyCode": "1902",
-          "surveyEn": "Provincial and Territorial Gross Domestic Product by Income and by Expenditure Accounts",
-          "surveyFr": "Comptes provinciaux et territoriaux du produit int\u00e9rieur brut en termes de revenus et de d\u00e9penses"
-        },
-        {
-          "surveyCode": "1903",
-          "surveyEn": "Annual Environmental Protection Expenditures Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur les d\u00e9penses de protection de l'environnement"
-        },
-        {
-          "surveyCode": "1910",
-          "surveyEn": "National Tourism Indicators",
-          "surveyFr": "Indicateurs nationaux du tourisme"
-        },
-        {
-          "surveyCode": "2001",
-          "surveyEn": "Electric Utility Financial Report Annual",
-          "surveyFr": "Rapport financier des services d'\u00e9lectricit\u00e9 annuel"
-        },
-        {
-          "surveyCode": "2003",
-          "surveyEn": "Monthly Coke Supply and Disposition Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur l'approvisionnement et l'\u00e9coulement du coke"
-        },
-        {
-          "surveyCode": "2008",
-          "surveyEn": "Retail Commodity Survey",
-          "surveyFr": "Enqu\u00eate sur les marchandises vendues au d\u00e9tail"
-        },
-        {
-          "surveyCode": "2009",
-          "surveyEn": "Biennial Waste Management Survey",
-          "surveyFr": "Enqu\u00eate biennale sur la gestion des d\u00e9chets"
-        },
-        {
-          "surveyCode": "2014",
-          "surveyEn": "Contract Drilling and Services to Oil and Gas Extraction Industry",
-          "surveyFr": "Forage \u00e0 forfait et services relatifs \u00e0 l'industrie de l'extraction du p\u00e9trole et du gaz"
-        },
-        {
-          "surveyCode": "2101",
-          "surveyEn": "Monthly Survey of Manufacturing",
-          "surveyFr": "Enqu\u00eate mensuelle sur les industries manufacturi\u00e8res"
-        },
-        {
-          "surveyCode": "2103",
-          "surveyEn": "Annual Survey of Manufacturing and Logging Industries",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries manufacturi\u00e8res et de l'exploitation foresti\u00e8re"
-        },
-        {
-          "surveyCode": "2105",
-          "surveyEn": "Steel Pipe and Tubing",
-          "surveyFr": "Tuyaux et tubes en acier"
-        },
-        {
-          "surveyCode": "2106",
-          "surveyEn": "Steel Wire and Specified Wire Products",
-          "surveyFr": "Fil d'acier et certains produits de fil m\u00e9tallique"
-        },
-        {
-          "surveyCode": "2107",
-          "surveyEn": "Annual Survey of Forestry",
-          "surveyFr": "Enqu\u00eate annuelle de la foresterie"
-        },
-        {
-          "surveyCode": "2108",
-          "surveyEn": "Sales of Paints, Varnishes and Lacquers",
-          "surveyFr": "Ventes de peintures, vernis et laqu\u00e9s"
-        },
-        {
-          "surveyCode": "2109",
-          "surveyEn": "Gypsum Products",
-          "surveyFr": "Produits de gypse"
-        },
-        {
-          "surveyCode": "2110",
-          "surveyEn": "Mineral Wool Including Fibrous Glass Insulation",
-          "surveyFr": "Laine min\u00e9rale y compris les isolants en fibre de verre"
-        },
-        {
-          "surveyCode": "2112",
-          "surveyEn": "Production, Sales and Stocks of Major Appliances",
-          "surveyFr": "Productions, ventes et stocks d'appareils m\u00e9nagers"
-        },
-        {
-          "surveyCode": "2113",
-          "surveyEn": "Domestic Washing Machines and Clothes Dryers",
-          "surveyFr": "Machines \u00e0 laver et s\u00e9cheuses \u00e0 linge"
-        },
-        {
-          "surveyCode": "2114",
-          "surveyEn": "Domestic Electrical Appliances",
-          "surveyFr": "Appareils \u00e9lectriques m\u00e9nagers"
-        },
-        {
-          "surveyCode": "2115",
-          "surveyEn": "Pig Iron",
-          "surveyFr": "Fonte en gueuses"
-        },
-        {
-          "surveyCode": "2116",
-          "surveyEn": "Steel Primary Forms, Steel Castings and Pig Iron",
-          "surveyFr": "Acier formes primaires, moulages d'acier et fonte en gueuses"
-        },
-        {
-          "surveyCode": "2117",
-          "surveyEn": "Electric Lamps (Light Sources)",
-          "surveyFr": "Lampes \u00e9lectriques (sources de lumi\u00e8re)"
-        },
-        {
-          "surveyCode": "2118",
-          "surveyEn": "Annual Production of Soft Drinks",
-          "surveyFr": "Production annuelle de boissons gazeuses"
-        },
-        {
-          "surveyCode": "2119",
-          "surveyEn": "Footwear Statistics",
-          "surveyFr": "Statistique de la chaussure"
-        },
-        {
-          "surveyCode": "2121",
-          "surveyEn": "Oils and Fats",
-          "surveyFr": "Huiles et mati\u00e8res grasses"
-        },
-        {
-          "surveyCode": "2122",
-          "surveyEn": "Hardboard",
-          "surveyFr": "Panneaux press\u00e9s"
-        },
-        {
-          "surveyCode": "2123",
-          "surveyEn": "Asphalt Roofing",
-          "surveyFr": "Papier-toiture asphalt\u00e9"
-        },
-        {
-          "surveyCode": "2124",
-          "surveyEn": "Rigid Insulating Board",
-          "surveyFr": "Panneaux isolants rigides"
-        },
-        {
-          "surveyCode": "2125",
-          "surveyEn": "Floor Tiles",
-          "surveyFr": "Carreaux et dalles de parquet"
-        },
-        {
-          "surveyCode": "2126",
-          "surveyEn": "Process Cheese",
-          "surveyFr": "Fromage fondu"
-        },
-        {
-          "surveyCode": "2130",
-          "surveyEn": "Production and Sales of Phonograph Records and Pre-Recorded Tapes in Canada",
-          "surveyFr": "Production et ventes de disques de phonographe et de rubans pr\u00e9-enregistr\u00e9s au Canada"
-        },
-        {
-          "surveyCode": "2131",
-          "surveyEn": "Steel Primary Forms Weekly",
-          "surveyFr": "Acier en formes primaires (hebdomadaire)"
-        },
-        {
-          "surveyCode": "2134",
-          "surveyEn": "Sawmills",
-          "surveyFr": "Scieries"
-        },
-        {
-          "surveyCode": "2135",
-          "surveyEn": "Production, Shipments and Stocks on Hand of Sawmills in British Columbia",
-          "surveyFr": "Production, livraisons et stocks en mains des scieries en Colombie-Britannique"
-        },
-        {
-          "surveyCode": "2136",
-          "surveyEn": "Pulpwood and Wood Residue",
-          "surveyFr": "Bois \u00e0 p\u00e2te et d\u00e9chets de bois"
-        },
-        {
-          "surveyCode": "2138",
-          "surveyEn": "Construction Type Plywood",
-          "surveyFr": "Contreplaqu\u00e9s de construction"
-        },
-        {
-          "surveyCode": "2140",
-          "surveyEn": "Cement Survey",
-          "surveyFr": "Enqu\u00eate de ciment"
-        },
-        {
-          "surveyCode": "2141",
-          "surveyEn": "Particleboard, Oriented Strandboard and Fibreboard",
-          "surveyFr": "Panneaux de particules, de lamelles orient\u00e9es et de fibres"
-        },
-        {
-          "surveyCode": "2142",
-          "surveyEn": "Production and Disposition of Tobacco Products",
-          "surveyFr": "Production et \u00e9coulement des produits du tabac"
-        },
-        {
-          "surveyCode": "2143",
-          "surveyEn": "Sugar - Situation",
-          "surveyFr": "Situation - sucre"
-        },
-        {
-          "surveyCode": "2147",
-          "surveyEn": "Monthly Coal Supply and Disposition Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur l'approvisionnement et l'\u00e9coulement du charbon"
-        },
-        {
-          "surveyCode": "2148",
-          "surveyEn": "Monthly Oil and Other Liquid Petroleum Products Pipeline Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur le transport par ol\u00e9oduc de p\u00e9trole brut et autres produits p\u00e9troliers liquides"
-        },
-        {
-          "surveyCode": "2149",
-          "surveyEn": "Monthly Natural Gas Transmission Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur le transport du gaz naturel"
-        },
-        {
-          "surveyCode": "2150",
-          "surveyEn": "Monthly Refined Petroleum Products",
-          "surveyFr": "Produits p\u00e9troliers raffin\u00e9s (rapport mensuel)"
-        },
-        {
-          "surveyCode": "2151",
-          "surveyEn": "Monthly Electricity Supply and Disposition Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur l'approvisionnement et l'\u00e9coulement de l'\u00e9lectricit\u00e9"
-        },
-        {
-          "surveyCode": "2152",
-          "surveyEn": "Business Conditions Survey for the Manufacturing Industries",
-          "surveyFr": "Enqu\u00eate sur les perspectives  du monde des affaires pour les industries manufacturi\u00e8res"
-        },
-        {
-          "surveyCode": "2154",
-          "surveyEn": "Production of Selected Biscuits",
-          "surveyFr": "Production de certains biscuits"
-        },
-        {
-          "surveyCode": "2156",
-          "surveyEn": "Tea and Coffee",
-          "surveyFr": "Th\u00e9 et caf\u00e9"
-        },
-        {
-          "surveyCode": "2161",
-          "surveyEn": "Semi-annual Shipments of Office Furniture Products",
-          "surveyFr": "Livraisons semestrielles des produits de meubles de bureau"
-        },
-        {
-          "surveyCode": "2166",
-          "surveyEn": "Quarterly Industrial Consumption of Energy Survey",
-          "surveyFr": "Enqu\u00eate trimestrielle sur la consommation industrielle d'\u00e9nergie"
-        },
-        {
-          "surveyCode": "2167",
-          "surveyEn": "Annual End-Use of Natural Gas Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur l'utilisation finale du gaz naturel"
-        },
-        {
-          "surveyCode": "2168",
-          "surveyEn": "Annual Survey on End-Use of Refined Petroleum Products",
-          "surveyFr": "Enqu\u00eate annuelle sur l'utilisation finale des produits p\u00e9troliers raffin\u00e9s"
-        },
-        {
-          "surveyCode": "2177",
-          "surveyEn": "Coal Mines Annual",
-          "surveyFr": "Mines de charbon annuel"
-        },
-        {
-          "surveyCode": "2178",
-          "surveyEn": "Annual Oil and Gas Extraction Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur l'extraction de p\u00e9trole et de gaz"
-        },
-        {
-          "surveyCode": "2179",
-          "surveyEn": "Oil Pipeline Annual",
-          "surveyFr": "Enqu\u00eate annuelle des ol\u00e9oducs"
-        },
-        {
-          "surveyCode": "2180",
-          "surveyEn": "Natural Gas Transport and Distribution Annual",
-          "surveyFr": "Transport et distribution de gaz naturel annuel"
-        },
-        {
-          "surveyCode": "2181",
-          "surveyEn": "Electric Power Capability and Load",
-          "surveyFr": "Puissance \u00e9lectrique et d'\u00e9lectricit\u00e9"
-        },
-        {
-          "surveyCode": "2183",
-          "surveyEn": "Industrial Chemicals and Synthetic Resins",
-          "surveyFr": "Produits chimiques industriels et r\u00e9sines synth\u00e9tiques"
-        },
-        {
-          "surveyCode": "2184",
-          "surveyEn": "Disposition of Shipments of Ingots and Rolled Steel Products",
-          "surveyFr": "\u00c9coulement des livraisons de lingots et de laminages d'acier"
-        },
-        {
-          "surveyCode": "2187",
-          "surveyEn": "Confectionery",
-          "surveyFr": "Confiserie"
-        },
-        {
-          "surveyCode": "2189",
-          "surveyEn": "Shipments of Solid Fuel Burning Heating Products",
-          "surveyFr": "Livraisons des produits de chauffage \u00e0 combustible solide"
-        },
-        {
-          "surveyCode": "2191",
-          "surveyEn": "Monthly Oil Pipeline Statement",
-          "surveyFr": "\u00c9tat mensuel des r\u00e9sultats d'exploitation"
-        },
-        {
-          "surveyCode": "2192",
-          "surveyEn": "Factory Shipments of High Pressure Decorative Laminate Sheet",
-          "surveyFr": "Livraisons d\u00e9part usine de feuilles ornementales stratifi\u00e9es sous haute pression"
-        },
-        {
-          "surveyCode": "2193",
-          "surveyEn": "Annual Electric Power Generating Stations Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur les centrales d'\u00e9nergie \u00e9lectrique"
-        },
-        {
-          "surveyCode": "2194",
-          "surveyEn": "Annual Electricity Supply and Disposition Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur l'approvisionnement et l'\u00e9coulement de l'\u00e9lectricit\u00e9"
-        },
-        {
-          "surveyCode": "2196",
-          "surveyEn": "Annual Survey of Electric Power Thermal Generating Station Fuel Consumption",
-          "surveyFr": "Enqu\u00eate annuelle sur la consommation de combustibles de centrales thermiques d'\u00e9nergie \u00e9lectrique"
-        },
-        {
-          "surveyCode": "2198",
-          "surveyEn": "Crude Oil and Natural Gas",
-          "surveyFr": "P\u00e9trole brut et gaz naturel"
-        },
-        {
-          "surveyCode": "2201",
-          "surveyEn": "Canadian International Merchandise Trade (Customs Basis)",
-          "surveyFr": "Commerce international de marchandises du Canada (base douani\u00e8re)"
-        },
-        {
-          "surveyCode": "2202",
-          "surveyEn": "Canadian International Merchandise Trade (Balance of Payments Basis)",
-          "surveyFr": "Commerce international de marchandises du Canada (base de la balance de paiements)"
-        },
-        {
-          "surveyCode": "2203",
-          "surveyEn": "International Merchandise Trade Price Index",
-          "surveyFr": "Indice des prix du commerce international de marchandises"
-        },
-        {
-          "surveyCode": "2301",
-          "surveyEn": "Consumer Price Index",
-          "surveyFr": "Indice des prix \u00e0 la consommation"
-        },
-        {
-          "surveyCode": "2303",
-          "surveyEn": "Precast Concrete Price Indexes",
-          "surveyFr": "Indices des prix du b\u00e9ton pr\u00e9fabriqu\u00e9"
-        },
-        {
-          "surveyCode": "2304",
-          "surveyEn": "Fabricated Structural Steel Price Indexes",
-          "surveyFr": "Indices des prix de l'acier de charpente semi-ouvr\u00e9"
-        },
-        {
-          "surveyCode": "2305",
-          "surveyEn": "Farm Input Price Index",
-          "surveyFr": "Indice des prix des entr\u00e9es dans l'agriculture"
-        },
-        {
-          "surveyCode": "2306",
-          "surveyEn": "Raw Materials Price Index",
-          "surveyFr": "Indice des prix des mati\u00e8res brutes"
-        },
-        {
-          "surveyCode": "2307",
-          "surveyEn": "Construction Union Wage Rate Index",
-          "surveyFr": "Indice des taux de salaires syndicaux dans la construction"
-        },
-        {
-          "surveyCode": "2308",
-          "surveyEn": "Residential Building Construction Input Price Indexes",
-          "surveyFr": "Indices des prix des entr\u00e9es dans la construction r\u00e9sidentielle"
-        },
-        {
-          "surveyCode": "2310",
-          "surveyEn": "New Housing Price Index",
-          "surveyFr": "Indice des prix des logements neufs"
-        },
-        {
-          "surveyCode": "2311",
-          "surveyEn": "Highway Construction Price Indexes",
-          "surveyFr": "Indices des prix de la construction routi\u00e8re"
-        },
-        {
-          "surveyCode": "2312",
-          "surveyEn": "Machinery and Equipment Price Index",
-          "surveyFr": "Indice des prix des machines et du mat\u00e9riel"
-        },
-        {
-          "surveyCode": "2314",
-          "surveyEn": "Chemical and Mineral Process Plant Price Indexes",
-          "surveyFr": "Indices des prix des installations de traitement des produits chimiques et min\u00e9raux"
-        },
-        {
-          "surveyCode": "2315",
-          "surveyEn": "Chemical and Petrochemical Process Plant Price Index",
-          "surveyFr": "Indices des prix des installations de traitement des produits chimiques et p\u00e9trochimiques"
-        },
-        {
-          "surveyCode": "2316",
-          "surveyEn": "Electric Utility Construction Price Index",
-          "surveyFr": "Indice des prix \u00e0 la construction dans les services d'\u00e9lectricit\u00e9"
-        },
-        {
-          "surveyCode": "2317",
-          "surveyEn": "Building Construction Price Index",
-          "surveyFr": "Indice des prix de la construction de b\u00e2timents"
-        },
-        {
-          "surveyCode": "2318",
-          "surveyEn": "Industrial Product Price Index",
-          "surveyFr": "Indice des prix des produits industriels"
-        },
-        {
-          "surveyCode": "2319",
-          "surveyEn": "Telecommunications Plant Price Index",
-          "surveyFr": "Indice des prix des installations de t\u00e9l\u00e9communications"
-        },
-        {
-          "surveyCode": "2321",
-          "surveyEn": "Isolated Posts Allowance Indexes (Living Cost Differential Indexes)",
-          "surveyFr": "Indices sur les postes isol\u00e9s (Indices d'indemnit\u00e9 de vie ch\u00e8re)"
-        },
-        {
-          "surveyCode": "2322",
-          "surveyEn": "Canadian Foreign Post Indexes",
-          "surveyFr": "Indices de missions canadiennes \u00e0 l'\u00e9tranger"
-        },
-        {
-          "surveyCode": "2324",
-          "surveyEn": "Construction Building Materials Price Index",
-          "surveyFr": "Indice des prix des mat\u00e9riaux de la construction"
-        },
-        {
-          "surveyCode": "2325",
-          "surveyEn": "Electric Power Selling Price Indexes for Non-residential Customers",
-          "surveyFr": "Indices des prix de vente de l'\u00e9nergie \u00e9lectrique pour les acheteurs non r\u00e9sidentiels"
-        },
-        {
-          "surveyCode": "2328",
-          "surveyEn": "Consulting Engineering Services Price Index",
-          "surveyFr": "Indice des prix des services d'ing\u00e9nierie conseil"
-        },
-        {
-          "surveyCode": "2329",
-          "surveyEn": "Selected Financial Indexes",
-          "surveyFr": "Certains indices financiers"
-        },
-        {
-          "surveyCode": "2330",
-          "surveyEn": "Apartment Building Construction Price Index",
-          "surveyFr": "Indice des prix de construction d'immeubles d'appartements"
-        },
-        {
-          "surveyCode": "2333",
-          "surveyEn": "Informatics Professional Services Price Indexes",
-          "surveyFr": "Indices des prix des services professionnels en informatique"
-        },
-        {
-          "surveyCode": "2334",
-          "surveyEn": "Accounting Services Price Index",
-          "surveyFr": "Indice des prix des services de comptabilit\u00e9"
-        },
-        {
-          "surveyCode": "2336",
-          "surveyEn": "Traveller Accommodation Services Price Index",
-          "surveyFr": "Indice des prix des services d'h\u00e9bergement des voyageurs"
-        },
-        {
-          "surveyCode": "2401",
-          "surveyEn": "Monthly Wholesale Trade Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur le commerce de gros"
-        },
-        {
-          "surveyCode": "2402",
-          "surveyEn": "Monthly New Motor Vehicle Sales Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur les ventes de v\u00e9hicules automobiles neufs"
-        },
-        {
-          "surveyCode": "2404",
-          "surveyEn": "Vending Machine Operators",
-          "surveyFr": "Exploitants de distributeurs automatiques"
-        },
-        {
-          "surveyCode": "2405",
-          "surveyEn": "Direct Selling in Canada",
-          "surveyFr": "Vente directe au Canada"
-        },
-        {
-          "surveyCode": "2406",
-          "surveyEn": "Retail Trade Survey (Monthly)",
-          "surveyFr": "Enqu\u00eate sur le commerce de d\u00e9tail (mensuelle)"
-        },
-        {
-          "surveyCode": "2408",
-          "surveyEn": "Monthly Retail Trade Survey (Department Store Organizations)",
-          "surveyFr": "Enqu\u00eate mensuelle sur le commerce de d\u00e9tail - Organismes des grands magasins"
-        },
-        {
-          "surveyCode": "2409",
-          "surveyEn": "Retail Chains and Department Stores",
-          "surveyFr": "Magasins de d\u00e9tail \u00e0 succursales et les grands magasins"
-        },
-        {
-          "surveyCode": "2410",
-          "surveyEn": "Annual Survey of Service Industries: Software Development and Computer Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : d\u00e9veloppement de logiciels et services informatiques"
-        },
-        {
-          "surveyCode": "2413",
-          "surveyEn": "Survey of Service Industries: Film, Television and Video Production",
-          "surveyFr": "Enqu\u00eate sur les industries de services : production cin\u00e9matographique, t\u00e9l\u00e9visuelle et vid\u00e9o"
-        },
-        {
-          "surveyCode": "2414",
-          "surveyEn": "Survey of Service Industries: Film and Video Distribution",
-          "surveyFr": "Enqu\u00eate sur les industries de services : distribution de films cin\u00e9matographiques et de vid\u00e9os"
-        },
-        {
-          "surveyCode": "2415",
-          "surveyEn": "Survey of Service Industries: Film, Television and Video Post-production",
-          "surveyFr": "Enqu\u00eate sur les industries de services : postproduction cin\u00e9matographique, t\u00e9l\u00e9visuelle et vid\u00e9o"
-        },
-        {
-          "surveyCode": "2416",
-          "surveyEn": "Survey of Service Industries: Motion Picture Theatres",
-          "surveyFr": "Enqu\u00eate sur les industries de services : cin\u00e9mas"
-        },
-        {
-          "surveyCode": "2418",
-          "surveyEn": "Annual Survey of Service Industries: Accommodation Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services d'h\u00e9bergement"
-        },
-        {
-          "surveyCode": "2419",
-          "surveyEn": "Monthly Survey of Food Services and Drinking Places",
-          "surveyFr": "Enqu\u00eate mensuelle sur les services de restauration et d\u00e9bits de boissons"
-        },
-        {
-          "surveyCode": "2420",
-          "surveyEn": "Annual Survey of Service Industries: Architectural Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services d'architecture"
-        },
-        {
-          "surveyCode": "2422",
-          "surveyEn": "Retail Trade Survey (Annual)",
-          "surveyFr": "Enqu\u00eate sur le commerce de d\u00e9tail (annuelle)"
-        },
-        {
-          "surveyCode": "2423",
-          "surveyEn": "Annual Survey of Service Industries: Travel Arrangement Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services de pr\u00e9paration de voyages"
-        },
-        {
-          "surveyCode": "2424",
-          "surveyEn": "Annual Survey of Service Industries:  Personal Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services :  services personnels"
-        },
-        {
-          "surveyCode": "2425",
-          "surveyEn": "Annual Survey of Service Industries: Amusement and Recreation",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : divertissement et loisirs"
-        },
-        {
-          "surveyCode": "2430",
-          "surveyEn": "Annual Survey of Professional Accountants",
-          "surveyFr": "Enqu\u00eate annuelle aupr\u00e8s des comptables professionnels"
-        },
-        {
-          "surveyCode": "2433",
-          "surveyEn": "Annual Retail and Wholesale Trade Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le commerce de gros et d\u00e9tail"
-        },
-        {
-          "surveyCode": "2434",
-          "surveyEn": "Annual Survey of Service Industries: Consumer Goods Rental",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : location de biens de consommation"
-        },
-        {
-          "surveyCode": "2435",
-          "surveyEn": "Annual Survey of Services to Buildings and Dwellings",
-          "surveyFr": "Enqu\u00eate annuelle sur le secteur des services relatifs aux b\u00e2timents et aux logements"
-        },
-        {
-          "surveyCode": "2436",
-          "surveyEn": "Annual Survey of Investigation and Security Services",
-          "surveyFr": "Enqu\u00eate annuelle sur le secteur des services d'enqu\u00eates et de securit\u00e9"
-        },
-        {
-          "surveyCode": "2437",
-          "surveyEn": "Annual Survey of Service Industries: Advertising and Related Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services: publicit\u00e9 et services connexes"
-        },
-        {
-          "surveyCode": "2439",
-          "surveyEn": "Annual Survey of Service Industries: Engineering Services",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : services de g\u00e9nie"
-        },
-        {
-          "surveyCode": "2441",
-          "surveyEn": "Annual Survey of Service Industries: Commercial and Industrial Machinery and Equipment Rental and Leasing",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : location et location \u00e0 bail de machines et mat\u00e9riel d'usage commercial et industriel"
-        },
-        {
-          "surveyCode": "2442",
-          "surveyEn": "Annual Survey of Service Industries: Automotive Equipment Rental and Leasing",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services : location et location \u00e0 bail de mat\u00e9riel automobile"
-        },
-        {
-          "surveyCode": "2445",
-          "surveyEn": "Annual Wholesale Trade Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le commerce de gros"
-        },
-        {
-          "surveyCode": "2446",
-          "surveyEn": "Retail Store Survey (Annual)",
-          "surveyFr": "Enqu\u00eate sur les magasins de d\u00e9tail (annuelle)"
-        },
-        {
-          "surveyCode": "2447",
-          "surveyEn": "Annual Retail Trade Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le commerce de d\u00e9tail"
-        },
-        {
-          "surveyCode": "2448",
-          "surveyEn": "Annual Non-store Retail Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le commerce de d\u00e9tail hors magasin"
-        },
-        {
-          "surveyCode": "2501",
-          "surveyEn": "Quarterly Survey of Financial Statements",
-          "surveyFr": "Relev\u00e9 trimestriel des \u00e9tats financiers"
-        },
-        {
-          "surveyCode": "2502",
-          "surveyEn": "Corporations and Labour Unions Returns Act, Part 2 - Labour Unions",
-          "surveyFr": "Loi sur les d\u00e9clarations des corporations et des syndicats ouvriers, Partie 2 - Syndicats ouvriers"
-        },
-        {
-          "surveyCode": "2503",
-          "surveyEn": "Corporations Returns Act",
-          "surveyFr": "Loi sur les d\u00e9clarations des personnes morales"
-        },
-        {
-          "surveyCode": "2504",
-          "surveyEn": "Quarterly Survey of Financial Institutions",
-          "surveyFr": "Enqu\u00eate trimestrielle sur les institutions financi\u00e8res"
-        },
-        {
-          "surveyCode": "2505",
-          "surveyEn": "Credit Unions",
-          "surveyFr": "Caisses d'\u00e9pargne et de cr\u00e9dit"
-        },
-        {
-          "surveyCode": "2506",
-          "surveyEn": "Corporation Financial Statistics",
-          "surveyFr": "Statistique financi\u00e8re des soci\u00e9t\u00e9s"
-        },
-        {
-          "surveyCode": "2507",
-          "surveyEn": "Corporation Taxation Statistics",
-          "surveyFr": "Statistique fiscale des soci\u00e9t\u00e9s"
-        },
-        {
-          "surveyCode": "2510",
-          "surveyEn": "Financial and Taxation Statistics for Enterprises",
-          "surveyFr": "Statistiques financi\u00e8res et fiscales des entreprises"
-        },
-        {
-          "surveyCode": "2513",
-          "surveyEn": "Survey of Deposit-accepting Intermediaries: Chartered Banks, Trust Companies, Caisses Populaires and Credit Unions",
-          "surveyFr": "Enqu\u00eate aupr\u00e8s des interm\u00e9diaires financiers de d\u00e9p\u00f4ts : banques \u00e0 charte, soci\u00e9t\u00e9s de fiducie, caisses populaires et coop\u00e9ratives de cr\u00e9dit"
-        },
-        {
-          "surveyCode": "2514",
-          "surveyEn": "Biannual Survey of Suppliers of Business Financing",
-          "surveyFr": "Enqu\u00eate semestrielle aupr\u00e8s des fournisseurs de services de financement aux entreprises"
-        },
-        {
-          "surveyCode": "2601",
-          "surveyEn": "Labour Cost Survey",
-          "surveyFr": "Enqu\u00eate sur les co\u00fbts de main-d'oeuvre"
-        },
-        {
-          "surveyCode": "2602",
-          "surveyEn": "Estimates of Labour Income",
-          "surveyFr": "Estimations du revenu du travail"
-        },
-        {
-          "surveyCode": "2603",
-          "surveyEn": "Survey of Employment, Payrolls and Man-hours",
-          "surveyFr": "Enqu\u00eate sur l'emploi, la r\u00e9mun\u00e9ration et les heures-hommes"
-        },
-        {
-          "surveyCode": "2604",
-          "surveyEn": "Employment Insurance Statistics - Monthly",
-          "surveyFr": "Statistiques de l'assurance-emploi - Mensuel"
-        },
-        {
-          "surveyCode": "2605",
-          "surveyEn": "National Work Injuries Statistics Program",
-          "surveyFr": "Programme national de statistiques sur les accidents de travail"
-        },
-        {
-          "surveyCode": "2606",
-          "surveyEn": "Help Wanted Index Survey",
-          "surveyFr": "Enqu\u00eate sur l'indice de l'offre d'emploi"
-        },
-        {
-          "surveyCode": "2607",
-          "surveyEn": "Quarterly Estimates of Trusteed Pension Funds",
-          "surveyFr": "Estimations trimestrielles relatives aux caisses de retraite en fiducie"
-        },
-        {
-          "surveyCode": "2608",
-          "surveyEn": "Census of Trusteed Pension Funds",
-          "surveyFr": "Recensement des Caisses de retraite en fiducie"
-        },
-        {
-          "surveyCode": "2609",
-          "surveyEn": "Pension Plans in Canada",
-          "surveyFr": "R\u00e9gimes de pension au Canada"
-        },
-        {
-          "surveyCode": "2610",
-          "surveyEn": "Unemployment Insurance Statistics (Annual)",
-          "surveyFr": "Statistiques sur l'assurance-ch\u00f4mage (Annuel)"
-        },
-        {
-          "surveyCode": "2612",
-          "surveyEn": "Survey of Employment, Payrolls and Hours",
-          "surveyFr": "Enqu\u00eate sur l'emploi, la r\u00e9mun\u00e9ration et les heures de travail"
-        },
-        {
-          "surveyCode": "2614",
-          "surveyEn": "Business Payrolls Survey",
-          "surveyFr": "Enqu\u00eate sur la r\u00e9mun\u00e9ration aupr\u00e8s des entreprises"
-        },
-        {
-          "surveyCode": "2615",
-          "surveyEn": "Workplace and Employee Survey",
-          "surveyFr": "Enqu\u00eate sur le milieu de travail et les employ\u00e9s"
-        },
-        {
-          "surveyCode": "2620",
-          "surveyEn": "Survey of Financial Security",
-          "surveyFr": "Enqu\u00eate sur la s\u00e9curit\u00e9 financi\u00e8re"
-        },
-        {
-          "surveyCode": "2701",
-          "surveyEn": "Airport Activity Survey",
-          "surveyFr": "Enqu\u00eate sur l'activit\u00e9 a\u00e9roportuaire"
-        },
-        {
-          "surveyCode": "2702",
-          "surveyEn": "Air Passenger Origin and Destination, Domestic Journeys",
-          "surveyFr": "Origine et destination des passagers a\u00e9riens, voyages int\u00e9rieurs"
-        },
-        {
-          "surveyCode": "2703",
-          "surveyEn": "Air Passenger Origin and Destination, Canada-U.S.A.",
-          "surveyFr": "Origine et destination des passagers a\u00e9riens, Canada - \u00c9tats-Unis"
-        },
-        {
-          "surveyCode": "2704",
-          "surveyEn": "Coupon Passenger Origin and Destination Report - Other Unit Toll Services",
-          "surveyFr": "Relev\u00e9 de l'origine et de la destination des passagers d'apr\u00e8s le coupon"
-        },
-        {
-          "surveyCode": "2705",
-          "surveyEn": "Air Charter Statistics",
-          "surveyFr": "Statistiques des affr\u00e8tements a\u00e9riens"
-        },
-        {
-          "surveyCode": "2708",
-          "surveyEn": "Fare Basis Survey",
-          "surveyFr": "Enqu\u00eate sur la base tarifaire"
-        },
-        {
-          "surveyCode": "2712",
-          "surveyEn": "Quarterly Civil Aviation Survey",
-          "surveyFr": "Enqu\u00eate trimestrielle sur l'aviation civile"
-        },
-        {
-          "surveyCode": "2713",
-          "surveyEn": "Annual Civil Aviation Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur l'aviation civile"
-        },
-        {
-          "surveyCode": "2715",
-          "surveyEn": "Aircraft Movement Statistics",
-          "surveyFr": "Statistiques relatives aux mouvements des a\u00e9ronefs"
-        },
-        {
-          "surveyCode": "2721",
-          "surveyEn": "Quarterly Survey of Telecommunications",
-          "surveyFr": "Enqu\u00eate trimestrielle des t\u00e9l\u00e9communications"
-        },
-        {
-          "surveyCode": "2722",
-          "surveyEn": "Annual Survey of Telecommunications",
-          "surveyFr": "Enqu\u00eate annuelle des t\u00e9l\u00e9communications"
-        },
-        {
-          "surveyCode": "2724",
-          "surveyEn": "Radio and Television Broadcasting Survey",
-          "surveyFr": "Enqu\u00eate sur la radiodiffusion et la t\u00e9l\u00e9diffusion"
-        },
-        {
-          "surveyCode": "2728",
-          "surveyEn": "Annual Cable Television Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur la t\u00e9l\u00e9distribution"
-        },
-        {
-          "surveyCode": "2732",
-          "surveyEn": "Monthly Railway Carloadings Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur les chargements ferroviaires"
-        },
-        {
-          "surveyCode": "2734",
-          "surveyEn": "Annual Survey on Rail Transportation",
-          "surveyFr": "Enqu\u00eate annuelle sur le transport ferroviaire"
-        },
-        {
-          "surveyCode": "2735",
-          "surveyEn": "Railway Operating Statistics Survey",
-          "surveyFr": "Enqu\u00eate sur les statistiques de l'exploitation ferroviaire"
-        },
-        {
-          "surveyCode": "2736",
-          "surveyEn": "Rail Commodity Origin and Destination Statistics",
-          "surveyFr": "Statistiques sur l'origine et la destination des marchandises transport\u00e9es par chemin de fer"
-        },
-        {
-          "surveyCode": "2741",
-          "surveyEn": "Trucking Commodity Origin and Destination Survey",
-          "surveyFr": "Enqu\u00eate sur l'origine et la destination des marchandises transport\u00e9es par camion"
-        },
-        {
-          "surveyCode": "2742",
-          "surveyEn": "Annual Trucking Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le camionnage"
-        },
-        {
-          "surveyCode": "2743",
-          "surveyEn": "Passenger Bus Statistics",
-          "surveyFr": "Statistique du transport des voyageurs par autobus"
-        },
-        {
-          "surveyCode": "2744",
-          "surveyEn": "Intercity and Rural Passenger Bus Survey",
-          "surveyFr": "Enqu\u00eate sur le transport interurbain et rural de voyageurs par autobus"
-        },
-        {
-          "surveyCode": "2745",
-          "surveyEn": "Monthly Passenger Bus and Urban Transit Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur le transport de passagers par autobus et le transport urbain"
-        },
-        {
-          "surveyCode": "2746",
-          "surveyEn": "Gasoline and Other Petroleum Fuels Sold",
-          "surveyFr": "Essence et autres combustibles de p\u00e9trole vendus"
-        },
-        {
-          "surveyCode": "2747",
-          "surveyEn": "Vehicle Registrations",
-          "surveyFr": "Immatriculations de v\u00e9hicules"
-        },
-        {
-          "surveyCode": "2748",
-          "surveyEn": "Quarterly Trucking Survey",
-          "surveyFr": "Enqu\u00eate trimestrielle sur le camionnage"
-        },
-        {
-          "surveyCode": "2749",
-          "surveyEn": "Fuel Consumption Survey",
-          "surveyFr": "Enqu\u00eate sur la consommation de carburant"
-        },
-        {
-          "surveyCode": "2751",
-          "surveyEn": "Coastwise Shipping Survey",
-          "surveyFr": "Enqu\u00eate sur le cabotage"
-        },
-        {
-          "surveyCode": "2753",
-          "surveyEn": "Financial Survey of Canadian Water Carriers",
-          "surveyFr": "Enqu\u00eate financi\u00e8re des transporteurs par eau canadiens"
-        },
-        {
-          "surveyCode": "2791",
-          "surveyEn": "Marine International Freight Origin and Destination Survey",
-          "surveyFr": "Enqu\u00eate sur l'origine et la destination des marchandises au titre du transport maritime international"
-        },
-        {
-          "surveyCode": "2797",
-          "surveyEn": "Passenger Bus\/Urban Transit Survey - Quarterly",
-          "surveyFr": "Enqu\u00eate trimestrielle sur le transport des voyageurs par autobus et le transport urbain"
-        },
-        {
-          "surveyCode": "2798",
-          "surveyEn": "Annual Passenger Bus and Urban Transit Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le transport de passagers par autobus et le transport urbain"
-        },
-        {
-          "surveyCode": "2800",
-          "surveyEn": "Annual Survey of Small For-Hire Carriers of Freight and Owner-Operators",
-          "surveyFr": "Enqu\u00eate annuelle sur les petits transporteurs routiers de marchandises pour compte d'autrui et les chauffeurs contractants"
-        },
-        {
-          "surveyCode": "2802",
-          "surveyEn": "Building Permits",
-          "surveyFr": "Permis de b\u00e2tir"
-        },
-        {
-          "surveyCode": "2803",
-          "surveyEn": "Annual Capital and Repair Expenditures Survey: Actual, Preliminary Actual and Intentions",
-          "surveyFr": "Enqu\u00eate annuelle sur les d\u00e9penses en immobilisations et r\u00e9parations : r\u00e9elles, provisoires, perspectives"
-        },
-        {
-          "surveyCode": "2820",
-          "surveyEn": "Stock and Consumption of Fixed Non-residential Capital",
-          "surveyFr": "Stock et consommation de capital fixe non r\u00e9sidentiel"
-        },
-        {
-          "surveyCode": "2821",
-          "surveyEn": "Capacity Utilization Rates",
-          "surveyFr": "Taux d'utilisation de la capacit\u00e9"
-        },
-        {
-          "surveyCode": "2917",
-          "surveyEn": "Survey on Fluid Power Products Manufactured in Canada",
-          "surveyFr": "Enqu\u00eate sur les dispositifs de transmission d'\u00e9nergie par fluide fabriqu\u00e9s au Canada"
-        },
-        {
-          "surveyCode": "2920",
-          "surveyEn": "Provincial Wage and Salary Survey",
-          "surveyFr": "Enqu\u00eate sur les traitements et salaires dans les provinces"
-        },
-        {
-          "surveyCode": "2925",
-          "surveyEn": "Survey of Canada's Tourist Attractions",
-          "surveyFr": "Enqu\u00eate sur les attractions touristiques du Canada"
-        },
-        {
-          "surveyCode": "2927",
-          "surveyEn": "Canadian Aquaculture Industry Survey",
-          "surveyFr": "Enqu\u00eate sur l'industrie canadienne de l'aquaculture"
-        },
-        {
-          "surveyCode": "2933",
-          "surveyEn": "Canadian Defence, Aerospace and Marine Industries Survey",
-          "surveyFr": "Enqu\u00eate sur les industries canadiennes de la d\u00e9fense, de l'a\u00e9rospatiale et de la marine"
-        },
-        {
-          "surveyCode": "2935",
-          "surveyEn": "National Construction Industry Wage Rate Survey",
-          "surveyFr": "Enqu\u00eate nationale sur les taux salariaux dans le secteur de la construction"
-        },
-        {
-          "surveyCode": "2936",
-          "surveyEn": "Survey of Growing Innovative Firms",
-          "surveyFr": "Enqu\u00eate sur les entreprises innovatrices en expension"
-        },
-        {
-          "surveyCode": "2939",
-          "surveyEn": "Survey of Information Technology Occupations",
-          "surveyFr": "Enqu\u00eate  sur les professions reli\u00e9es aux technologies de l'information"
-        },
-        {
-          "surveyCode": "2941",
-          "surveyEn": "Survey on Financing and Growth of Small and Medium Enterprises",
-          "surveyFr": "Enqu\u00eate sur le financement et la croissance des petites et moyennes entreprises"
-        },
-        {
-          "surveyCode": "2943",
-          "surveyEn": "Commercial and Institutional Buildings Energy Use Survey",
-          "surveyFr": "Enqu\u00eate sur la consommation d'\u00e9nergie par les b\u00e2timents commerciaux et institutionnels"
-        },
-        {
-          "surveyCode": "2944",
-          "surveyEn": "Survey of Adventure Travel Operations in Canada",
-          "surveyFr": "Enqu\u00eate aupr\u00e8s des entreprises de tourisme d'aventure au Canada"
-        },
-        {
-          "surveyCode": "2946",
-          "surveyEn": "Employment Dynamics",
-          "surveyFr": "Variations de l'emploi"
-        },
-        {
-          "surveyCode": "2947",
-          "surveyEn": "Survey of the Medical Devices Industry",
-          "surveyFr": "Enqu\u00eate sur l'industrie des mat\u00e9riels m\u00e9dicaux"
-        },
-        {
-          "surveyCode": "3101",
-          "surveyEn": "University and College Academic Staff System - Full-time Staff",
-          "surveyFr": "Syst\u00e8me d'information sur le personnel d'enseignement dans les universit\u00e9s et les coll\u00e8ges - Personnel enseignant \u00e0 plein temps"
-        },
-        {
-          "surveyCode": "3105",
-          "surveyEn": "Survey of Service Industries: Book Publishers",
-          "surveyFr": "Enqu\u00eate sur les industries de services : \u00e9diteurs de livres"
-        },
-        {
-          "surveyCode": "3107",
-          "surveyEn": "Annual Survey of Service Industries: Heritage Institutions",
-          "surveyFr": "Enqu\u00eate annuelle sur les industries de services :  \u00e9tablissements du patrimoine"
-        },
-        {
-          "surveyCode": "3108",
-          "surveyEn": "Survey of Service Industries: Performing Arts",
-          "surveyFr": "Enqu\u00eate sur les industries de services : Arts de la sc\u00e8ne"
-        },
-        {
-          "surveyCode": "3114",
-          "surveyEn": "Television Viewing Databank",
-          "surveyFr": "Banque de donn\u00e9es sur l'\u00e9coute de la t\u00e9l\u00e9vision"
-        },
-        {
-          "surveyCode": "3115",
-          "surveyEn": "Survey of Service Industries: Sound Recording and Music Publishing",
-          "surveyFr": "Enqu\u00eate sur les industries de services : enregistrement sonore et \u00e9dition de musique"
-        },
-        {
-          "surveyCode": "3116",
-          "surveyEn": "Survey of Provincial\/Territorial Government Expenditures on Culture",
-          "surveyFr": "Enqu\u00eate sur les d\u00e9penses des administrations provinciales\/territoriales au titre de la culture"
-        },
-        {
-          "surveyCode": "3117",
-          "surveyEn": "Survey of Federal Government Expenditures on Culture",
-          "surveyFr": "Enqu\u00eate sur les d\u00e9penses d'administration f\u00e9d\u00e9rale au titre de la culture"
-        },
-        {
-          "surveyCode": "3119",
-          "surveyEn": "Survey of Uniform Financial System - School Boards",
-          "surveyFr": "Enqu\u00eate sur le syst\u00e8me int\u00e9gr\u00e9 d'information financi\u00e8re sur les commissions scolaires"
-        },
-        {
-          "surveyCode": "3120",
-          "surveyEn": "Survey of Financial Statistics of Private Elementary and Secondary Schools",
-          "surveyFr": "Enqu\u00eate sur les statistiques financi\u00e8res des \u00e9coles priv\u00e9es primaires et secondaires"
-        },
-        {
-          "surveyCode": "3121",
-          "surveyEn": "Financial Information of Universities Survey",
-          "surveyFr": "Enqu\u00eate sur l'information financi\u00e8re des universit\u00e9s"
-        },
-        {
-          "surveyCode": "3122",
-          "surveyEn": "Community College Student Information System",
-          "surveyFr": "Syst\u00e8me d'information statistique sur la client\u00e8le des coll\u00e8ges communautaires"
-        },
-        {
-          "surveyCode": "3123",
-          "surveyEn": "Tuition and Living Accommodation Costs",
-          "surveyFr": "Frais de scolarit\u00e9 et de subsistance"
-        },
-        {
-          "surveyCode": "3124",
-          "surveyEn": "University Student Information System",
-          "surveyFr": "Syst\u00e8me d'information statistique sur la client\u00e8le universitaire"
-        },
-        {
-          "surveyCode": "3125",
-          "surveyEn": "Annual College and Related Institutions Educational Staff Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur le personnel enseignant des coll\u00e8ges et \u00e9tablissements analogues"
-        },
-        {
-          "surveyCode": "3126",
-          "surveyEn": "Survey of Earned Doctorates",
-          "surveyFr": "Enqu\u00eate aupr\u00e8s des titulaires d'un doctorat"
-        },
-        {
-          "surveyCode": "3127",
-          "surveyEn": "Elementary\/Secondary Education Staff Survey",
-          "surveyFr": "Enqu\u00eate sur les caract\u00e9ristiques du personnel scolaire des \u00e9coles primaires et secondaires"
-        },
-        {
-          "surveyCode": "3128",
-          "surveyEn": "Elementary\/Secondary School Enrolment",
-          "surveyFr": "Effectifs des \u00e9coles primaires et secondaires"
-        },
-        {
-          "surveyCode": "3129",
-          "surveyEn": "Minority and Second Language Education, Elementary and Secondary Independent Schools",
-          "surveyFr": "Enseignement dans la langue de la minorit\u00e9 et dans la langue seconde - \u00c9coles primaires et secondaires ind\u00e9pendantes"
-        },
-        {
-          "surveyCode": "3131",
-          "surveyEn": "Degrees, Diplomas and Certificates Granted by Universities",
-          "surveyFr": "Grades, dipl\u00f4mes et certificats d\u00e9cern\u00e9s par les universit\u00e9s"
-        },
-        {
-          "surveyCode": "3139",
-          "surveyEn": "Periodical Publishing Survey",
-          "surveyFr": "Enqu\u00eate sur l'\u00e9dition du p\u00e9riodique"
-        },
-        {
-          "surveyCode": "3140",
-          "surveyEn": "Survey of Federal Government Expenditures in Support of Education",
-          "surveyFr": "Enqu\u00eate sur les d\u00e9penses du gouvernement f\u00e9d\u00e9ral au titre de l'\u00e9ducation"
-        },
-        {
-          "surveyCode": "3141",
-          "surveyEn": "Provincial Expenditures on Education in Reform and Correctional Institutions",
-          "surveyFr": "D\u00e9penses provinciales au titre de l'\u00e9ducation dans les maisons de r\u00e9habilitation et de correction"
-        },
-        {
-          "surveyCode": "3142",
-          "surveyEn": "Trade\/Vocational Enrolment Survey",
-          "surveyFr": "Enqu\u00eate sur les effectifs des programmes de formation professionnelle au niveau des m\u00e9tiers"
-        },
-        {
-          "surveyCode": "3144",
-          "surveyEn": "Education Price Index",
-          "surveyFr": "Indice des prix a l'enseignement"
-        },
-        {
-          "surveyCode": "3146",
-          "surveyEn": "Financial Information of Colleges",
-          "surveyFr": "Information financi\u00e8re des coll\u00e8ges"
-        },
-        {
-          "surveyCode": "3147",
-          "surveyEn": "Continuing Education Survey",
-          "surveyFr": "Enqu\u00eate sur l'\u00e9ducation permanente"
-        },
-        {
-          "surveyCode": "3152",
-          "surveyEn": "International Travel Survey: Electronic questionnaires and Air Exit Survey",
-          "surveyFr": "Enqu\u00eate sur les voyages internationaux : questionnaires \u00e9lectroniques et Enqu\u00eate sur les d\u00e9parts a\u00e9riens"
-        },
-        {
-          "surveyCode": "3153",
-          "surveyEn": "Radio Listening Databank",
-          "surveyFr": "Banque de donn\u00e9es sur l'\u00e9coute de la radio"
-        },
-        {
-          "surveyCode": "3154",
-          "surveyEn": "Registered Apprenticeship Information System",
-          "surveyFr": "Syst\u00e8me d'information sur les apprentis inscrits"
-        },
-        {
-          "surveyCode": "3156",
-          "surveyEn": "School Leavers Survey",
-          "surveyFr": "Enqu\u00eate aupr\u00e8s des sortants"
-        },
-        {
-          "surveyCode": "3160",
-          "surveyEn": "National Apprenticeship Survey",
-          "surveyFr": "Enqu\u00eate nationale aupr\u00e8s des apprentis"
-        },
-        {
-          "surveyCode": "3161",
-          "surveyEn": "University and College Academic Staff System - Part-time Staff",
-          "surveyFr": "Syst\u00e8me d'information sur le personnel d'enseignement dans les universit\u00e9s et les coll\u00e8ges - Personnel \u00e0 temps partiel"
-        },
-        {
-          "surveyCode": "3163",
-          "surveyEn": "Survey of Providers of Training in English or French as a Second Language",
-          "surveyFr": "Enqu\u00eate aupr\u00e8s des fournisseurs de formation en anglais ou en fran\u00e7ais langue seconde au Canada"
-        },
-        {
-          "surveyCode": "3166",
-          "surveyEn": "Survey on Education in the Minority-Language and Second-Language at the Postsecondary Level",
-          "surveyFr": "Enqu\u00eate sur l'enseignement  dans la langue de la minorit\u00e9 et dans la langue seconde au niveau postsecondaire"
-        },
-        {
-          "surveyCode": "3167",
-          "surveyEn": "Survey of Activity with International Financial Institutions",
-          "surveyFr": "Enqu\u00eate sur l'activit\u00e9 dans le secteur des institutions financi\u00e8res Internationales"
-        },
-        {
-          "surveyCode": "3203",
-          "surveyEn": "Hospital Morbidity Database",
-          "surveyFr": "Base de donn\u00e9es sur la morbidit\u00e9 hospitali\u00e8re"
-        },
-        {
-          "surveyCode": "3204",
-          "surveyEn": "Mental Health Statistics",
-          "surveyFr": "La statistique de l'hygi\u00e8ne mentale"
-        },
-        {
-          "surveyCode": "3207",
-          "surveyEn": "Canadian Cancer Registry",
-          "surveyFr": "Registre canadien du cancer"
-        },
-        {
-          "surveyCode": "3208",
-          "surveyEn": "Annual Return of Health Care Facilities - Hospitals",
-          "surveyFr": "Rapport annuel des \u00e9tablissements de sant\u00e9 - H\u00f4pitaux"
-        },
-        {
-          "surveyCode": "3209",
-          "surveyEn": "Therapeutic Abortion Survey",
-          "surveyFr": "Enqu\u00eate sur les avortements th\u00e9rapeutiques"
-        },
-        {
-          "surveyCode": "3210",
-          "surveyEn": "Private nursing and residential care facilities",
-          "surveyFr": "\u00c9tablissements priv\u00e9 de soins infirmiers et de soins pour b\u00e9n\u00e9ficiaires internes"
-        },
-        {
-          "surveyCode": "3217",
-          "surveyEn": "Canada Health Survey",
-          "surveyFr": "Enqu\u00eate sant\u00e9 Canada"
-        },
-        {
-          "surveyCode": "3225",
-          "surveyEn": "National Population Health Survey: Household Component, Longitudinal",
-          "surveyFr": "Enqu\u00eate nationale sur la sant\u00e9 de la population : Volet m\u00e9nages, longitudinal"
-        },
-        {
-          "surveyCode": "3226",
-          "surveyEn": "Canadian Community Health Survey - Annual Component",
-          "surveyFr": "Enqu\u00eate sur la sant\u00e9 dans les collectivit\u00e9s canadiennes - Composante annuelle"
-        },
-        {
-          "surveyCode": "3231",
-          "surveyEn": "Vital Statistics - Birth Database",
-          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les naissances"
-        },
-        {
-          "surveyCode": "3232",
-          "surveyEn": "Vital Statistics - Marriage Database",
-          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les mariages"
-        },
-        {
-          "surveyCode": "3233",
-          "surveyEn": "Vital Statistics - Death Database",
-          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les d\u00e9c\u00e8s"
-        },
-        {
-          "surveyCode": "3234",
-          "surveyEn": "Vital Statistics - Stillbirth Database",
-          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les mortinaissances"
-        },
-        {
-          "surveyCode": "3235",
-          "surveyEn": "Vital Statistics - Divorce Database",
-          "surveyFr": "Statistique de l'\u00e9tat civil - Base de donn\u00e9es sur les divorces"
-        },
-        {
-          "surveyCode": "3236",
-          "surveyEn": "National Population Health Survey: Household Component, Cross-sectional",
-          "surveyFr": "Enqu\u00eate nationale sur la sant\u00e9 de la population : Volet m\u00e9nages - transversal"
-        },
-        {
-          "surveyCode": "3250",
-          "surveyEn": "Indigenous Peoples Survey",
-          "surveyFr": "Enqu\u00eate aupr\u00e8s des peuples autochtones"
-        },
-        {
-          "surveyCode": "3251",
-          "surveyEn": "Canadian Survey on Disability",
-          "surveyFr": "Enqu\u00eate canadienne sur l'incapacit\u00e9"
-        },
-        {
-          "surveyCode": "3252",
-          "surveyEn": "Health and Activity Limitation Survey : Institutional Component",
-          "surveyFr": "Enqu\u00eate sur la sant\u00e9 et les limitations d'activit\u00e9s : \u00c9tablissements"
-        },
-        {
-          "surveyCode": "3301",
-          "surveyEn": "Police Administration Survey",
-          "surveyFr": "Enqu\u00eate sur l'administration polici\u00e8re"
-        },
-        {
-          "surveyCode": "3302",
-          "surveyEn": "Uniform Crime Reporting Survey",
-          "surveyFr": "Programme de d\u00e9claration uniforme de la criminalit\u00e9"
-        },
-        {
-          "surveyCode": "3306",
-          "surveyEn": "Adult Correctional Services",
-          "surveyFr": "Services correctionnels pour adultes"
-        },
-        {
-          "surveyCode": "3308",
-          "surveyEn": "Legal Aid Survey",
-          "surveyFr": "Enqu\u00eate sur l'aide juridique"
-        },
-        {
-          "surveyCode": "3309",
-          "surveyEn": "Youth Court Survey",
-          "surveyFr": "Enqu\u00eate sur les tribunaux de la jeunesse"
-        },
-        {
-          "surveyCode": "3310",
-          "surveyEn": "Courts Resources, Expenditures and Personnel Survey",
-          "surveyFr": "Enqu\u00eate des ressources, d\u00e9penses et personnel des tribunaux"
-        },
-        {
-          "surveyCode": "3312",
-          "surveyEn": "Integrated Criminal Court Survey",
-          "surveyFr": "Enqu\u00eate int\u00e9gr\u00e9e sur les tribunaux de juridiction criminelle"
-        },
-        {
-          "surveyCode": "3313",
-          "surveyEn": "Corrections Key Indicator Report for Adults and Youth",
-          "surveyFr": "Rapport sur les indicateurs cl\u00e9s des services correctionnels pour les adultes et les jeunes"
-        },
-        {
-          "surveyCode": "3315",
-          "surveyEn": "Homicide Survey",
-          "surveyFr": "Enqu\u00eate sur l'homicide"
-        },
-        {
-          "surveyCode": "3322",
-          "surveyEn": "Prosecutorial Services in Canada",
-          "surveyFr": "Services en mati\u00e8re de poursuites au Canada"
-        },
-        {
-          "surveyCode": "3323",
-          "surveyEn": "Youth Custody and Community Services",
-          "surveyFr": "Services communautaires et le placement sous garde des jeunes"
-        },
-        {
-          "surveyCode": "3324",
-          "surveyEn": "Survey of Maintenance Enforcement Programs",
-          "surveyFr": "L'Enqu\u00eate sur les programmes d'ex\u00e9cution des ordonnances alimentaires"
-        },
-        {
-          "surveyCode": "3325",
-          "surveyEn": "Alternative Measures Survey for Youth",
-          "surveyFr": "Enqu\u00eate sur les mesures de rechange pour les adolescents"
-        },
-        {
-          "surveyCode": "3326",
-          "surveyEn": "A One Day Snapshot in Canada's Correctional Facilities",
-          "surveyFr": "Profil instantan\u00e9 d'une journ\u00e9e des d\u00e9tenus dans les \u00e9tablissements correctionnels pour adultes du Canada"
-        },
-        {
-          "surveyCode": "3327",
-          "surveyEn": "Adult and Youth Recidivism in Canada Special Study",
-          "surveyFr": "\u00c9tude sp\u00e9ciale sur la r\u00e9cidive chez les adultes et les jeunes au Canada"
-        },
-        {
-          "surveyCode": "3328",
-          "surveyEn": "Survey of Residential Facilities for Victims of Abuse",
-          "surveyFr": "Enqu\u00eate sur les \u00e9tablissements d'h\u00e9bergement pour les victimes de violence"
-        },
-        {
-          "surveyCode": "3401",
-          "surveyEn": "Field Crop Reporting Series",
-          "surveyFr": "S\u00e9rie de rapports sur les grandes cultures"
-        },
-        {
-          "surveyCode": "3403",
-          "surveyEn": "Monthly Miller's Survey",
-          "surveyFr": "Enqu\u00eate mensuelle aupr\u00e8s des minotiers"
-        },
-        {
-          "surveyCode": "3404",
-          "surveyEn": "Monthly Crushing Operations Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur les op\u00e9rations de trituration"
-        },
-        {
-          "surveyCode": "3405",
-          "surveyEn": "Leaf Tobacco Area, Production and Value",
-          "surveyFr": "Superficie r\u00e9colt\u00e9e, production et valeur du tabac en feuilles"
-        },
-        {
-          "surveyCode": "3407",
-          "surveyEn": "Fruits and Vegetables Survey",
-          "surveyFr": "Enqu\u00eate sur les fruits et l\u00e9gumes"
-        },
-        {
-          "surveyCode": "3411",
-          "surveyEn": "Mushroom Growers' Survey",
-          "surveyFr": "Enqu\u00eate relative aux producteurs de champignons"
-        },
-        {
-          "surveyCode": "3414",
-          "surveyEn": "Maple Products",
-          "surveyFr": "Produits de l'\u00e9rable"
-        },
-        {
-          "surveyCode": "3416",
-          "surveyEn": "Annual Greenhouse, Sod and Nursery Survey",
-          "surveyFr": "Enqu\u00eate annuelle sur les cultures de serre, les p\u00e9pini\u00e8res et les gazonni\u00e8res"
-        },
-        {
-          "surveyCode": "3419",
-          "surveyEn": "Honey Production, Value and Colonies",
-          "surveyFr": "Production de miel, valeur et colonies d'abeilles"
-        },
-        {
-          "surveyCode": "3421",
-          "surveyEn": "Egg Producers Survey",
-          "surveyFr": "Enqu\u00eate sur les producteurs d'oeufs"
-        },
-        {
-          "surveyCode": "3422",
-          "surveyEn": "Stocks of Frozen Fruit and Vegetables",
-          "surveyFr": "Stocks de fruits et de l\u00e9gumes congel\u00e9es"
-        },
-        {
-          "surveyCode": "3423",
-          "surveyEn": "Quarterly Stocks of Frozen and Chilled Meats Survey",
-          "surveyFr": "Enqu\u00eate trimestrielle sur les stocks de viandes froides et congel\u00e9es"
-        },
-        {
-          "surveyCode": "3425",
-          "surveyEn": "Inventory Statement of Frozen Eggs, Poultry and Edible Dried Egg Products (Agriculture and Agri-Food Canada Data)",
-          "surveyFr": "Relev\u00e9 des stocks de produits avicoles, d'oeufs congel\u00e9s et de produits d'oeufs en poudre comestibles (Donn\u00e9es du Agriculture et Agroalimentaire Canada)"
-        },
-        {
-          "surveyCode": "3426",
-          "surveyEn": "Fur Farm Report - Mink and Foxes",
-          "surveyFr": "Rapport des fermes \u00e0 fourrure - Visons et renards"
-        },
-        {
-          "surveyCode": "3428",
-          "surveyEn": "Census of Wildlife Pelt Production",
-          "surveyFr": "Recensement de la production des fourrures provenant de la chasse"
-        },
-        {
-          "surveyCode": "3430",
-          "surveyEn": "Monthly Dairy Factory Production and Stocks Survey",
-          "surveyFr": "Enqu\u00eate mensuelle sur la production et stocks des fabriques laiti\u00e8res"
-        },
-        {
-          "surveyCode": "3431",
-          "surveyEn": "Monthly Inventory Statement of Butter and Cheese",
-          "surveyFr": "Inventaire mensuel du beurre et du fromage"
-        },
-        {
-          "surveyCode": "3432",
-          "surveyEn": "Milk Sold Off Farms and Cash Receipts from the Sale of Milk",
-          "surveyFr": "Ventes de lait hors ferme et recettes mon\u00e9taires provenant des ventes de lait"
-        },
-        {
-          "surveyCode": "3434",
-          "surveyEn": "Survey of Livestock Slaughter",
-          "surveyFr": "Relev\u00e9 des abattages de bestiaux"
-        },
-        {
-          "surveyCode": "3435",
-          "surveyEn": "Wool Price Survey",
-          "surveyFr": "Enqu\u00eate sur les prix de la laine"
-        },
-        {
-          "surveyCode": "3436",
-          "surveyEn": "Farm Product Prices Survey",
-          "surveyFr": "Enqu\u00eate sur les prix des produits agricoles"
-        },
-        {
-          "surveyCode": "3437",
-          "surveyEn": "Farm Cash Receipts",
-          "surveyFr": "Recettes mon\u00e9taires agricoles"
-        },
-        {
-          "surveyCode": "3438",
-          "surveyEn": "Census of Agriculture",
-          "surveyFr": "Recensement de l'agriculture"
-        },
-        {
-          "surveyCode": "3439",
-          "surveyEn": "National Farm Survey",
-          "surveyFr": "Enqu\u00eate nationale sur les fermes"
-        },
-        {
-          "surveyCode": "3441",
-          "surveyEn": "Processors Supplementary Report of Frozen Vegetables Intended for Re-manufacture",
-          "surveyFr": "Rapport suppl\u00e9mentaire des conditionneurs de l\u00e9gumes congel\u00e9s sur les stocks destin\u00e9s \u00e0 la retransformation"
-        },
-        {
-          "surveyCode": "3442",
-          "surveyEn": "Forage Seed Usage Survey",
-          "surveyFr": "Enqu\u00eate sur l'utilisation des semences fourrag\u00e8res"
-        },
-        {
-          "surveyCode": "3443",
-          "surveyEn": "Annual Miller's Survey",
-          "surveyFr": "Enqu\u00eate annuelle aupr\u00e8s des minotiers"
-        },
-        {
-          "surveyCode": "3446",
-          "surveyEn": "Biannual Potato Area and Yield Survey",
-          "surveyFr": "Enqu\u00eate semestrielle sur la superficie et le rendement des pommes de terre"
-        },
-        {
-          "surveyCode": "3447",
-          "surveyEn": "Agriculture Taxation Data Program",
-          "surveyFr": "Programme des donn\u00e9es fiscales agricoles"
-        },
-        {
-          "surveyCode": "3449",
-          "surveyEn": "Survey of Wage Rates for Hired Farm Labour",
-          "surveyFr": "Enqu\u00eate sur les taux des salaires de la main-d'oeuvre agricole salari\u00e9e"
-        },
-        {
-          "surveyCode": "3450",
-          "surveyEn": "Farm Financial Survey",
-          "surveyFr": "Enqu\u00eate financi\u00e8re sur les fermes"
-        },
-        {
-          "surveyCode": "3451",
-          "surveyEn": "Seed Corn Trade Survey",
-          "surveyFr": "Enqu\u00eate sur le commerce des semences de ma\u00efs"
-        },
-        {
-          "surveyCode": "3460",
-          "surveyEn": "Livestock Survey",
-          "surveyFr": "Enqu\u00eate sur le b\u00e9tail"
-        },
-        {
-          "surveyCode": "3461",
-          "surveyEn": "Farm Inputs Management Survey",
-          "surveyFr": "Enqu\u00eate sur la gestion des intrants agricoles"
-        },
-        {
-          "surveyCode": "3464",
-          "surveyEn": "Commercial Stocks of Corn and Soybeans Survey",
-          "surveyFr": "Enqu\u00eate sur les stocks commerciaux de ma\u00efs et de soya"
-        },
-        {
-          "surveyCode": "3465",
-          "surveyEn": "Atlantic Agriculture Survey",
-          "surveyFr": "Enqu\u00eate agricole des provinces de l'Atlantique"
-        },
-        {
-          "surveyCode": "3471",
-          "surveyEn": "Value of Farm Capital",
-          "surveyFr": "Valeur du capital agricole"
-        },
-        {
-          "surveyCode": "3472",
-          "surveyEn": "Farm Debt Outstanding",
-          "surveyFr": "Dette agricole en cours"
-        },
-        {
-          "surveyCode": "3473",
-          "surveyEn": "Net Farm Income",
-          "surveyFr": "Revenu agricole net"
-        },
-        {
-          "surveyCode": "3474",
-          "surveyEn": "Farm Income in Kind, by Item",
-          "surveyFr": "Revenu agricole en nature, par article"
         }
       ],
       "subject": [
