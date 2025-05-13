@@ -3,10 +3,9 @@ import requests
 import requests_cache
 from datetime import timedelta
 
-#Import debugging libraries
+#Import and initialize debugging libraries
 from tqdm import tqdm
 import logging
-import json
 import urllib3
 import pandas as pd
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -24,6 +23,7 @@ class StatsCan_Manager:
         self.data_assembler = Data_Assembler(self.api, self)
 
     def fetch_data_dicts(self, vectorIds):
+        """Given list of vector ids, returns included data in list of dictionaries"""
         #Get population vector for per capita reference
         population_vectors=self.api.fetch_vetors(populationVectorIds)
         
@@ -37,61 +37,6 @@ class StatsCan_Manager:
         data_dicts = self.data_assembler.assemble_data(vectors)
 
         return data_dicts
-    
-    def prep_data_for_export(self, list_of_grouped_dicts):
-        """Takes grouped data, and re-groups into data frames for export to excel, organized by Product Id.
-        De-duplicates grouped data, so that each data frame contains one row per dat point"""
-        #Initialize product id to sheet dictionary list, to track included productIds
-        #Also, product id to title. There's *got* to be a better way
-        product_id_to_sheet = {}
-        product_id_to_title = {}
-
-        #Initialize lists for tracking globally shared keys and the included values
-        shared_keys_values = {}
-        shared_keys = set(list_of_grouped_dicts[0].group[0].keys())
-
-        #Iterate through groups of data.
-        for data_group in list_of_grouped_dicts:
-            #Iterate through data point dictionaries within each group
-            for data_point in data_group.group:
-                #Update intersection of keys 
-                shared_keys.intersection_update(data_point.keys())
-                logger.debug(f'Updated shared keys to intersection with previous and {data_point.keys()}. Now {shared_keys}')
-                #Add value of current value
-                for key in shared_keys:
-                    #Check to ensure key exists
-                    if key not in shared_keys_values:
-                            shared_keys_values[key]=set()
-                    shared_keys_values[key].add(data_point[key])
-
-                #Get product Id of data point
-                productId = data_point['ProductId']
-                #If product id is not present in the product_id_to_sheet dictionary keys, add it
-                if productId not in product_id_to_sheet:
-                    logger.debug(f'Creating new sheet for productId {productId}')
-                    product_id_to_sheet[productId] = []
-
-                #If this product id isn't in the title dictionary, add it
-                if productId not in product_id_to_title:
-                    logger.debug(f'Adding product Id {productId} to title dictionary (should follow "creating new sheet" message)')
-                    product_id_to_title[productId]=data_point['Title']
-                
-                #If the current data point dictionary is not in the corresponding dictionary value, add it
-                if data_point not in product_id_to_sheet[productId]:
-                    logger.debug(f'Dict {data_point} not found in sheet for productId {productId}. Adding')
-                    product_id_to_sheet[productId].append(data_point)
-
-        # Convert each sheet to a pandas DataFrame and store in dictionary, organized by product id
-        dfs = {f'{product_id}-{product_id_to_title[product_id]}'[:30]: pd.DataFrame(sheet) for product_id, sheet in product_id_to_sheet.items()}
-        
-        #Convert shared key sets to lists for pandas output
-        shared_keys_values={key:list(values) for key, values in shared_keys_values.items()}
-        #Create shared keys df
-        global_vars_df=pd.DataFrame(dict([(k, pd.Series(v)) for k, v in shared_keys_values.items()]))
-        #Add to dfs
-        dfs['Global variables']=global_vars_df
-        
-        return dfs
 
 class API_Manager:
     """Controls interactions with API, stores and returns data"""
@@ -245,8 +190,6 @@ class Data_Point:
         #Process Value and per capita measure
         self.process_value(comparisons)
 
-        logger.debug(f'Processed data point. {self.data}')
-
     def initialize_dictionary(self, data_point, metadata):
         """Processes data and metadata into dictionary"""
         #Save passed variables
@@ -298,7 +241,6 @@ class Data_Point:
         if(comparisons):
             #Compare to population data to calculate per capita measure
             self.process_per_capita()
-
 
     def process_per_capita(self):
         #Get population data for matching refper and geography
