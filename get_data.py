@@ -44,10 +44,12 @@ def init():
 class Director:
     """Coordintes overall process"""
     def __init__(self):
+        
         #Creates manager for data from Statistics Canada
         self.statscan=statscan_data_manager.StatsCan_Manager()
 
     def main(self):
+        
         logger.info("Beginning main loop")
         """Imports, sorts, analyzes, and exports data"""
         #Stats Canada organizes by "Vectors". Vectors are stored in source file
@@ -66,7 +68,15 @@ class Director:
         self.export_to_excel(export_df, outputFile)
 
     def extract_vector_ids(self, source_df):
-        """Organizes all vectors ids into single string for API call"""
+        """Organizes all vectors ids into single string for API call
+
+        Args:
+            source_df (dataframe)): source document containing vectors to download
+
+        Returns:
+            string: list of vectors, separated by ,
+        """        
+
         #Initialize empty list of strings
         vectorIds = []
         #Add list of vectorIds within cell as single string to list
@@ -80,7 +90,14 @@ class Director:
         """Groups StatsCan data for summary, performs summaries,
         Organizes data into pandas data frame for export
         returns dataframe
-        """
+
+        Args:
+            data_dicts (list<dict>): List of dictionaries containing raw data
+
+        Returns:
+            dataframe: Pandas DF representation of processed data, including summary statistics
+        """        
+
         excluded_columns = ['VectorId', 'Data_Value', 'Scaled_Value', "Value Per Capita"]
         statsCan_analyzer = Data_Analyzer(data_dicts, excluded_columns)
 
@@ -98,6 +115,16 @@ class Director:
         return export_df
 
     def convert_list_to_dataframes(self, data_dicts, sorting_key, name_key):
+        """Converts list of data dictionaries into pandas data frames, sorted by given key, labeled as provided
+
+        Args:
+            data_dicts (list<dict>): List of raw data dictionaries
+            sorting_key (string): Key for data to sort and group by
+            name_key (string): Key for data containing name to label sheet with
+
+        Returns:
+            dataframe: Pandas data frame with data sorted by sorting key, with each sheet labeled with data from name_key
+        """        
         grouped = {}
 
         for data_point in data_dicts:
@@ -117,7 +144,12 @@ class Director:
         return dfs
 
     def export_to_excel(self, dfs, filename):
-        """Exports dictionary of pandas dataframes to excel file, where each value is a list of rows that share a product Id, and each sheet contains all values grouped by productId"""
+        """Exports dictionary of pandas dataframes to excel file
+
+        Args:
+            dfs (dataframe): Pandas dataframe to export
+            filename (_type_): File name to save data into
+        """        
         with pd.ExcelWriter(filename, engine='xlsxwriter') as writer:
             for sheet_name, df in dfs.items():
                 df.to_excel(writer, sheet_name=sheet_name, index=False)  
@@ -139,8 +171,14 @@ class Data_Analyzer:
 
     def group_data(self, data_dicts):
         """Groups data into lists of data who share all but one dimension
-        Returns list of Data_group objects
-        """
+
+        Args:
+            data_dicts (list<dict>): List of all raw data points
+
+        Returns:
+            list<data_group>: List of groups of data points that can be summarized
+        """        
+
         list_of_groups = []
 
         # Compare every pair of data points
@@ -170,10 +208,15 @@ class Data_Analyzer:
         return summary_list
     
     def get_global_group(self, data_dicts):
-        """Gets group of keys that are represented in all data, and includes all key values"""
-        if not data_dicts:
-            return set(), {}
+        """Find keys that are present across all data, record all possible vlues for each global key
 
+        Args:
+            data_dicts (list<dict>): List of all raw data points
+
+        Returns:
+            dataframe: Pandas dataframe containing global key/value sets
+        """        
+        """Gets group of keys that are represented in all data, and includes all key values"""
         shared_keys = set(data_dicts[0].keys())
         shared_keys_values = {}
 
@@ -191,7 +234,17 @@ class Data_Analyzer:
         return pd.DataFrame(dict([(k, pd.Series(list(v))) for k, v in shared_keys_values.items()]))
 
     def find_single_difference(self, data_point, comparison_data_point):
-        """Compares two data points to find single differing value"""
+        """Returns single difference between two data points, unless more or less exist
+
+        Args:
+            data_point (data_point): Data point to compare against
+            comparison_data_point (data_point): Data point to compare
+
+        Returns:
+            string: name of single key where data points differ
+            *If the points differ by 0 or >1, return None
+        """        
+        """"""
         # Bounce if we're testing a data point against itself
         if data_point == comparison_data_point:
             return None
@@ -218,10 +271,13 @@ class Data_Analyzer:
             return None
         
     def add_points_to_groups(self, list_of_groups, data_point, comparison_data_point, differing_key):
-        """Adds points to group list. 
-           -If group exists with one of the two points and a matching differing key, add missing point
-           -If no group exists, create one
-           """
+        """Adds points to group list. Creates group if needed.
+
+        Args:
+            list_of_groups (list<Data_group>): Current list of groups, to be augmented
+            data_point, comparison_data_point (data_point): data points to add to group  
+            differing_key (string): Key of single differing value between two points 
+        """        
         #Initialize match_found, in case neither data point is found
         match_found = False
 
@@ -253,15 +309,22 @@ class Data_group:
             self.differing_key = differing_key
 
     def add_point(self, data_dict):
-        #logger.debug(f"Checking whether vector {data_dict['VectorId']} is in group")
-        """Adds data point to group, unless group already contains point"""
+        """Adds data point to group, unless group already contains point
+
+        Args:
+            data_dict (dictionary): Single data point to add to group
+        """        
         #Checks for duplicates
         if data_dict not in self.group:
             #Adds point and updates stats
             self.group.append(data_dict)
 
     def add_points(self, data_dicts):
-        """Version of add point that takes multiple points"""
+        """Version of add point that takes list of points rather than single point
+
+        Args:
+            data_dicts (list<dict>): List of data points to add to group
+        """
         #Iterate through list and add each to group
         for data_dict in data_dicts:
             self.add_point(data_dict)

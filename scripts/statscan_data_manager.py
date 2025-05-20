@@ -23,7 +23,14 @@ class StatsCan_Manager:
         self.data_assembler = Data_Assembler(self.api, self)
 
     def fetch_data_dicts(self, vectorIds):
-        """Given list of vector ids, returns included data in list of dictionaries"""
+        """Given list of vector ids, returns included data in list of dictionaries
+
+        Args:
+            vectorIds (string): list of all vector Ids to download in form of single string, separated by ,
+
+        Returns:
+            list<dict>: List of raw data points from statscan vector Ids
+        """        
         #Get population vector for per capita reference
         population_vectors=self.api.fetch_vetors(populationVectorIds)
         
@@ -61,7 +68,14 @@ class API_Manager:
         return self.statscan_call(url)
 
     def fetch_vetors(self, vectorIds):
-        """Fetches Vector data from StatsCan API, based on list of VectorIDs"""
+        """Fetches Vector data from StatsCan API, based on list of VectorIDs
+
+        Args:
+            vectorIds (string): single string with all vector ids, separated by ,
+
+        Returns:
+            JSON: JSON representation of data
+        """        
         #Construct API call
         url = "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange"
         params= {
@@ -73,7 +87,14 @@ class API_Manager:
         return self.statscan_call(url, params)
 
     def fetch_metadata(self, productId):
-        """Fetches metadata for given ProductId"""
+        """Fetches metadata for given ProductId
+
+        Args:
+            productId (string): string of product id to get metadata from
+
+        Returns:
+            JSON: JSON containing metadata for given ProductId
+        """        
         #Get metadata from Stats Can 
         url = "https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata"
         raw_data = self.statscan_call(url, [{"productId": productId}], 'post')
@@ -86,8 +107,16 @@ class API_Manager:
             logger.error(f"No data from api from product id {productId}")
 
     def statscan_call(self, url, suffix = '', call_type = 'get'):
-        """Calls StatsCan API. Takes suffix for get/post params/json, and call type for get/post
-        Defaults to blank suffix and get call"""
+        """Calls StatsCan API with given parameters
+
+        Args:
+            url (string): URL for API call
+            suffix (str, optional): Suffix contains call-specific data, such as vector or product ids. Defaults to ''.
+            call_type (str, optional): Determines whether to use post or get. Defaults to 'get'.
+
+        Returns:
+            JSON: JSON response from server
+        """        
         #Perform call based on call type
         if call_type=='get':
             response = self.session.get(url, params=suffix, verify=False)
@@ -113,7 +142,15 @@ class Data_Assembler:
     
     def assemble_data(self, vectors, comparisons=True):
         """Assembles data_point objects from raw vector data
-        Returns data points as list of dictionaries"""
+
+        Args:
+            vectors (list<dict>): JSON representation of all vectors
+            comparisons (bool, optional): Used to perform per capita and other comparisons, unless loading comparative data (when False). Defaults to True.
+
+        Returns:
+            list<dict>: List of data points from vectors
+        """        
+
         #Initialize empty list to store data
         data_points = []
 
@@ -164,7 +201,13 @@ class Data_Assembler:
 class Data_Point:
     """Helper class for assembling data point"""
     def __init__(self, api, manager, comparisons):
-        """Saves references"""
+        """Create initial data point with references for other data
+
+        Args:
+            api (API_Manager): API manager to fetch metadata calls
+            manager (StatsCan_Manager): StatsCan Manager for full porocess
+            comparisons (bool): Determines whether we perform comparisons or are setting comparative data
+        """
         self.api=api
         self.manager=manager
         self.scale_codes = api.scale_codes
@@ -179,9 +222,7 @@ class Data_Point:
         self.vectorId = vectorId
         
     def process_data_point(self, data_point, metadata, comparisons):
-        """Processes raw data into dictionary
-        Processes dimensional data
-        Processes value for scaling and comparisons"""
+        """Processes raw data into labeled, scaled, and summarized data point"""
         #Save vector into dictionary
         self.initialize_dictionary(data_point, metadata)
         
@@ -243,6 +284,11 @@ class Data_Point:
             self.process_per_capita()
 
     def process_per_capita(self):
+        """Compares values to corresponding population data
+
+        Returns:
+            None: Returns none if we cannot perform comparison. Otherwise, update own data
+        """
         #Get population data for matching refper and geography
         geo = self.data['Geography']
         year = self.data['RefPeriod']
@@ -271,7 +317,15 @@ class Data_Point:
             logger.error(f'No matching dict found for geo = {geo} and year={year}')
         
     def get_dimension_and_coordinate_name(self, dimension, coord):
-        """Gets dimension and coordinate (member) name """
+        """Gets dimension and coordinate names
+
+        Args:
+            dimension (dict): dictionary containing dimension key:values for names
+            coord (integer): Value of current coordinate to be compared with dimension
+
+        Returns:
+            string, string: returns strings containing dimension name and coordinate value name 
+        """        
         #Find given dimension in metadata, save name
         dimension = self.metadata['dimension'][dimension]
         dimension_name = dimension['dimensionNameEn']

@@ -1,0 +1,12 @@
+site_name: Stats Fetcher
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - Stats Fetcher: index.md
+  - Get_data reference: get_data_ref.md
+  - StatsCan API manager reference: statscan_ref.md
